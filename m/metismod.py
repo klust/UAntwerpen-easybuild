@@ -125,6 +125,25 @@ class EB_METISMOD(ConfigureMake):
         else:
             super(EB_METISMOD, self).install_step()
 
+            # Copy the manual
+            try:
+                manualdir = os.path.join(self.installdir, 'manual')
+                mkdir(manualdir)
+                src = os.path.join(self.cfg['start_dir'], 'manual/manual.pdf')
+                dst = os.path.join(manualdir, 'manual.pdf')
+                shutil.copy2(src, dst)
+            except OSError, err:
+                raise EasyBuildError("Copying the manual (manual/manual.pdf) failed: %s", err)
+
+            # Copy the LICENSE.txt file
+            try:
+                src = os.path.join(self.cfg['start_dir'], 'LICENSE.txt')
+                dst = os.path.join(self.installdir, 'LICENSE.txt')
+                shutil.copy2(src, dst)
+            except OSError, err:
+                raise EasyBuildError("Copying LICENSE.txt failed: %s", err)
+
+
     def sanity_check_step(self):
         """Custom sanity check for METIS (more extensive for recent version (>= v5))"""
 

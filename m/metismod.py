@@ -99,7 +99,7 @@ class EB_METISMOD(ConfigureMake):
                 src = os.path.join(self.cfg['start_dir'], 'libmetis.a')
                 dst = os.path.join(libdir, 'libmetis.a')
                 shutil.copy2(src, dst)
-            except OSError, err:
+            except OSError as err:
                 raise EasyBuildError("Copying file libmetis.a to lib dir failed: %s", err)
 
             # copy include files
@@ -108,8 +108,8 @@ class EB_METISMOD(ConfigureMake):
                     src = os.path.join(self.cfg['start_dir'], 'Lib', f)
                     dst = os.path.join(includedir, f)
                     shutil.copy2(src, dst)
-                    os.chmod(dst, 0755)
-            except OSError, err:
+                    os.chmod(dst, 0o755)
+            except OSError as err:
                 raise EasyBuildError("Copying file metis.h to include dir failed: %s", err)
 
             # other applications depending on ParMETIS (SuiteSparse for one) look for both ParMETIS libraries
@@ -119,7 +119,7 @@ class EB_METISMOD(ConfigureMake):
                 os.symlink(libdir, Libdir)
                 for f in ['defs.h', 'macros.h', 'metis.h', 'proto.h', 'rename.h', 'struct.h']:
                     os.symlink(os.path.join(includedir, f), os.path.join(libdir, f))
-            except OSError, err:
+            except OSError as err:
                 raise EasyBuildError("Something went wrong during symlink creation: %s", err)
 
         else:
@@ -132,7 +132,7 @@ class EB_METISMOD(ConfigureMake):
                 src = os.path.join(self.cfg['start_dir'], 'manual/manual.pdf')
                 dst = os.path.join(manualdir, 'manual.pdf')
                 shutil.copy2(src, dst)
-            except OSError, err:
+            except OSError as err:
                 raise EasyBuildError("Copying the manual (manual/manual.pdf) failed: %s", err)
 
             # Copy the LICENSE.txt file
@@ -140,7 +140,7 @@ class EB_METISMOD(ConfigureMake):
                 src = os.path.join(self.cfg['start_dir'], 'LICENSE.txt')
                 dst = os.path.join(self.installdir, 'LICENSE.txt')
                 shutil.copy2(src, dst)
-            except OSError, err:
+            except OSError as err:
                 raise EasyBuildError("Copying LICENSE.txt failed: %s", err)
 
 

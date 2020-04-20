@@ -77,14 +77,14 @@ class EB_ParMETISMOD(EasyBlock):
 
 			if self.toolchain.options.get('usempi', None):
 				self.cfg.update('configopts', 'cc=%s' % (os.getenv('MPICC')) )
- 				self.cfg.update('configopts', 'cxx=%s' % (os.getenv('MPICXX')) )
+				self.cfg.update('configopts', 'cxx=%s' % (os.getenv('MPICXX')) )
 
 			self.parmetis_builddir = 'build'
 			try:
 				cmd = "%s make config %s prefix=%s BUILDDIR=build" % (self.cfg['preconfigopts'], self.cfg['configopts'], self.installdir)
 				run_cmd(cmd, log_all=True, simple=True)
 				os.chdir(self.cfg['start_dir'])
-			except OSError, err:
+			except OSError as err:
 				raise EasyBuildError("Running make config in %s failed: %s", self.parmetis_builddir, err)
 		else:
 			raise EasyBuildError("ParMETIS versions before version 4 not fully supported by this EasyBlock.")
@@ -101,7 +101,7 @@ class EB_ParMETISMOD(EasyBlock):
 
 		try:
 			run_cmd(cmd, log_all=True, simple=True, log_output=verbose)
-		except OSError, err:
+		except OSError as err:
 			raise EasyBuildError("Running cmd '%s' failed: %s", cmd, err)
 
 	def install_step(self):
@@ -119,7 +119,7 @@ class EB_ParMETISMOD(EasyBlock):
 			try:
 				run_cmd(cmd, log_all=True, simple=True)
 				os.chdir(self.cfg['start_dir'])
-			except OSError, err:
+			except OSError as err:
 				raise EasyBuildError("Running '%s' in %s failed: %s", cmd, self.parmetis_builddir, err)
 
 			# libraries: make install does not install libmetis.a
@@ -127,7 +127,7 @@ class EB_ParMETISMOD(EasyBlock):
 				src = os.path.join(self.cfg['start_dir'], 'build' ,'libmetis' ,'libmetis.a')
 				dst = os.path.join(libdir, 'libmetis.a')
 				shutil.copy2(src, dst)
-			except OSError, err:
+			except OSError as err:
 				raise EasyBuildError("Copying files to installation dir failed: %s", err)
 
 			# include files: make install does not copy metis.h though this is read by
@@ -136,7 +136,7 @@ class EB_ParMETISMOD(EasyBlock):
 				src = os.path.join(self.cfg['start_dir'], 'build', 'metis', 'include', 'metis.h')
 				dst = os.path.join(includedir, 'metis.h')
 				shutil.copy2(src, dst)
-			except OSError, err:
+			except OSError as err:
 				raise EasyBuildError("Copying files to installation dir failed: %s", err)
 
 		else:
@@ -149,7 +149,7 @@ class EB_ParMETISMOD(EasyBlock):
 					src = os.path.join(self.cfg['start_dir'], fil)
 					dst = os.path.join(libdir, fil)
 					shutil.copy2(src, dst)
-			except OSError, err:
+			except OSError as err:
 				raise EasyBuildError("Copying files to installation dir failed: %s", err)
 
 			# include files
@@ -160,7 +160,7 @@ class EB_ParMETISMOD(EasyBlock):
 				# some applications (SuiteSparse) can only use METIS (not ParMETIS), but header files are the same
 				dst = os.path.join(includedir, 'metis.h')
 				shutil.copy2(src, dst)
-			except OSError, err:
+			except OSError as err:
 				raise EasyBuildError("Copying files to installation dir failed: %s", err)
 
 		# other applications depending on ParMETIS (SuiteSparse for one) look for both ParMETIS libraries
@@ -170,7 +170,7 @@ class EB_ParMETISMOD(EasyBlock):
 			os.symlink(libdir, llibdir)
 			for f in ['metis.h', 'parmetis.h']:
 				os.symlink(os.path.join(includedir, f), os.path.join(libdir, f))
-		except OSError, err:
+		except OSError as err:
 			raise EasyBuildError("Something went wrong during symlink creation: %s", err)
 
 		# Copy the manual
@@ -180,7 +180,7 @@ class EB_ParMETISMOD(EasyBlock):
 			src = os.path.join(self.cfg['start_dir'], 'manual/manual.pdf')
 			dst = os.path.join(manualdir, 'manual.pdf')
 			shutil.copy2(src, dst)
-		except OSError, err:
+		except OSError as err:
 			raise EasyBuildError("Copying the manual (manual/manual.pdf) failed: %s", err)
 
 		# Copy the LICENSE.txt file
@@ -188,7 +188,7 @@ class EB_ParMETISMOD(EasyBlock):
 			src = os.path.join(self.cfg['start_dir'], 'LICENSE.txt')
 			dst = os.path.join(self.installdir, 'LICENSE.txt')
 			shutil.copy2(src, dst)
-		except OSError, err:
+		except OSError as err:
 			raise EasyBuildError("Copying LICENSE.txt failed: %s", err)
 
 	def sanity_check_step(self):

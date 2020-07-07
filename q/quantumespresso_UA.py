@@ -44,7 +44,7 @@ from easybuild.tools.filetools import apply_regex_substitutions, copy_dir, copy_
 from easybuild.tools.modules import get_software_root, get_software_version
 
 
-class EB_QuantumESPRESSO(ConfigureMake):
+class EB_QuantumESPRESSO_UA(ConfigureMake):
     """Support for building and installing Quantum ESPRESSO."""
 
     @staticmethod

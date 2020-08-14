@@ -1,5 +1,5 @@
 ##
-# Copyright 2009-2019 Ghent University
+# Copyright 2009-2020 Ghent University
 #
 # This file is part of EasyBuild,
 # originally created by the HPC team of Ghent University (http://ugent.be/hpc/en),
@@ -40,11 +40,11 @@ import easybuild.tools.toolchain as toolchain
 from easybuild.easyblocks.generic.configuremake import ConfigureMake
 from easybuild.framework.easyconfig import CUSTOM
 from easybuild.tools.build_log import EasyBuildError
-from easybuild.tools.filetools import apply_regex_substitutions, copy_dir, copy_file
+from easybuild.tools.filetools import copy_dir, copy_file
 from easybuild.tools.modules import get_software_root, get_software_version
 
 
-class EB_QuantumESPRESSO_UA(ConfigureMake):
+class EB_QuantumESPRESSO_UA_EB42(ConfigureMake):
     """Support for building and installing Quantum ESPRESSO."""
 
     @staticmethod
@@ -59,18 +59,16 @@ class EB_QuantumESPRESSO_UA(ConfigureMake):
 
     def __init__(self, *args, **kwargs):
         """Add extra config options specific to Quantum ESPRESSO."""
-        super(EB_QuantumESPRESSO, self).__init__(*args, **kwargs)
+        super(EB_QuantumESPRESSO_UA_EB42, self).__init__(*args, **kwargs)
 
-        if LooseVersion(self.version) >= LooseVersion("6.4"):
-            self.install_subdir = "q-e-qe-%s" % self.version
-        elif LooseVersion(self.version) >= LooseVersion("6"):
+        if LooseVersion(self.version) >= LooseVersion("6"):
             self.install_subdir = "qe-%s" % self.version
         else:
             self.install_subdir = "espresso-%s" % self.version
 
     def patch_step(self):
         """Patch files from build dir (not start dir)."""
-        super(EB_QuantumESPRESSO, self).patch_step(beginpath=self.builddir)
+        super(EB_QuantumESPRESSO_UA_EB42, self).patch_step(beginpath=self.builddir)
 
     def configure_step(self):
         """Custom configuration procedure for Quantum ESPRESSO."""
@@ -117,7 +115,10 @@ class EB_QuantumESPRESSO_UA(ConfigureMake):
                 raise EasyBuildError("Must use libxc >= 3.0.1")
             dflags.append(" -D__LIBXC")
             repls.append(('IFLAGS', '-I%s' % os.path.join(libxc, 'include'), True))
-            extra_libs.append(" -lxcf90 -lxc")
+            if LooseVersion(self.version) < LooseVersion("6.5"):
+                extra_libs.append(" -lxcf90 -lxc")
+            else:
+                extra_libs.append(" -lxcf90 -lxcf03 -lxc")
 
         hdf5 = get_software_root("HDF5")
         if hdf5:
@@ -133,24 +134,35 @@ class EB_QuantumESPRESSO_UA(ConfigureMake):
 
             elpa_v = get_software_version("ELPA")
             if LooseVersion(self.version) >= LooseVersion("6"):
+
+                # NOTE: Quantum Espresso should use -D__ELPA_<year> for corresponding ELPA version
+                # However for ELPA VERSION >= 2017.11 Quantum Espresso needs to use ELPA_2018
+                # because of outdated bindings. See: https://xconfigure.readthedocs.io/en/latest/elpa/
+                if LooseVersion("2018") > LooseVersion(elpa_v) >= LooseVersion("2017.11"):
+                    dflags.append('-D__ELPA_2018')
+                else:
+                    # get year from LooseVersion
+                    elpa_year_v = elpa_v.split('.')[0]
+                    dflags.append('-D__ELPA_%s' % elpa_year_v)
+
                 elpa_min_ver = "2016.11.001.pre"
-                dflags.append('-D__ELPA_2016')
             else:
                 elpa_min_ver = "2015"
                 dflags.append('-D__ELPA_2015 -D__ELPA')
 
             if LooseVersion(elpa_v) < LooseVersion(elpa_min_ver):
                 raise EasyBuildError("QuantumESPRESSO %s needs ELPA to be " +
-                                     "version %s or newer" % (self.version, elpa_min_ver))
+                                     "version %s or newer", self.version, elpa_min_ver)
 
-            elpa_include = os.path.join(elpa, 'include')
-            repls.append(('IFLAGS', '-I%s' % os.path.join(elpa_include, 'modules'), True))
-            self.cfg.update('configopts', '--with-elpa-include=%s' % elpa_include)
             if self.toolchain.options.get('openmp', False):
+                elpa_include = 'elpa_openmp-%s' % elpa_v
                 elpa_lib = 'libelpa_openmp.a'
             else:
+                elpa_include = 'elpa-%s' % elpa_v
                 elpa_lib = 'libelpa.a'
-
+            elpa_include = os.path.join(elpa, 'include', elpa_include)
+            repls.append(('IFLAGS', '-I%s' % os.path.join(elpa_include, 'modules'), True))
+            self.cfg.update('configopts', '--with-elpa-include=%s' % elpa_include)
             elpa_lib = os.path.join(elpa, 'lib', elpa_lib)
             self.cfg.update('configopts', '--with-elpa-lib=%s' % elpa_lib)
 
@@ -170,7 +182,7 @@ class EB_QuantumESPRESSO_UA(ConfigureMake):
         elif comp_fam == toolchain.GCC:
             repls.append(('F90FLAGS', '-cpp', True))
 
-        super(EB_QuantumESPRESSO, self).configure_step()
+        super(EB_QuantumESPRESSO_UA_EB42, self).configure_step()
 
         if self.toolchain.options.get('openmp', False):
             libfft = os.getenv('LIBFFT_MT')
@@ -345,51 +357,26 @@ class EB_QuantumESPRESSO_UA(ConfigureMake):
         copy_dir(os.path.join(self.cfg['start_dir'], 'bin'), bindir)
 
         # Pick up files not installed in bin
-        upftools = []
+        def copy_binaries(path):
+            full_dir = os.path.join(self.cfg['start_dir'], path)
+            self.log.info("Looking for binaries in %s" % full_dir)
+            for filename in os.listdir(full_dir):
+                full_path = os.path.join(full_dir, filename)
+                if os.path.isfile(full_path):
+                    if filename.endswith('.x'):
+                        copy_file(full_path, bindir)
+
         if 'upf' in targets or 'all' in targets:
-            upftools = ["casino2upf.x", "cpmd2upf.x", "fhi2upf.x", "fpmd2upf.x", "ncpp2upf.x",
-                        "oldcp2upf.x", "read_upf_tofile.x", "rrkj2upf.x", "uspp2upf.x", "vdb2upf.x",
-                        "virtual.x"]
-            if LooseVersion(self.version) > LooseVersion("5"):
-                upftools.extend(["interpolate.x", "upf2casino.x"])
-            if LooseVersion(self.version) >= LooseVersion("6.3"):
-                upftools.extend(["fix_upf.x"])
-            if LooseVersion(self.version) >= LooseVersion("6.4"):
-                upftools.remove("virtual.x")
-                upftools.extend(["virtual_v2.x"])
-        upf_bins = [os.path.join('upftools', x) for x in upftools]
-        for upf_bin in upf_bins:
-            copy_file(os.path.join(self.cfg['start_dir'], upf_bin), bindir)
+            copy_binaries('upftools')
 
-        wanttools = []
         if 'want' in targets:
-            wanttools = ["blc2wan.x", "conductor.x", "current.x", "disentangle.x",
-                         "dos.x", "gcube2plt.x", "kgrid.x", "midpoint.x", "plot.x", "sumpdos",
-                         "wannier.x", "wfk2etsf.x"]
-            if LooseVersion(self.version) > LooseVersion("5"):
-                wanttools.extend(["cmplx_bands.x", "decay.x", "sax2qexml.x", "sum_sgm.x"])
-        want_bins = [os.path.join('WANT', 'bin', x) for x in wanttools]
-        for want_bin in want_bins:
-            copy_file(os.path.join(self.cfg['start_dir'], want_bin), bindir)
+            copy_binaries('WANT')
 
-        w90tools = []
         if 'w90' in targets:
-            if LooseVersion(self.version) >= LooseVersion("5.4"):
-                w90tools = ["postw90.x"]
-                if LooseVersion(self.version) < LooseVersion("6.1"):
-                    w90tools = ["w90chk2chk.x"]
-            if LooseVersion(self.version) >= LooseVersion("6.4"):
-                w90tools.extend(["wannier90.x"])
-        w90_bins = [os.path.join('W90', x) for x in w90tools]
-        for w90_bin in w90_bins:
-            copy_file(os.path.join(self.cfg['start_dir'], w90_bin), bindir)
+            copy_binaries('W90')
 
-        yambo_bins = []
         if 'yambo' in targets:
-            yambo_bins = ["a2y", "p2y", "yambo", "ypp"]
-        yambo_bins = [os.path.join('YAMBO', 'bin', x) for x in yambo_bins]
-        for yambo_bin in yambo_bins:
-            copy_file(os.path.join(self.cfg['start_dir'], yambo_bin), bindir)
+            copy_binaries('YAMBO')
 
     def sanity_check_step(self):
         """Custom sanity check for Quantum ESPRESSO."""
@@ -401,9 +388,9 @@ class EB_QuantumESPRESSO_UA(ConfigureMake):
         bins = ["iotk", "iotk.x", "iotk_print_kinds.x"]
 
         if 'cp' in targets or 'all' in targets:
-            bins.extend(["cp.x", "cppp.x", "wfdd.x"])
-            if LooseVersion(self.version) >= LooseVersion("6.4"):
-                bins.remove("cppp.x")
+            bins.extend(["cp.x", "wfdd.x"])
+            if LooseVersion(self.version) < LooseVersion("6.4"):
+                bins.append("cppp.x")
 
         # only for v4.x, not in v5.0 anymore, called gwl in 6.1 at least
         if 'gww' in targets or 'gwl' in targets:
@@ -429,23 +416,23 @@ class EB_QuantumESPRESSO_UA(ConfigureMake):
         if 'pp' in targets or 'pwall' in targets or 'all' in targets:
             bins.extend(["average.x", "bands.x", "dos.x", "epsilon.x", "initial_state.x",
                          "plan_avg.x", "plotband.x", "plotproj.x", "plotrho.x", "pmw.x", "pp.x",
-                         "projwfc.x", "sumpdos.x", "pw2wannier90.x", "pw_export.x", "pw2gw.x",
+                         "projwfc.x", "sumpdos.x", "pw2wannier90.x", "pw2gw.x",
                          "wannier_ham.x", "wannier_plot.x"])
-            if LooseVersion(self.version) > LooseVersion("5"):
+            if LooseVersion(self.version) > LooseVersion("5") and LooseVersion(self.version) < LooseVersion("6.4"):
                 bins.extend(["pw2bgw.x", "bgw2pw.x"])
-            if LooseVersion(self.version) >= LooseVersion("6.4"):
-                bins.remove("bgw2pw.x")
-                bins.remove("pw_export.x")
-            else:
+            elif LooseVersion(self.version) <= LooseVersion("5"):
                 bins.extend(["pw2casino.x"])
+            if LooseVersion(self.version) < LooseVersion("6.4"):
+                bins.extend(["pw_export.x"])
 
         if 'pw' in targets or 'all' in targets:
             bins.extend(["dist.x", "ev.x", "kpoints.x", "pw.x", "pwi2xsf.x"])
-            if LooseVersion(self.version) >= LooseVersion("5.1"):
-                bins.extend(["generate_rVV10_kernel_table.x"])
-            if LooseVersion(self.version) > LooseVersion("5"):
-                bins.extend(["generate_vdW_kernel_table.x"])
-            else:
+            if LooseVersion(self.version) < LooseVersion("6.5"):
+                if LooseVersion(self.version) >= LooseVersion("5.1"):
+                    bins.extend(["generate_rVV10_kernel_table.x"])
+                if LooseVersion(self.version) > LooseVersion("5"):
+                    bins.extend(["generate_vdW_kernel_table.x"])
+            if LooseVersion(self.version) <= LooseVersion("5"):
                 bins.extend(["path_int.x"])
             if LooseVersion(self.version) < LooseVersion("5.3.0"):
                 bins.extend(["band_plot.x", "bands_FS.x", "kvecs_FS.x"])
@@ -460,14 +447,14 @@ class EB_QuantumESPRESSO_UA(ConfigureMake):
         upftools = []
         if 'upf' in targets or 'all' in targets:
             upftools = ["casino2upf.x", "cpmd2upf.x", "fhi2upf.x", "fpmd2upf.x", "ncpp2upf.x",
-                        "oldcp2upf.x", "read_upf_tofile.x", "rrkj2upf.x", "uspp2upf.x", "vdb2upf.x",
-                        "virtual.x"]
+                        "oldcp2upf.x", "read_upf_tofile.x", "rrkj2upf.x", "uspp2upf.x", "vdb2upf.x"]
             if LooseVersion(self.version) > LooseVersion("5"):
                 upftools.extend(["interpolate.x", "upf2casino.x"])
             if LooseVersion(self.version) >= LooseVersion("6.3"):
                 upftools.extend(["fix_upf.x"])
-            if LooseVersion(self.version) >= LooseVersion("6.4"):
-                upftools.remove("virtual.x")
+            if LooseVersion(self.version) < LooseVersion("6.4"):
+                upftools.extend(["virtual.x"])
+            else:
                 upftools.extend(["virtual_v2.x"])
 
         if 'vdw' in targets:  # only for v4.x, not in v5.0 anymore
@@ -491,7 +478,6 @@ class EB_QuantumESPRESSO_UA(ConfigureMake):
         if 'xspectra' in targets:
             bins.extend(["xspectra.x"])
 
-
         yambo_bins = []
         if 'yambo' in targets:
             yambo_bins = ["a2y", "p2y", "yambo", "ypp"]
@@ -509,4 +495,4 @@ class EB_QuantumESPRESSO_UA(ConfigureMake):
             'dirs': []
         }
 
-        super(EB_QuantumESPRESSO, self).sanity_check_step(custom_paths=custom_paths)
+        super(EB_QuantumESPRESSO_UA_EB42, self).sanity_check_step(custom_paths=custom_paths)

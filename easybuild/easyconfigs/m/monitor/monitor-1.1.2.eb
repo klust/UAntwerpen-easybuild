@@ -28,14 +28,22 @@ docurls = [
     'monitor -h',
 ]
 
-sources = [{
-    'filename':   SOURCE_TAR_GZ,
-    'git_config': {
-        'url':       'https://github.com/gjbex',
-        'repo_name': '%(name)s',
-        'tag':       'release/%(version)s',    
-    }    
-}]
+# https://github.com/gjbex/monitor/archive/refs/tags/1.1.2.tar.gz
+sources = [
+    {
+        'filename': SOURCE_TAR_GZ,
+        'download_filename': '%(version)s.tar.gz',
+        'source_urls': ['https://github.com/gjbex/monitor/archive/refs/tags']
+    }
+]
+#sources = [{
+#    'filename':   SOURCE_TAR_GZ,
+#    'git_config': {
+#        'url':       'https://github.com/gjbex',
+#        'repo_name': '%(name)s',
+#        'tag':       'release/%(version)s',    
+#    }    
+#}]
 
 toolchain = SYSTEM
 

@@ -1,6 +1,6 @@
 easyblock = 'Tarball'
 
-name = 'g_mmpbsa'
+name =    'g_mmpbsa'
 version = '1.6'
 
 homepage = 'http://rashmikumari.github.io/g_mmpbsa/'
@@ -9,7 +9,7 @@ method except the entropic term and energetic contribution of each residue to
 the binding using energy decomposition scheme."""
 
 
-toolchain = {'name': 'dummy', 'version': 'dummy'}
+toolchain = SYSTEM
 
 sources = ['%(namelower)s-%(version)s.tar.gz']
 
@@ -17,7 +17,7 @@ modextrapaths = {'PATH': ['']}
 
 sanity_check_paths = {
     'files': ['g_mmpbsa', 'energy2bfac'],
-    'dirs': [''],
+    'dirs':  [''],
 }
 
 moduleclass = 'bio'

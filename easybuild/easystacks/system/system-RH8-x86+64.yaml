@@ -7,3 +7,7 @@ software:
     toolchains:
       SYSTEM:
         versions: ['2020.0']
+  Mathematica:
+    toolchains:
+      SYSTEM:
+        versions: ['12.0']

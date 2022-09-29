@@ -1,0 +1,14 @@
+software:
+#  AutoDock_Vina:
+#    toolchains:
+#      SYSTEM:
+#        versions: ['1.2.3'] 
+#  g_mmpbsa: # Is this still relevant? Old software, provided by the user.
+#    toolchains:
+#      SYSTEM:
+#        versions: ['1.6']
+#  monitor:
+#    toolchains:
+#      SYSTEM
+#        versions: ['1.1.2']
+

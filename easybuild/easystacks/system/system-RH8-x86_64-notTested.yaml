@@ -1,0 +1,5 @@
+software:
+  COMSOL:
+    toolchains:
+      SYSTEM
+        versions: ['5.5.0.359']

@@ -50,7 +50,7 @@ modluafooter = """
 prepend_path( 'PATH', '%(root)s/bin' )
 
 -- Overwerite EasyBuild-generated EBROOT variable.
-setenv( 'EBROOTMATLAB', '%(root)s' )
+setenv( 'EBROOTMAPLE', '%(root)s' )
 """ % {
     'root': local_root
 }

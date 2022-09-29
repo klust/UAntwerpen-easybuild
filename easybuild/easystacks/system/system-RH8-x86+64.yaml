@@ -1,0 +1,9 @@
+software:
+  MATLAB:
+    toolchains:
+      SYSTEM:
+        versions: ['R2020a', 'R2021a','R2022a']
+  Maple:
+    toolchains:
+      SYSTEM:
+        versions: ['2020.0']

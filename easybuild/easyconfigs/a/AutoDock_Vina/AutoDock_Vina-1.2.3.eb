@@ -1,0 +1,48 @@
+# This file is an EasyBuild reciPY as per https://github.com/hpcugent/easybuild
+# Author: Pablo Escobar Lopez
+# Swiss Institute of Bioinformatics
+# Biozentrum - University of Basel
+easyblock = "Binary"
+
+name =    'AutoDock_Vina'
+version = '1.2.3'
+
+homepage = 'http://vina.scripps.edu/index.html'
+
+whatis = [
+    "Description: AutoDock Vina is an open-source program for doing molecular docking."
+]
+
+description = """
+AutoDock Vina is an open-source program for doing molecular docking. It was 
+designed and implemented by Dr. Oleg Trott in the Molecular Graphics Lab at 
+The Scripps Research Institute.
+
+This module uses a downloaded binary.
+"""
+
+toolchain = SYSTEM
+
+# https://github.com/ccsb-scripps/AutoDock-Vina/releases/download/v1.2.3/vina_1.2.3_linux_x86_64
+local_download_suffix = '_linux_x86_64'
+source_urls = ['https://github.com/ccsb-scripps/AutoDock-Vina/releases/download/v%(version)s']
+sources =     ['vina_%s%s' % (version, local_download_suffix)]
+checksums =   ['04a665729f86cee39e0c18fdbc397a85bda24e81b76685ed6d3e3beec405aa0c']
+
+extract_sources = False
+
+install_cmd  = 'mkdir -p %(installdir)s/bin/ && '
+install_cmd += 'cp vina_%(version)s' + local_download_suffix + ' %(installdir)s/bin/vina && '
+install_cmd += 'cd %(installdir)s/bin && '
+install_cmd += 'chmod a+rx vina'
+
+sanity_check_paths = {
+    'files': ["bin/vina"],
+    'dirs':  []
+}
+
+sanity_check_commands = [
+    'vina --help',
+]
+
+moduleclass = 'bio'

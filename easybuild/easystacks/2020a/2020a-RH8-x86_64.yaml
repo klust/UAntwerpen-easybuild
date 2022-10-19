@@ -11,4 +11,10 @@ software:
 #    toolchains:
 #      SYSTEM
 #        versions: ['1.1.2']
-  
+  NAMD:
+    toolchains:
+      SYSTEM:
+        versions:
+          '2.14':
+            versionsuffix:
+              '-verbs'

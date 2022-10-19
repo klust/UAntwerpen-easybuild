@@ -1,14 +1,20 @@
 software:
-#  AutoDock_Vina:
-#    toolchains:
-#      SYSTEM:
-#        versions: ['1.2.3'] 
+  AutoDock_Vina:
+    toolchains:
+      SYSTEM:
+        versions: ['1.2.3'] 
 #  g_mmpbsa: # Is this still relevant? Old software, provided by the user.
 #    toolchains:
 #      SYSTEM:
 #        versions: ['1.6']
-#  monitor:
+#  monitor: # Awaiting a fix in the system Perl installation
 #    toolchains:
 #      SYSTEM
 #        versions: ['1.1.2']
-
+  NAMD:
+    toolchains:
+      SYSTEM:
+        versions:
+          '2.14':
+            versionsuffix:
+              '-verbs'

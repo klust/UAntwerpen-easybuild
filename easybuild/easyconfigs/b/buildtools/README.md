@@ -17,6 +17,7 @@ these problems.
 ## Contents
 
 The contents of the module evolved over time. It does contain a subset of:
+
 * byacc 
     * [version check download location](https://invisible-mirror.net/archives/byacc/)
     * [byacc in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/b/byacc)
@@ -116,6 +117,7 @@ The contents of the module evolved over time. It does contain a subset of:
 * Added re2c and SCons to the bundle.
 
 Versions used:
+
 * Byacc 20191125
 * Flex 2.6.4
 * re2c 1.3
@@ -147,6 +149,7 @@ Versions used:
   appear in `buildtools-systempython` and `buildtools-python`.
   
 Versions used:
+
 * Byacc 20220128
 * Flex 2.6.4
 * git 2.36.0 (2022a uses 2.36, but upgraded to 2.36.3)

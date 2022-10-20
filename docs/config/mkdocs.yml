@@ -4,7 +4,7 @@ site_name: "UAntwerpen-modules documentation"
 site_description: >-
   Documentation for the UAntwerpen-modules repository
 
-docs_dir: ../generated
+docs_dir: ../generated/docs
 site_dir: ../../site
 
 theme:
@@ -12,10 +12,12 @@ theme:
   # We'll customise the team (basically a simpler footer)
   # custom_dir: overrides
   features:
+    # navigation.instant lets the site work like a single page application, good for search etc.
     - navigation.instant
     - navigation.tracking
-    #- navigation.tabs
-    - navigation.top
+    - navigation.tabs
+    - navigation.tabs.sticky
+    #- navigation.top
     - navigation.indexes
     - header.autohide
     - toc.follow
@@ -26,9 +28,11 @@ theme:
 
 #hide:
 #  - toc
+#  - nav
 
 nav:
   - Pacakge list: index.md
+  - A: index.html#a
 
 plugins:
   # show revision date at bottom of each page
@@ -54,6 +58,10 @@ markdown_extensions:
   - toc:
       permalink: false
       toc_depth: 4
+
+extra_css:
+  - stylesheets/extra.css
+
 
 extra:
   # add links in bottom right

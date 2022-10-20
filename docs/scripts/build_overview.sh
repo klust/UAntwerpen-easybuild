@@ -4,16 +4,19 @@ cd ..
 [[ -d generated ]] || mkdir generated
 cd generated
 
-package_list='index.md'
+#[[ -h mkdocs.yml ]] || ln -s ../scripts/mkdocs.yml
+
+mkdir -p docs
+/bin/cp -r ../stylesheets docs/stylesheets
+
+package_list='docs/index.md'
 
 last_group='.'
 
 echo -e "# Package list\n" > $package_list
 
-# /bin/ls -1 easyconfigs/*/*/*.eb | sed -e 's|easyconfigs/\(.*/.*\)/.*\.eb|\1|' | sort -uf
-
-
 for package_dir in $(/bin/ls -1 ../../easybuild/easyconfigs/*/*/*.eb | sed -e 's|.*/easyconfigs/\(.*/.*\)/.*\.eb|\1|' | sort -uf)
+#for package_dir in $(/bin/ls -1 ../../easybuild/easyconfigs/a/*/*.eb | sed -e 's|.*/easyconfigs/\(.*/.*\)/.*\.eb|\1|' | sort -uf)
 do
 	
 	>&2 echo "Processing $package_dir..." 
@@ -24,8 +27,8 @@ do
 	
 	>&2 echo "Identified group $group, package $package"
 
-	mkdir -p $package_dir
-	package_file="$package_dir/package.md"
+	mkdir -p docs/$package_dir
+	package_file="docs/$package_dir/package.md"
 
     # Create the package file.
 
@@ -53,7 +56,7 @@ do
 	do
 
         easyconfig="${file##$prefix/}"
-		easyconfig_md="$package_dir/${easyconfig/.eb/.md}"
+		easyconfig_md="docs/$package_dir/${easyconfig/.eb/.md}"
 
 		>&2 echo "Processing $easyconfig, generating $easyconfig_md..."
 
@@ -89,7 +92,7 @@ do
     [[ $group != $last_group ]] && echo -e "## $group\n" >>$package_list
     last_group="$group"
     
-    echo -e "-   [$package]($package_file)\n" >>$package_list
+    echo -e "-   [$package](${package_file#docs/})\n" >>$package_list
 
 	
 done

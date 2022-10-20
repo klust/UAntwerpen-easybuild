@@ -1,0 +1,36 @@
+easyblock = 'PythonPackage'
+
+name =          'vsc-install'
+version =       '0.12.7'
+versionsuffix = '-Python-%(pyver)s'
+
+local_buildset = '2019b'
+
+homepage = 'https://pypi.python.org/pypi/vsc-install'
+
+whatis = [
+    "Description: vsc-install provides shared setuptools functions and classes for Python"
+]
+
+description = """
+vsc-install provides shared setuptools functions and classes for Python 
+libraries developed by UGent's HPC group
+"""
+
+toolchain = {'name': 'intel', 'version': local_buildset}
+
+sources =     [SOURCE_TAR_GZ]
+source_urls = [PYPI_SOURCE]
+
+dependencies = [
+    ('Python', '2.7.16'),
+]
+
+options = {'modulename': 'vsc.install'}
+
+sanity_check_paths = {
+    'files': [],
+    'dirs': ['lib/python%(pyshortver)s/site-packages'],
+}
+
+moduleclass = 'tools'

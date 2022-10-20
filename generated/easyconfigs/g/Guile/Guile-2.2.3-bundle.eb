@@ -1,0 +1,153 @@
+easyblock = 'Bundle'
+
+name = 'Guile'
+guile_version = '2.2.3'
+version = guile_version
+versionsuffix = '-bundle'
+
+homepage = 'https://www.gnu.org/software/guile/'
+
+whatis = [
+   "Description: GNU Guile programming language",
+   "This module provides static libraries only, and the binaries"
+]
+
+description = """
+Guile is a programming language, designed to help programmers create flexible
+applications that can be extended by users or other programmers with plug-ins,
+modules, or scripts. With Guile you can create applications and games for the
+desktop, the Web, the command-line, and more.
+
+It is an implementation of the Scheme programming language, supporting the
+Revided5 and most of the Revised6 language reports, as well as many SRFIs. It
+also comes with a library of modules that offer additional features, like an
+HTTP server and client, XML parsing, and object-oriented programming.
+
+This module is compiled against the system libraries and contains all
+dependencies that are not installed on the system in its directories, so
+no other modules are loaded.
+"""
+
+docurls = [
+    "Web-based documentation on https://www.gnu.org/software/guile/learn/",
+    "Manual page for the guile command (section 1)",
+    "texinfo-based documentation: info guile",
+]
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+
+builddependencies = [
+    ('buildtools', '2018a'),
+]
+
+default_easyblock = 'ConfigureMake'
+
+guile_configopts  = '--with-libgmp-prefix=%(installdir)s '
+guile_configopts += '--with-libunistring-prefix=%(installdir)s '
+guile_configopts += '--enable-shared '
+guile_prebuildopts = 'module load buildtools/2018a ; '
+
+ncurses_version = '6.1'
+libreadline_version = '7.0'
+GMP_version = '6.1.2'
+libffi_version = '3.2.1'
+libunistring_version = '0.9.9'
+guile_ncurses_version = '2.2'
+
+components = [
+    ('ncurses', ncurses_version, {
+        'sources': [SOURCE_TAR_GZ],
+        'source_urls': [GNU_SOURCE],
+        'patches':     ['ncurses-%(version)s_gcc-5.patch'],
+        'start_dir':   '%(namelower)s-%(version)s',
+        'configopts':  '--with-shared --enable-overwrite', # First build: default build.
+    }),
+    ('ncurses', ncurses_version, {
+        'sources': [SOURCE_TAR_GZ],
+        'source_urls': [GNU_SOURCE],
+        'patches':     ['ncurses-%(version)s_gcc-5.patch'],
+        'start_dir':   '%(namelower)s-%(version)s',
+        'configopts':  '--with-shared --enable-overwrite --enable-ext-colors --enable-widec --includedir=%(installdir)s/include/ncursesw/' # Second build: the UTF-8 enabled version (ncursesw)
+    }),
+    ('libreadline', libreadline_version, {
+        'sources': ['readline-%(version)s.tar.gz'],
+        'source_urls': ['http://ftp.gnu.org/gnu/readline'],
+        'start_dir':   'readline-%(version)s',
+        'preconfigopts': "LD_LIBRARY_PATH=%(installdir)s/lib:$LD_LIBRARY_PATH LDFLAGS='-L%(installdir)s/lib -lncurses'",
+    }),
+    ('gc', '7.6.4', {
+        'sources':       [SOURCE_TAR_GZ, 'libatomic_ops-7_4_4.tar.gz'],
+        'source_urls':   ['http://hboehm.info/gc/gc_source/', 'https://github.com/ivmai/libatomic_ops/archive/'],
+        'start_dir':     '%(name)s-%(version)s',
+        'preconfigopts': "ln -s %(builddir)s/libatomic_ops*/ libatomic_ops && ",
+        'configopts':    '--enable-threads=posix --disable-static --enable-shared',
+    }),
+    ('GMP', GMP_version, {
+        'sources':     [SOURCELOWER_TAR_BZ2],
+        'source_urls': ['http://ftp.gnu.org/gnu/gmp'],
+        'start_dir':   '%(namelower)s-%(version)s',
+        'configopts':  '--enable-cxx --disable-static --enable-shared'
+    }),
+    ('libffi', libffi_version, {
+        'sources':      [SOURCELOWER_TAR_GZ],
+        'source_urls':  [ 'ftp://sourceware.org/pub/libffi/', 'http://www.mirrorservice.org/sites/sourceware.org/pub/libffi/'],
+        'start_dir':    '%(name)s-%(version)s',
+        'configopts':   '--disable-static --enable-shared'
+    }),
+    ('libunistring', libunistring_version, {
+        'sources':     [SOURCELOWER_TAR_XZ],
+        'source_urls': [GNU_SOURCE],
+        'start_dir':   '%(name)s-%(version)s',
+        'configopts':   '--disable-static --enable-shared',
+        'parallel':    1
+    }),
+    ('Guile', guile_version, {
+        'sources':        [SOURCELOWER_TAR_XZ],
+        'source_urls':    [GNU_SOURCE],
+        'start_dir':      '%(namelower)s-%(version)s',
+        'preconfigopts':  'module load buildtools/2018a ; ' + \
+                          'CPATH="%(installdir)s/include:$CPATH" LDFLAGS="-L%(installdir)s/lib -L%(installdir)s/lib64" ' + \
+                          'LIBFFI_CFLAGS="-I%(installdir)s/lib/libffi-3.2.1/include" LIBFFI_FLAGS="-L%(installdir)s/lib64 -lffi" ' + \
+                          'BDW_GC_CFLAGS="-I%(installdir)s/include" BDW_GC_LIBS="-L%(installdir)s/lib -lgc -lpthread" ',
+        'configopts':     '--with-libgmp-prefix=%(installdir)s ' + \
+                          '--with-libunistring-prefix=%(installdir)s ' + \
+                          '--enable-shared ',
+        'prebuildopts':   'module load buildtools/2018a ; ',
+        'buildopts':      ' V=1 ',
+        'preinstallopts': 'module load buildtools/2018a ; ',
+        'installopts':    ' ; ' + \
+                          'cd %(installdir)s/bin ; ' + \
+                          'ln -s guile        guile2 ; ' + \
+                          'ln -s guild        guild2 ; ' + \
+                          'ln -s guild        guile2-tools ; ' + \
+                          'ln -s guild        guile-tools2 ; ' + \
+                          'ln -s guile-config guile2-config ; ' + \
+                          'ln -s guile-config guile-config2'
+    }),
+    ('Guile-Ncurses', '2.2', {
+        'sources':        [SOURCELOWER_TAR_GZ],
+        'source_urls':    [GNU_SOURCE],
+        'start_dir':      '%(namelower)s-%(version)s',
+        'preconfigopts':  'module load buildtools/2018a ; ' + \
+                          'PATH="%(installdir)s/bin:$PATH" ' +  \
+                          'LD_LIBRARY_PATH="%(installdir)s/lib:$LD_LIBRARY_PATH" ' + \
+                          'LIBRARY_PATH="%(installdir)s/lib:$LIBRARY_PATH" ' + \
+                          'PKG_CONFIG_PATH="%(installdir)s/lib/pkgconfig:$PKG_CONFIG_PATH" ',
+        'prebuildopts':   'module load buildtools/2018a ; ' + \
+                          'PATH="%(installdir)s/bin:$PATH" ' +  \
+                          'LD_LIBRARY_PATH="%(installdir)s/lib:$LD_LIBRARY_PATH" ' + \
+                          'LIBRARY_PATH="%(installdir)s/lib:$LIBRARY_PATH" ',
+        'preinstallopts': 'module load buildtools/2018a ; ' + \
+                          'PATH="%(installdir)s/bin:$PATH" ' +  \
+                          'LD_LIBRARY_PATH="%(installdir)s/lib:$LD_LIBRARY_PATH" ' + \
+                          'LIBRARY_PATH="%(installdir)s/lib:$LIBRARY_PATH" ',
+    })
+]
+
+sanity_check_paths = {
+    'files': ['bin/guild', 'bin/guile', 'bin/guile-config',
+              'bin/guile-snarf', 'bin/guile-tools'],
+    'dirs': ['lib/guile/%(version_major_minor)s/ccache'],
+}
+
+moduleclass = 'lang'

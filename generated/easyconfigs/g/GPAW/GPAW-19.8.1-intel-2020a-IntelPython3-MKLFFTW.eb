@@ -1,0 +1,230 @@
+easyblock = 'Bundle'
+
+local_buildset =         '2020a'
+local_gcc_version =      '9.3.0'
+
+local_ASE_version =         '3.19.1'              # https://pypi.org/project/ase/
+local_GPAW_version =        '19.8.1'              # https://pypi.org/project/gpaw/
+local_GPAWsetup_version =   '0.9.20000'           # Check version on https://wiki.fysik.dtu.dk/gpaw/setups/setups.html
+local_libxc_version =       '4.3.4'               # https://www.tddft.org/programs/libxc/download/
+
+local_IntelPython3_major_minor = '3.7'
+
+name =          'GPAW'
+version =       local_GPAW_version
+versionsuffix = '-IntelPython3-MKLFFTW'
+
+homepage = 'http://wiki.fysik.dtu.dk/gpaw'
+
+whatis = [
+    "Description: GPAW: DFT and beyond within the projector-augmented wave method.",
+    'This module also includes the compatible ASE version ' + local_ASE_version,
+]
+
+description = """
+GPAW is a density-functional theory (DFT) Python code based on the
+projector-augmented wave (PAW) method and the atomic simulation environment
+(ASE). It uses plane-waves, atom-centered basis-functions or real-space
+uniform grids combined with multigrid methods.
+
+This module also includes a matching version of ASE (version %(ASE_version)s),
+the Atomic Simulation Environment, which is used internally by GPAW.
+
+The module also contains the Atomic PAW setup files (version %(GPAWsetup_version)s)
+in the directory $GPAW_SETUP_FILES.
+
+The GPAW manual advises the OMP_NUM_THREADS should be set to 1 so we do this
+in the module.
+
+This version uses the Intel Python distribution which uses a different version
+of NumPy with better alignment of data structures and therefore better 
+NumPy performance in some applications.
+The version in this module is compiled using the Intel MKL libraries for FFT.
+The optional libvdwxc support is NOT included in this module.
+The optional ELPA support is included in this module.
+""" % {
+    'ASE_version':       local_ASE_version,  
+    'GPAWsetup_version': local_GPAWsetup_version,  
+}
+
+docurls = [
+    'GPAW web-based documentation: https://wiki.fysik.dtu.dk/gpaw/',
+    'ASE web-based documentation:https://wiki.fysik.dtu.dk/ase/',
+]
+
+toolchain =     {'name': 'intel', 'version': local_buildset}
+toolchainopts = {'pic': True}
+
+dependencies = [
+    ('IntelPython3-Packages', local_buildset),
+    ('libxc',                 local_libxc_version),
+    ('ELPA',                  '2019.05.002'),
+]
+
+local_gpaw_customize = """
+print( 'GPAW EasyBuild INFO: Starting execution of the customization script' )
+print( 'GPAW EasyBuild INFO: Variables at the start of the customization script' )
+print( 'GPAW EasyBuild INFO: libraries =               ', libraries )
+print( 'GPAW EasyBuild INFO: mpi_libaries =            ', mpi_libraries )
+print( 'GPAW EasyBuild INFO: library_dirs =            ', library_dirs )
+print( 'GPAW EasyBuild INFO: mpi_libary_dirs =         ', mpi_library_dirs )
+print( 'GPAW EasyBuild INFO: runtime_library_dirs =    ', runtime_library_dirs )
+print( 'GPAW EasyBuild INFO: mpi_runtime_libary_dirs = ', mpi_runtime_library_dirs )
+print( 'GPAW EasyBuild INFO: include_dirs =            ', include_dirs )
+print( 'GPAW EasyBuild INFO: mpi_include_dirs =        ', mpi_include_dirs )
+print( 'GPAW EasyBuild INFO: compiler =                ', compiler )
+print( 'GPAW EasyBuild INFO: mpicompiler =             ', mpicompiler )
+print( 'GPAW EasyBuild INFO: mpilinker =               ', mpilinker )
+print( 'GPAW EasyBuild INFO: extra_compile_args =      ', extra_compile_args )
+print( 'GPAW EasyBuild INFO: extra_link_args =         ', extra_link_args )
+print( 'GPAW EasyBuild INFO: define_macros =           ', define_macros )
+print( 'GPAW EasyBuild INFO: mpi_define_macros =       ', mpi_define_macros )
+print( 'GPAW EasyBuild INFO: undef_macros =            ', undef_macros )
+print( 'GPAW EasyBuild INFO: fftw =                    ', fftw )
+print( 'GPAW EasyBuild INFO: scalapack =               ', scalapack )
+print( 'GPAW EasyBuild INFO: libvdwxc =                ', libvdwxc )
+print( 'GPAW EasyBuild INFO: elpa =                    ', elpa )
+
+libraries = []
+mpi_libraries = []
+
+# LibXC via EasyBuild
+libxc = True
+include_dirs.append(os.path.join(os.getenv('EBROOTLIBXC'), 'include'))
+libraries.append('xc')
+
+# libvdwxc
+libvdwxc = False
+
+# ELPA
+elpa = True
+include_dirs.append(os.path.join(os.getenv('EBROOTELPA'), 'include/elpa'))
+libraries.append('elpa')
+
+# Use Intel MKL FFTW
+fftw = True
+libraries += ['fftw3xc_intel_pic'] # MKL BLAS libs are added further down and these contain the other MKL libraries also needed for the FFT.
+
+# ScaLAPACK
+scalapack = True
+mpi_libraries += ['mkl_scalapack_lp64', 'mkl_blacs_intelmpi_lp64']
+mpi_define_macros += [('GPAW_NO_UNDERSCORE_CBLACS', '1')]
+mpi_define_macros += [('GPAW_NO_UNDERSCORE_CSCALAPACK', '1')]
+
+# Add EasyBuild LAPACK/BLAS libs
+libraries += ['mkl_intel_lp64', 'mkl_sequential', 'mkl_core']
+
+# Add other EasyBuild library directories.
+library_dirs = os.getenv('LIBRARY_PATH').split(':')
+
+# Set the compilers
+compiler =    'icc'
+mpicompiler = 'mpiicc'
+mpilinker =   'mpiicc'
+
+# We need extra_compile_args to have the right compiler options when re-compiling
+# files for gpaw-python. It does imply double compiler options for the other
+# compiles though.
+extra_compile_args = os.getenv('CFLAGS').split(' ')
+
+print( 'GPAW EasyBuild INFO: Variables at the end of the customization script' )
+print( 'GPAW EasyBuild INFO: libraries =               ', libraries )
+print( 'GPAW EasyBuild INFO: mpi_libaries =            ', mpi_libraries )
+print( 'GPAW EasyBuild INFO: library_dirs =            ', library_dirs )
+print( 'GPAW EasyBuild INFO: mpi_libary_dirs =         ', mpi_library_dirs )
+print( 'GPAW EasyBuild INFO: runtime_library_dirs =    ', runtime_library_dirs )
+print( 'GPAW EasyBuild INFO: mpi_runtime_libary_dirs = ', mpi_runtime_library_dirs )
+print( 'GPAW EasyBuild INFO: include_dirs =            ', include_dirs )
+print( 'GPAW EasyBuild INFO: mpi_include_dirs =        ', mpi_include_dirs )
+print( 'GPAW EasyBuild INFO: compiler =                ', compiler )
+print( 'GPAW EasyBuild INFO: mpicompiler =             ', mpicompiler )
+print( 'GPAW EasyBuild INFO: mpilinker =               ', mpilinker )
+print( 'GPAW EasyBuild INFO: extra_compile_args =      ', extra_compile_args )
+print( 'GPAW EasyBuild INFO: extra_link_args =         ', extra_link_args )
+print( 'GPAW EasyBuild INFO: define_macros =           ', define_macros )
+print( 'GPAW EasyBuild INFO: mpi_define_macros =       ', mpi_define_macros )
+print( 'GPAW EasyBuild INFO: undef_macros =            ', undef_macros )
+print( 'GPAW EasyBuild INFO: fftw =                    ', fftw )
+print( 'GPAW EasyBuild INFO: scalapack =               ', scalapack )
+print( 'GPAW EasyBuild INFO: libvdwxc =                ', libvdwxc )
+print( 'GPAW EasyBuild INFO: elpa =                    ', elpa )
+print( 'GPAW EasyBuild INFO: Ending execution of the customization script' )
+"""
+
+default_easyblock = 'Tarball'
+
+components = [
+    ( 'GPAW-setups', local_GPAWsetup_version, { 
+        # Check version on https://wiki.fysik.dtu.dk/gpaw/setups/setups.html
+        'sources':   [{
+                        'filename':    SOURCELOWER_TAR_GZ,
+                        'source_urls': ['https://wiki.fysik.dtu.dk/gpaw-files/'], 
+                        'extract_cmd': 'mkdir -p share/gpaw-setups ; cd share/gpaw-setups ; tar -xf %s --strip-components=1',
+                     }]  
+    }),
+]
+
+# This is a bundle of Python packages
+exts_defaultclass = 'PythonPackage'
+exts_default_options = {
+    'download_dep_fail': True,
+    'sanity_pip_check':  False,
+    'source_urls':       [PYPI_SOURCE],
+    'use_pip':           True,
+}
+
+exts_list = [
+    # ASE and its dependencies
+    ('Werkzeug', '0.16.0', {
+        'modulename':     'werkzeug',
+    }),
+    ('MarkupSafe', '1.1.1', { # Includes binaries!
+        'modulename':  'markupsafe',
+        'check_ldshared': True, # Needed for a GCC-based Python with Intel-based extensions.
+    }),
+    ('Jinja2', '2.10.3', { # Contains only .py files so probably safe as zipped egg?
+        'modulename':  'jinja2',
+    }),
+    ('itsdangerous', '1.1.0', { # Installs as a zipped egg by itself.
+    }),
+#    ('Click', '7.0', { # Included in the Python 3.7.4 extension list.
+#        'modulename':  'click',
+#        'source_urls': ['https://pypi.python.org/packages/source/c/click'],
+#    }),
+    ('Flask', '1.1.1', {
+        'modulename':  'flask',
+    }),
+    ('ase', local_ASE_version, {
+    }),
+    # GPAW and its dependencies
+    ('gpaw', version, { # Includes binaries!
+        'use_pip':        False,
+        'check_ldshared': True, # Needed for a GCC-based Python with Intel-based extensions.
+        'prebuildopts':   'cat >customize.py <<EOF\n' + local_gpaw_customize + 'EOF\n' + 
+                          'unset CC && unset LDSHARED && CFLAGS="$CFLAGS -qno-openmp-simd" ', 
+        'buildopts':      ' && echo -e "\\nGPAW EasyBuild INFO: configuration log:\\n" && cat configuration.log && echo -e "\\nEnd of GPAW configuration log\\n"',
+        'preinstallopts': 'unset CC && unset LDSHARED && CFLAGS="$CFLAGS -qno-openmp-simd" ',
+    }),
+]
+
+sanity_check_paths = {
+    'files': ['bin/gpaw%s' % x for x in ['', '-analyse-basis', '-basis', '-mpisim', '-plot-parallel-timings',
+                                         '-python', '-runscript', '-setup', '-upfplot']],
+    'dirs':  ['lib/python' + local_IntelPython3_major_minor + '/site-packages/%(namelower)s']
+}
+
+# make sure Tkinter is available, otherwise 'ase gui' will not work
+sanity_check_commands = ["python -c 'import tkinter' "]
+
+# As the main EasyBlock is "Bundle" PYTHONPATH will not be set automatically
+modextrapaths = {
+    'PYTHONPATH':      ['lib/python' + local_IntelPython3_major_minor + '/site-packages'],
+}
+
+modextravars = {
+    'GPAW_SETUP_PATH': '%(installdir)s/share/gpaw-setups', # We don't use modextrapaths as the path should be  
+                                                           # comma-separated rather than colon-separated anyway.
+    'OMP_NUM_THREADS': '1',
+}
+
+moduleclass = 'chem'

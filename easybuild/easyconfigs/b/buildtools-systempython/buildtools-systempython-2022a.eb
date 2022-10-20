@@ -1,0 +1,141 @@
+# This easyconfig requires at least EasyBuild 3.9.4 due to a bug in the Bundle
+# EasyBlock in earlier versions. Or use the patched bundle.py of
+# https://github.com/easybuilders/easybuild-easyblocks/pull/1777 via --include-easyblocks
+#
+# NOTE: This module is developed at UAntwerp
+# NOTE: meson, which is included, requires python3 with setuptools installed in the OS.
+#
+# It is the first module we compile when starting a new toolchain.
+#
+# This bundle collects a number of GNU tools useful during the building process
+# and a few other tools.
+#
+# We do include a Flex and Bison even though they do contain libraries
+# for which some packages may want to use toolchain-specific versions. These 
+# packages should then just assure that module is loaded after buildtools.
+#
+easyblock = 'Bundle'
+
+name =    'buildtools-systempython'
+version = '2022a'
+
+local_system_pyshortver = '3.6'
+
+# Version info:   
+local_Meson_version =            '0.61.5'        # Meson      20220117 - Check on https://pypi.org/project/meson/#history
+local_SCons_version =            '4.0.1'         # SCons      20200717 - Check on https://github.com/SCons/scons/releases, https://scons.org/pages/download.html
+
+homepage = 'http://www.gnu.org'
+
+whatis = [
+    "Description: A bundle of often used build tools that rely on Python, as an add-on to buildtools"
+    "Contains: Meson and SCons"
+]
+
+description = """
+"""
+
+usage = """
+This bundle collects a number of Python-based standard tools that are often 
+needed when building software.
++ Meson %(meson)s                    - https://mesonbuild.com/Manual.html
++ SCons %(SCons)s                     - https://www.scons.org/
+These tools are all build against the system libraries and system Python 
+and have been used to build several of the %(ver)s packages.
+""" % {
+    'meson'           : local_Meson_version,
+    'SCons'           : local_SCons_version,
+    'ver'             : version,
+}
+
+toolchain = SYSTEM
+
+dependencies = [ ]
+
+builddependencies = [
+#    ('flex',  local_flex_version),   # For Doxygen
+#    ('Bison', local_bison_version),  # For Doxygen
+]
+
+osdependencies = [
+    ('python3'),                                         # For Meson, SCons
+]
+
+default_easyblock = 'PythonPackage'
+
+components = [
+    ('Meson', local_Meson_version, { # Does require Ninja
+        'easyblock':         'PythonPackage',
+        'sources':           [SOURCELOWER_TAR_GZ],
+        'source_urls':       [PYPI_SOURCE],
+        'checksums':         ['5e9a0d65c1a51936362b9686d1c5e9e184a6fd245d57e7269750ce50c20f5d9a'],
+        'start_dir':         '%(namelower)s-%(version)s',
+        'req_py_majver':     3, # Used to let EasyBuild select the right system Python executable.
+        'req_py_minver':     5, # Used to let EasyBuild select the right system Python executable.
+        'options':           {'modulename': 'mesonbuild'}
+    }),
+    ('SCons', local_SCons_version, {
+        'easyblock':        'PythonPackage',
+        'sources':           [SOURCE_TAR_GZ],
+        'source_urls':       [PYPI_SOURCE],
+        'checksums':         ['722ed104b5c624ecdc89bd4e02b094d2b14d99d47b5d0501961e47f579a2007c'],
+        'start_dir':         '%(name)s-%(version)s',
+        'req_py_majver':     3, # Used to let EasyBuild select the right system Python executable.
+        'req_py_minver':     5, # Used to let EasyBuild select the right system Python executable.
+        'download_dep_fail': True,
+        'use_pip':           False,
+        'sanity_pip_check':  False,
+        'options':           {'modulename': False}
+        }),
+]
+#
+# Additions to consider:
+# - GNU coreutils: Not only for building, but several programs are used during the build proces of some codes.
+# - SCons: Werkt nog niet.
+#
+
+#parallel = 1
+
+#postinstallcmds = [
+#    # For SCons
+#    '/bin/rm %(installdir)s/bin/scon*.bat',
+#    'cd %(installdir)s/bin; sed -e "s/env python/env python3/" -i scons*'    
+#]
+
+sanity_check_paths = {
+    'files': # Meson
+             # SCons
+             ['bin/scons', 'bin/sconsign', 'bin/scons-configure-cache'], # scons-time is missing in SCons 4? Strange as there is a manual page for it.
+    'dirs':  ['lib/python%s/site-packages' % local_system_pyshortver],
+}
+
+sanity_check_commands = [
+   # Meson
+    'meson --version',
+    # SCons
+    'scons --help',
+]
+
+modextrapaths = {
+    'PYTHONPATH': ['lib/python%s/site-packages' % local_system_pyshortver]
+}
+
+modextravars = {
+    'EBROOTMESON':                 '%(installdir)s',
+    'EBVERSIONMESON':              local_Meson_version, 
+    'EBROOTSCONS':                 '%(installdir)s',
+    'EBVERSIONSCONS':              local_SCons_version, 
+}
+
+modluafooter = """
+conflict( 'buildtools-python' )
+conflict( 'Python' )
+conflict( 'IntelPython3' )
+
+extensions( 'Meson/%(Meson)s, SCons/%(SCons)s' )
+"""  % {
+    'Meson' : local_Meson_version,
+    'SCons':  local_SCons_version,
+}
+
+moduleclass = 'devel'

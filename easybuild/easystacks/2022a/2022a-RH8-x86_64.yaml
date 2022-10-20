@@ -3,6 +3,10 @@ software:
     toolchains:
       SYSTEM:
         versions: ['2022a'] 
+  buildtools-systempython:
+    toolchains:
+      SYSTEM:
+        versions: ['2022a'] 
   AutoDock_Vina:
     toolchains:
       SYSTEM:

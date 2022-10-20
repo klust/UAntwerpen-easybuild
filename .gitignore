@@ -6,3 +6,5 @@
 # particular IDE and remains relevant to all users of the repository.
 *.pyo
 __pycache__/
+docs/generated
+site/

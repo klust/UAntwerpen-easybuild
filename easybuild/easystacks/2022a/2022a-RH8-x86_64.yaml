@@ -1,4 +1,8 @@
 software:
+  buildtools:
+    toolchains:
+      SYSTEM:
+        versions: ['2022a'] 
   AutoDock_Vina:
     toolchains:
       SYSTEM:

@@ -17,26 +17,80 @@ these problems.
 ## Contents
 
 The contents of the module evolved over time. It does contain a subset of:
-* Byacc [version check](ftp://ftp.invisible-island.net/byacc)
-* Flex [version check](https://github.com/westes/flex/releases)
-* git [version check](https://github.com/git/git/releases)
-* GNU Autoconf [version check](http://ftp.gnu.org/gnu/autoconf/)
-* GNU Automake [version check](http://ftp.gnu.org/gnu/automake/)
-* GNU Bison [version check](https://ftp.gnu.org/gnu/bison/)
-* GNU libtool [version check](https://www.gnu.org/software/libtool/)
-* GNU M4 [version check](https://www.gnu.org/software/m4/)
-* GNU make [version check](http://ftp.gnu.org/gnu/make/)
-* GNU sed [version check](http://ftp.gnu.org/gnu/sed/)
-* CMake [version check](http://www.cmake.org/)
-* Ninja [version check](https://ninja-build.org/)
-* Meson [version check](https://pypi.org/project/meson/#history)
-* NASM [version check](http://www.nasm.us/)
-* Yasm [version check](http://yasm.tortall.net/)
-* patchelf [version check](https://github.com/NixOS/patchelf/releases)
-* pkg-config [version check](https://www.freedesktop.org/wiki/Software/pkg-config/)
-* GNU gperf [version check](https://www.gnu.org/software/gperf/)
-* GNU help2man [version check](http://ftpmirror.gnu.org/help2man/)
-* Doxygen [version check](http://www.doxygen.nl/download.html) or [version check](https://github.com/doxygen/doxygen/releases)
+* byacc 
+    * [version check download location](https://invisible-mirror.net/archives/byacc/)
+    * [byacc in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/b/byacc)
+* flex 
+    * [version check GitHub](https://github.com/westes/flex/releases)
+    * [flex in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/f/flex)
+* git 
+    * [version check GitHub](https://github.com/git/git/tags)
+    * [git in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/g/git)
+* GNU Autoconf 
+    * [version check download location](http://ftp.gnu.org/gnu/autoconf/)
+    * [Autoconf in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/a/Autoconf)
+* GNU Automake
+    * [version check download location](http://ftp.gnu.org/gnu/automake/)
+    * [Automake in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/a/Automake)
+* GNU Autoconf-archive
+    * [version check download location](https://ftp.gnu.org/gnu/autoconf-archive/)
+    * [Autoconf-archive in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/a/Autoconf-archive)
+* GNU Bison 
+    * [version check on download location](https://ftp.gnu.org/gnu/bison/)
+    * [Bison in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/b/Bison)
+* GNU libtool 
+    * [version check on the download location](https://www.gnu.org/software/libtool/)
+    * [libtool in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/l/libtool)
+* GNU M4 
+    * [version check on the download loacation](https://ftp.gnu.org/gnu/m4/)\
+    * [M4 in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/m/M4)
+* GNU make 
+    * [version check on the download location](http://ftp.gnu.org/gnu/make/)
+    * [make in the EasyBuilders repository]
+* GNU sed 
+    * [version check on the download location](http://ftp.gnu.org/gnu/sed/)
+    * No support for sed in the EasyBuilders repository
+* CMake 
+    * [version check on the CMake web site](http://www.cmake.org/)
+    * [Releases on the GitHub mirror of the development repository](https://github.com/Kitware/CMake/releases)
+    * [CMake in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/c/CMake)
+* Ninja 
+    * [version check on the Ninja web site](https://ninja-build.org/)
+    * [Releases on the Ninja GitHub](https://github.com/ninja-build/ninja/releases)
+    * [Ninja in the EAsyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs//n/Ninja)
+* NASM 
+    * [version check on the NASM web site](http://www.nasm.us/)
+    * [Releases on the NASM GitHub](https://github.com/netwide-assembler/nasm/tags)
+* Yasm 
+    * [version check on the Yasm web site](http://yasm.tortall.net/)
+    * [Releases on the Yasm GitHub](https://github.com/yasm/yasm/releases)
+    * [Yasm in th EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs//y/Yasm)
+* patchelf 
+    * [version check on the download location](https://github.com/NixOS/patchelf/releases)
+    * [patchelf in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs//p/patchelf)
+* pkg-config 
+    * [version check on the download location](https://pkgconfig.freedesktop.org/releases/)
+    * [pkg-config in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs//p/pkg-config)
+* GNU gperf
+    * [version check on the gperf web site](https://www.gnu.org/software/gperf/)
+    * [version check on the download location](https://ftp.gnu.org/gnu/gperf/)
+    * [gperf in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs//g/gperf)
+* GNU help2man 
+    * [version check on the download location](http://ftpmirror.gnu.org/help2man/)
+    * [help2man in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs//h/help2man)
+* Doxygen 
+    * [version check on the doxygen web site](http://www.doxygen.nl/download.html)
+    * [version check on the doxugen GitHub](https://github.com/doxygen/doxygen/tags)
+    * [Doxygen on the EasyBuilders web site](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/d/Doxygen)
+* [re2c](https://re2c.org/)
+    * [version check on the re2c GitHub](https://github.com/skvadrik/re2c/releases)
+    * [re2c in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/r/re2c)
+* Meson 
+    * [version check on PyPi](https://pypi.org/project/meson/#history)
+    * [Meson in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/m/Meson)
+* SCons
+    * [Version check on PyPi](https://pypi.org/project/SCons/#history)
+    * [SCons in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/s/SCons)
 
 
 ## EasyConfigs
@@ -77,11 +131,49 @@ Versions used:
 * Ninja 1.10.0
 * Meson 0.53.2
 * SCons 3.1.2
-* NASM 2.13.03
-* Yasm 1.3
+* NASM 2.14.02
+* Yasm 1.3.0
 * patchelf 0.10
 * pkg-config 0.29.2
 * GNU gperf 3.1
 * GNU help2man 1.47.13
-* Doxygen 1.8.16 (1.8.17 did not compile)
+* Doxygen 1.8.18
+
+
+### 2022a
+
+* Removed those packages that use the system Python and require PYTHONPATH to be
+  set as they don't provide shell script wrappers: Meson and SCons. These will
+  appear in `buildtools-systempython` and `buildtools-python`.
+  
+Versions used:
+* Byacc 20220128
+* Flex 2.6.4
+* git 2.36.0 (2022a uses 2.36, but upgraded to 2.36.3)
+* GNU Autoconf 2.71
+* GNU Automake 1.16.2
+* GNU Autoconf-archive 2022.09.03
+* GNU Bison 3.8.2
+* GNU libtool 2.4.6
+* GNU M4 1.4.19
+* GNU make 4.3. Switched back to .tar.gz as there was no .tar.bz2 file anymore
+* GNU sed 4.8
+* CMake 3.23.4 (2022a still uses 3.23.1 but we went for the latest bugfix release at 
+  the time of development)
+* Ninja 1.10.2 (version used in 2022a, not the newest at time of development)
+* NASM 2.15.05
+* Yasm 1.3.0
+* patchelf 0.15.0
+* pkg-config 0.29.2
+* GNU gperf 3.1
+* GNU help2man 1.49.2
+* Doxygen 1.9.5 (2022a uses 1.9.4, but we went for the latest bugfix release at the 
+  time of development)
+* re2c 2.2 (Version used in 2022a, not clear why the community did not upgrade to 3.0 
+  which was out before the development of 2022a even started)
+
+
+
+
+
 

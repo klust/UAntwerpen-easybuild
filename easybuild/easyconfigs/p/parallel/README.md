@@ -19,3 +19,9 @@ The EasyBuilders recipes rely on a Perl build in the toolchain.
 At UAntwerp, we have chosen to use the OS-provided perl distribution instead as
 this seems to be sufficient to run GNU parallel. We also put more documentation
 in our module files.
+
+### Version 20220922
+
+-   Added an additional sanity check, basically running the command with `--help`
+    as in this way we may already detect missing Perl packages that might be
+    needed.

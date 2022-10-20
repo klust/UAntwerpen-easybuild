@@ -7,6 +7,10 @@ software:
     toolchains:
       SYSTEM:
         versions: ['1.6']
+  Java:
+    toolchains:
+      SYSTEM:
+        versions: ['8.345', '8', '11.0.16', '11']
 #  monitor:
 #    toolchains:
 #      SYSTEM
@@ -18,3 +22,8 @@ software:
           '2.14':
             versionsuffix:
               '-verbs'
+  parallel:
+    toolchains:
+      SYSTEM:
+        versions: ['20200422']
+  

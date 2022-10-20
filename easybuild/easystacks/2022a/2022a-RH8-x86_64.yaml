@@ -6,6 +6,10 @@ software:
 #  g_mmpbsa: # Is this still relevant? Old software, provided by the user.
 #    toolchains:
 #      SYSTEM:
+  Java:
+    toolchains:
+      SYSTEM:
+        versions: ['11.0.16', '11', '17.0.4', '17']
 #        versions: ['1.6']
 #  monitor: # Awaiting a fix in the system Perl installation
 #    toolchains:
@@ -18,3 +22,7 @@ software:
           '2.14':
             versionsuffix:
               '-verbs'
+  parallel:
+    toolchains:
+      SYSTEM:
+        versions: ['20220922']

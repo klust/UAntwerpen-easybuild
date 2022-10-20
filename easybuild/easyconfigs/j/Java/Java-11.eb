@@ -1,19 +1,25 @@
-name = 'Java'
-version = '11'
+easyblock = 'ModuleRC'
 
-homepage = 'http://java.com/'
+name =    'Java'
+version = '11'
+local_java_fullversion = '11.0.16'
+
+homepage = 'https://java.com/'
+
+whatis = [
+    'Description: Java Platform, Standard Edition (Java SE) lets you develop and deploy Java applications on desktops and servers.'
+]
 
 description = """
- Java Platform, Standard Edition (Java SE) lets you develop and deploy
- Java applications on desktops and servers.
+Java Platform, Standard Edition (Java SE) lets you develop and deploy
+Java applications on desktops and servers.
+
+This EasyConfig does not generate a modulefile but rather a .modulerc
+file that defines a synonym for the Java module.
 """
 
-#toolchain = {'name': 'dummy', 'version': 'dummy'}
 toolchain = SYSTEM
 
-# download the tar.gz directly from
-# http://www.oracle.com/technetwork/java/javase/downloads/index.html
-sources = ['jdk-%(version)s_linux-x64_bin.tar.gz']
-checksums = ['246a0eba4927bf30180c573b73d55fc10e226c05b3236528c3a721dff3b50d32']
+dependencies = [('Java', local_java_fullversion)]
 
 moduleclass = 'lang'

@@ -1,0 +1,766 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the UAntwerpen-modules repository">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>BioTools 2020a.00 intel 2020a - UAntwerpen-modules documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#biotools-2020a00-intel-2020aeb" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="UAntwerpen-modules documentation" class="md-header__button md-logo" aria-label="UAntwerpen-modules documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UAntwerpen-modules documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BioTools 2020a.00 intel 2020a
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="UAntwerpen-modules documentation" class="md-nav__button md-logo" aria-label="UAntwerpen-modules documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    UAntwerpen-modules documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Pacakge list
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p><a href="../package/">[BioTools]</a> <a href="../../..">[package list]</a></p>
+<h1 id="biotools-2020a00-intel-2020aeb">BioTools-2020a.00-intel-2020a.eb</h1>
+<div class="highlight"><pre><span></span><code><span class="n">easyblock</span> <span class="o">=</span> <span class="s1">&#39;Bundle&#39;</span>
+
+<span class="n">local_buildset</span>         <span class="o">=</span> <span class="s1">&#39;2020a&#39;</span>
+<span class="n">local_gcc_version</span>      <span class="o">=</span> <span class="s1">&#39;9.3.0&#39;</span>
+
+<span class="n">local_LuaJIT_version</span> <span class="o">=</span>         <span class="s1">&#39;2.0.5&#39;</span>           <span class="c1"># https://luajit.org/download.html</span>
+<span class="n">local_Perl_version</span> <span class="o">=</span>           <span class="s1">&#39;5.30.2&#39;</span>          <span class="c1"># https://www.perl.org/get.html</span>
+
+<span class="n">local_BCFtools_version</span> <span class="o">=</span>      <span class="s1">&#39;1.10.2&#39;</span> <span class="c1"># https://github.com/samtools/bcftools/releases</span>
+<span class="n">local_BEDTools_version</span> <span class="o">=</span>      <span class="s1">&#39;2.29.2&#39;</span> <span class="c1"># https://github.com/arq5x/bedtools2/releases</span>
+<span class="n">local_CDHIT_version</span> <span class="o">=</span>         <span class="s1">&#39;4.8.1&#39;</span>  <span class="c1"># https://github.com/weizhongli/cdhit/releases</span>
+<span class="n">local_ClonalFrameML_version</span> <span class="o">=</span> <span class="s1">&#39;1.12&#39;</span>   <span class="c1"># https://github.com/xavierdidelot/ClonalFrameML/releases</span>
+<span class="n">local_fastp_version</span> <span class="o">=</span>         <span class="s1">&#39;0.20.1&#39;</span> <span class="c1"># https://github.com/OpenGene/fastp/releases</span>
+<span class="n">local_FastTree_version</span> <span class="o">=</span>      <span class="s1">&#39;2.1.11&#39;</span> <span class="c1"># http://www.microbesonline.org/fasttree/</span>
+<span class="n">local_HTSlib_version</span> <span class="o">=</span>        <span class="s1">&#39;1.10.2&#39;</span> <span class="c1"># https://github.com/samtools/htslib/releases</span>
+<span class="n">local_MCL_version</span> <span class="o">=</span>           <span class="s1">&#39;14.137&#39;</span> <span class="c1"># https://micans.org/mcl/</span>
+<span class="n">local_MEGAHIT_version</span> <span class="o">=</span>       <span class="s1">&#39;1.2.9&#39;</span> <span class="c1"># https://github.com/voutcn/megahit/releases</span>
+<span class="n">local_miniasm_version</span> <span class="o">=</span>  <span class="s1">&#39;0.3&#39;</span>    <span class="c1"># https://github.com/lh3/minimap2/releases</span>
+<span class="n">local_minimap2_version</span> <span class="o">=</span>      <span class="s1">&#39;2.17&#39;</span>   <span class="c1"># https://github.com/lh3/minimap2/releases</span>
+<span class="n">local_MUSCLE_version</span> <span class="o">=</span>        <span class="s1">&#39;3.8.31&#39;</span> <span class="c1"># http://drive5.com/muscle/downloads.htm</span>
+<span class="n">local_Racon_version</span> <span class="o">=</span>         <span class="s1">&#39;1.4.13&#39;</span> <span class="c1"># https://github.com/isovic/racon/releases</span>
+<span class="n">local_SAMtools_version</span> <span class="o">=</span>      <span class="s1">&#39;1.10&#39;</span>   <span class="c1"># https://github.com/samtools/samtools/releases</span>
+<span class="n">local_VSEARCH_version</span> <span class="o">=</span>       <span class="s1">&#39;2.14.2&#39;</span> <span class="c1"># https://github.com/torognes/vsearch/releases</span>
+
+<span class="n">name</span> <span class="o">=</span>          <span class="s1">&#39;BioTools&#39;</span>
+<span class="n">version</span> <span class="o">=</span>       <span class="s1">&#39;2020a.00&#39;</span>
+
+<span class="n">local_version_subs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;bedtools&#39;</span><span class="p">:</span>      <span class="n">local_BEDTools_version</span><span class="p">,</span>
+    <span class="s1">&#39;CDHIT&#39;</span><span class="p">:</span>         <span class="n">local_CDHIT_version</span><span class="p">,</span>
+    <span class="s1">&#39;ClonalFrameML&#39;</span><span class="p">:</span> <span class="n">local_ClonalFrameML_version</span><span class="p">,</span>
+    <span class="s1">&#39;fastp&#39;</span><span class="p">:</span>         <span class="n">local_fastp_version</span><span class="p">,</span>
+    <span class="s1">&#39;FastTree&#39;</span><span class="p">:</span>      <span class="n">local_FastTree_version</span><span class="p">,</span> 
+    <span class="s1">&#39;HTSlib&#39;</span><span class="p">:</span>        <span class="n">local_HTSlib_version</span><span class="p">,</span>
+    <span class="s1">&#39;BCFtools&#39;</span><span class="p">:</span>      <span class="n">local_BCFtools_version</span><span class="p">,</span>
+    <span class="s1">&#39;SAMtools&#39;</span><span class="p">:</span>      <span class="n">local_SAMtools_version</span><span class="p">,</span>
+    <span class="s1">&#39;MCL&#39;</span><span class="p">:</span>           <span class="n">local_MCL_version</span><span class="p">,</span>
+    <span class="s1">&#39;MEGAHIT&#39;</span><span class="p">:</span>       <span class="n">local_MEGAHIT_version</span><span class="p">,</span>
+    <span class="s1">&#39;miniasm&#39;</span><span class="p">:</span>       <span class="n">local_miniasm_version</span><span class="p">,</span>
+    <span class="s1">&#39;minimap2&#39;</span><span class="p">:</span>      <span class="n">local_minimap2_version</span><span class="p">,</span>
+    <span class="s1">&#39;MUSCLE&#39;</span><span class="p">:</span>        <span class="n">local_MUSCLE_version</span><span class="p">,</span>
+    <span class="s1">&#39;Racon&#39;</span><span class="p">:</span>         <span class="n">local_Racon_version</span><span class="p">,</span>
+    <span class="s1">&#39;VSEARCH&#39;</span><span class="p">:</span>       <span class="n">local_VSEARCH_version</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;(none)&#39;</span>
+
+<span class="c1"># We list all libraries in a whatis line so that they can be found by module keyword.</span>
+<span class="c1"># Contrary to what the LMOD documentation makes you believe, it seems that help is</span>
+<span class="c1"># not searched when using module keyword.</span>
+<span class="n">whatis</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Name:        </span><span class="si">%(name)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Version:     </span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Description: A number of bioinformatics tools, installed together as a bundle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Contains:    BEDTools </span><span class="si">%(bedtools)s</span><span class="s1">, &#39;</span> <span class="o">%</span> <span class="n">local_version_subs</span> <span class="o">+</span> 
+                 <span class="s1">&#39;CD-HIT </span><span class="si">%(CDHIT)s</span><span class="s1">, &#39;</span> <span class="o">%</span> <span class="n">local_version_subs</span> <span class="o">+</span> 
+                 <span class="s1">&#39;ClonalRangeML </span><span class="si">%(ClonalFrameML)s</span><span class="s1">, &#39;</span> <span class="o">%</span> <span class="n">local_version_subs</span> <span class="o">+</span> 
+                 <span class="s1">&#39;HTSlib </span><span class="si">%(HTSlib)s</span><span class="s1"> / BCFtools </span><span class="si">%(BCFtools)s</span><span class="s1"> / SAMtools </span><span class="si">%(SAMtools)s</span><span class="s1">, &#39;</span> <span class="o">%</span> <span class="n">local_version_subs</span> <span class="o">+</span> 
+                 <span class="s1">&#39;fastp </span><span class="si">%(fastp)s</span><span class="s1">, &#39;</span> <span class="o">%</span> <span class="n">local_version_subs</span> <span class="o">+</span> 
+                 <span class="s1">&#39;FastTree </span><span class="si">%(FastTree)s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">local_version_subs</span> <span class="o">+</span> 
+                 <span class="s1">&#39;MCL </span><span class="si">%(MCL)s</span><span class="s1">, &#39;</span> <span class="o">%</span> <span class="n">local_version_subs</span> <span class="o">+</span>
+                 <span class="s1">&#39;MEGAHIT </span><span class="si">%(MEGAHIT)s</span><span class="s1">, &#39;</span> <span class="o">%</span> <span class="n">local_version_subs</span> <span class="o">+</span>
+                 <span class="s1">&#39;miniasm </span><span class="si">%(miniasm)s</span><span class="s1">, &#39;</span> <span class="o">%</span> <span class="n">local_version_subs</span> <span class="o">+</span>
+                 <span class="s1">&#39;minimap2 </span><span class="si">%(minimap2)s</span><span class="s1">, &#39;</span> <span class="o">%</span> <span class="n">local_version_subs</span> <span class="o">+</span>
+                 <span class="s1">&#39;MUSCLE </span><span class="si">%(MUSCLE)s</span><span class="s1">, &#39;</span> <span class="o">%</span> <span class="n">local_version_subs</span> <span class="o">+</span> 
+                 <span class="s1">&#39;Racon</span><span class="si">%(Racon)s</span><span class="s1">, &#39;</span> <span class="o">%</span> <span class="n">local_version_subs</span> <span class="o">+</span>
+                 <span class="s1">&#39;VSEARCH </span><span class="si">%(VSEARCH)s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">local_version_subs</span>
+<span class="p">]</span>
+
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">This module provides a number of useful bio-informatics tools.</span>
+
+<span class="s2">Overview of the included tools and libraries:</span>
+
+<span class="s2">* bedtools (version </span><span class="si">%(bedtools)s</span><span class="s2">): Collectively, the bedtools utilities are a </span>
+<span class="s2">  swiss-army knife of tools for a wide-range of genomics analysis tasks. The </span>
+<span class="s2">  most widely-used tools enable genome arithmetic: that is, set theory on the genome. </span>
+<span class="s2">  For example, bedtools allows one to intersect, merge, count, complement, and </span>
+<span class="s2">  shuffle genomic intervals from multiple files in widely-used genomic file formats </span>
+<span class="s2">  such as BAM, BED, GFF/GTF, VCF. While each individual tool is designed to do a </span>
+<span class="s2">  relatively simple task (e.g., intersect two interval files), quite sophisticated </span>
+<span class="s2">  analyses can be conducted by combining multiple bedtools operations on the UNIX </span>
+<span class="s2">  command line.</span>
+<span class="s2">  bedtools is developed in the Quinlan laboratory at the University of Utah </span>
+<span class="s2">  and benefits from fantastic contributions made by scientists worldwide.</span>
+<span class="s2">* CD-HIT (version </span><span class="si">%(CDHIT)s</span><span class="s2">) is very fast and can handle extremely large databases. CD-HIT helps </span>
+<span class="s2">  to significantly reduce the computational and manual efforts in many sequence </span>
+<span class="s2">   analysis tasks and aids in understanding the data structure and correct the </span>
+<span class="s2">  bias within a dataset.</span>
+<span class="s2">  The CD-HIT package has CD-HIT, CD-HIT-2D, CD-HIT-EST, CD-HIT-EST-2D, </span>
+<span class="s2">  CD-HIT-454, CD-HIT-PARA, PSI-CD-HIT, CD-HIT-OTU, CD-HIT-LAP, CD-HIT-DUP and </span>
+<span class="s2">  over a dozen scripts.</span>
+<span class="s2">   * CD-HIT (CD-HIT-EST) clusters similar proteins (DNAs) into clusters that meet </span>
+<span class="s2">     a user-defined similarity threshold.</span>
+<span class="s2">   * CD-HIT-2D (CD-HIT-EST-2D) compares 2 datasets and identifies the sequences in db2 </span>
+<span class="s2">     that are similar to db1 above a threshold.</span>
+<span class="s2">   * CD-HIT-454 identifies natural and artificial duplicates from pyrosequencing reads.</span>
+<span class="s2">   * CD-HIT-OTU clusters rRNA tags into OTUs</span>
+<span class="s2">   * CD-HIT-DUP identifies duplicates from single or paired Illumina reads</span>
+<span class="s2">   * CD-HIT-LAP identifies overlapping reads</span>
+<span class="s2">  The usage of other programs and scripts can be found in CD-HIT user&#39;s guide.</span>
+<span class="s2">  CD-HIT is currently maintained by the Dr. Li&#39;s group (http://weizhongli-lab.org/) at </span>
+<span class="s2">  J Craig Venter Institute. We thank the support from National Center for Research Resources (</span>
+<span class="s2">  Grant # 1R01RR025030, 2008-2011). We thank all users that report bugs, give us suggestions </span>
+<span class="s2">  and comments.</span>
+<span class="s2">* ClonalFrameML (version </span><span class="si">%(ClonalFrameML)s</span><span class="s2">), a software package that performs efficient inference of </span>
+<span class="s2">  recombination in bacterial genomes. ClonalFrameML was created by Xavier Didelot </span>
+<span class="s2">  and Daniel Wilson. ClonalFrameML can be applied to any type of aligned sequence </span>
+<span class="s2">  data, but is especially aimed at analysis of whole genome sequences. It is able </span>
+<span class="s2">  to compare hundreds of whole genomes in a matter of hours on a standard Desktop </span>
+<span class="s2">  computer. There are three main outputs from a run of ClonalFrameML: a phylogeny </span>
+<span class="s2">  with branch lengths corrected to account for recombination, an estimation of the </span>
+<span class="s2">  key parameters of the recombination process, and a genomic map of where </span>
+<span class="s2">  recombination took place for each branch of the phylogeny.</span>
+<span class="s2">  ClonalFrameML is a maximum likelihood implementation of the Bayesian software </span>
+<span class="s2">  ClonalFrame which was previously described by Didelot and Falush (2007). The </span>
+<span class="s2">  recombination model underpinning ClonalFrameML is exactly the same as for </span>
+<span class="s2">  ClonalFrame, but this new implementation is a lot faster, is able to deal with </span>
+<span class="s2">  much larger genomic dataset, and does not suffer from MCMC convergence issues. </span>
+<span class="s2">  A scientific paper describing ClonalFrameML in detail has been published, see </span>
+<span class="s2">  Didelot X, Wilson DJ (2015) ClonalFrameML: Efficient Inference of Recombination </span>
+<span class="s2">  in Whole Bacterial Genomes. PLoS Comput Biol 11(2): e1004041. </span>
+<span class="s2">  doi:10.1371/journal.pcbi.1004041.</span>
+<span class="s2">* fastp (version </span><span class="si">%(fastp)s</span><span class="s2">): a tool designed to provide fast all-in-one preprocessing </span>
+<span class="s2">  for FastQ files. This tool is developed in C++ with multithreading supported </span>
+<span class="s2">  to afford high performance.</span>
+<span class="s2">* FastTree (version </span><span class="si">%(FastTree)s</span><span class="s2">: FastTree infers approximately-maximum-likelihood </span>
+<span class="s2">  phylogenetic trees from alignments of nucleotide  or protein sequences. </span>
+<span class="s2">  FastTree can handle alignments with up to a million of sequences in a reasonable </span>
+<span class="s2">  amount of time and memory.</span>
+<span class="s2">* HTSlib (version </span><span class="si">%(HTSlib)s</span><span class="s2">): HTSlib is an implementation of a unified C library for </span>
+<span class="s2">  accessing common file formats, such as SAM, CRAM and VCF, used for high-throughput </span>
+<span class="s2">  sequencing data, and is the core library used by samtools and bcftools. </span>
+<span class="s2">  HTSlib implements a generalized BAM index, with file extension .csi </span>
+<span class="s2">  (coordinate-sorted index). The HTSlib file reader first looks for the new index </span>
+<span class="s2">  and then for the old if the new index is absent.</span>
+<span class="s2">  This project also includes the popular tabix indexer, which indexes both .tbi </span>
+<span class="s2">  and .csi formats, and the bgzip compression utility.</span>
+<span class="s2">* BCFtools (version </span><span class="si">%(BCFtools)s</span><span class="s2">): BCFtools is a program for variant calling and manipulating </span>
+<span class="s2">  files in the Variant Call Format (VCF) and its binary counterpart BCF. All commands </span>
+<span class="s2">  work transparently with both VCFs and BCFs, both uncompressed and BGZF-compressed. In </span>
+<span class="s2">  order to avoid tedious repetion, throughout this document we will use &quot;VCF&quot; and &quot;BCF&quot; </span>
+<span class="s2">  interchangeably, unless specifically noted.</span>
+<span class="s2">  Most commands accept VCF, bgzipped VCF and BCF with filetype detected automatically </span>
+<span class="s2">  even when streaming from a pipe. Indexed VCF and BCF work in all situations. </span>
+<span class="s2">  Unindexed VCF and BCF and streams work in most, but not all situations. In general, </span>
+<span class="s2">  whenever multiple VCFs are read simultaneously, they must be indexed and therefore </span>
+<span class="s2">  also compressed.</span>
+<span class="s2">* SAMtools (version </span><span class="si">%(SAMtools)s</span><span class="s2">): SAMtools provide various utilities for manipulating </span>
+<span class="s2">  alignments in the SAMformat, including sorting, merging, indexing and generating </span>
+<span class="s2">  alignments in aper-position format.</span>
+<span class="s2">  SAMtools is implemented as a couple of executables and a number of scripts.Some scripts </span>
+<span class="s2">  (in particular the LUA scripts) may require additional modules.</span>
+<span class="s2">* MCL (version </span><span class="si">%(MCL)s</span><span class="s2">): The MCL algorithm is short for the Markov Cluster </span>
+<span class="s2">  Algorithm, a fast and scalableunsupervised cluster algorithm for graphs </span>
+<span class="s2">  (also known as networks) based onsimulation of (stochastic) flow in graphs.</span>
+<span class="s2">  The software is licensed under the GNU General Public License, version 3. It</span>
+<span class="s2">  implies that the source code is available, and the license gives you the freedom</span>
+<span class="s2">  to study the code and modify it in any way that you see fit. If you pass parts</span>
+<span class="s2">  or all of the code, compiled parts of the code, or a derived product on to</span>
+<span class="s2">  others, you have to make the code available to them on the same conditions.</span>
+<span class="s2">  The authors do ask though to quote a number of publications when using the</span>
+<span class="s2">  software, see https://micans.org/mcl/index.html?sec_license.</span>
+<span class="s2">  The package consists of executables only, no libraries. Documentation is</span>
+<span class="s2">  provided through man pages and the package homepage.</span>
+<span class="s2">* MEGAHIT (version </span><span class="si">%(MEGAHIT)s</span><span class="s2">): an ultra-fast and memory-efficient NGS assembler. It is</span>
+<span class="s2">  optimized for metagenomes, but also works well on generic single genome assembly </span>
+<span class="s2">  (small or mammalian size) and single-cell assembly.</span>
+<span class="s2">  The MEGAHIT executable is a Python script. It should run with the system</span>
+<span class="s2">  Python on the UAntwerp systems. However, any of the other Python modules</span>
+<span class="s2">  in the toolchain should also work.</span>
+<span class="s2">* miniasm (version </span><span class="si">%(miniasm)s</span><span class="s2">): a very fast OLC-based de novo assembler for noisy long </span>
+<span class="s2">  reads. It takes all-vs-all read self-mappings (typically by minimap) as input and </span>
+<span class="s2">  outputs an assembly graph in the GFA format. Different from mainstream assemblers, </span>
+<span class="s2">  miniasm does not have a consensus step. It simply concatenates pieces of read </span>
+<span class="s2">  sequences to generate the final unitig sequences. Thus the per-base error </span>
+<span class="s2">  rate is similar to the raw input reads.</span>
+<span class="s2">  So far miniasm is in early development stage. It has only been tested on a dozen </span>
+<span class="s2">  of PacBio and Oxford Nanopore (ONT) bacterial data sets.</span>
+<span class="s2">* minimap2 (version </span><span class="si">%(minimap2)s</span><span class="s2">): a fast sequence mapping and alignment</span>
+<span class="s2">  program that can find overlaps between long noisy reads, or map long</span>
+<span class="s2">  reads or their assemblies to a reference genome optionally with detailed</span>
+<span class="s2">  alignment (i.e. CIGAR). At present, it works efficiently with query</span>
+<span class="s2">  sequences from a few kilobases to ~100 megabases in length at an error</span>
+<span class="s2">  rate ~15</span><span class="si">%%</span><span class="s2">. Minimap2 outputs in the PAF or the SAM format. On limited</span>
+<span class="s2">  test data sets, minimap2 is over 20 times faster than most other</span>
+<span class="s2">  long-read aligners. It will replace BWA-MEM for long reads and contig</span>
+<span class="s2">  alignment.</span>
+<span class="s2">  The module also includes the optional minimap2-lite and sdust commands.</span>
+<span class="s2">  Specific processor support in Minimap2 is ancient. It only supports</span>
+<span class="s2">  vectorization at the level of early 00&#39;s CPUs but no recent CPUs, and the</span>
+<span class="s2">  code doesn&#39;t have much parallelism either, so consider switching to a more</span>
+<span class="s2">  modern code.</span>
+<span class="s2">* MUSCLE (version </span><span class="si">%(MUSCLE)s</span><span class="s2">): MUSCLE is one of the best-performing multiple </span>
+<span class="s2">  alignment programs according to published benchmark tests, with accuracy and </span>
+<span class="s2">  speed that are consistently better than CLUSTALW. MUSCLE can align hundreds </span>
+<span class="s2">  of sequences in seconds. Most users learn everything they need to know about </span>
+<span class="s2">  MUSCLE in a few minutes—only a handful of command-line options are needed </span>
+<span class="s2">  to perform common alignment tasks.</span>
+<span class="s2">* Racon (version </span><span class="si">%(Racon)s</span><span class="s2">): s intended as a standalone consensus module to correct </span>
+<span class="s2">  raw contigs generated by rapid assembly methods which do not include a consensus </span>
+<span class="s2">  step. The goal of Racon is to generate genomic consensus which is of similar or </span>
+<span class="s2">  better quality compared to the output generated by assembly methods which </span>
+<span class="s2">  employ both error correction and consensus steps, while providing a speedup </span>
+<span class="s2">  of several times compared to those methods. It supports data produced by both </span>
+<span class="s2">  Pacific Biosciences and Oxford Nanopore Technologies.</span>
+<span class="s2">  Racon can be used as a polishing tool after the assembly with either Illumina </span>
+<span class="s2">  data or data produced by third generation of sequencing. The type of data </span>
+<span class="s2">  inputed is automatically detected.</span>
+<span class="s2">  This module is built without support for CUDA.</span>
+<span class="s2">* VSEARCH (version </span><span class="si">%(VSEARCH)s</span><span class="s2">): VSEARCH upports de novo and reference based </span>
+<span class="s2">  chimera detection, clustering, full-length and prefix dereplication, </span>
+<span class="s2">  rereplication, reverse complementation, masking, all-vs-all pairwise </span>
+<span class="s2">  global alignment, exact and global alignment searching, shuffling, </span>
+<span class="s2">  subsampling and sorting. It also supports FASTQ file analysis, filtering, </span>
+<span class="s2">  conversion and merging of paired-end reads.</span>
+<span class="s2">  VSEARCH stands for vectorized search, as the tool takes advantage of </span>
+<span class="s2">  parallelism in the form of SIMD vectorization as well as multiple threads </span>
+<span class="s2">  to perform accurate alignments at high speed. VSEARCH uses an optimal global </span>
+<span class="s2">  aligner (full dynamic programming Needleman-Wunsch), in contrast to USEARCH </span>
+<span class="s2">  which by default uses a heuristic seed and extend aligner. This usually </span>
+<span class="s2">  results in more accurate alignments and overall improved sensitivity </span>
+<span class="s2">  (recall) with VSEARCH, especially for alignments with gaps.</span>
+<span class="s2">  NOTE: Given that the compiler options that the code choses are those for</span>
+<span class="s2">  essentially a 15-year old Pentium 4 processor, the code may not be that well</span>
+<span class="s2">  vectorized despite what it suggests and may not exploit more modern vector</span>
+<span class="s2">  instructions at all.</span>
+<span class="s2">&quot;&quot;&quot;</span> <span class="o">%</span> <span class="n">local_version_subs</span>
+
+<span class="n">docurls</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;bedtools:      Web-based documentation on http://bedtools.readthedocs.io/&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CD-HIT:        Web-based documentation on https://github.com/weizhongli/cdhit/wiki&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ClonalFrameML: Web-based information on https://github.com/xavierdidelot/clonalframeml/wiki&#39;</span><span class="p">,</span>    
+    <span class="s1">&#39;fastpp:        Web-based documentation on https://github.com/OpenGene/fastp/blob/master/README.md&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;FastTree:      Web-based documentation on http://www.microbesonline.org/fasttree/&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;HTSlib:        Man pages in sections 1, 5 and 7&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;BCFtools:      Web-based documentation on http://samtools.github.io/bcftools/howtos/index.html&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;BCFtools:      Man page bcftools in section 1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;SAMtools:      Man page for the samtools and wgsim commands (section 1)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;MCL:           Man pages (sections 1, 5 and 7) - try \man mcl\ as a starting point&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;MEGAHIT:       Web-based documentation on https://github.com/voutcn/megahit/blob/master/README.md&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;MEGAHIT:       Command line help with `megahit -h`&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;miniasm:       Web-based documentation on https://github.com/lh3/miniasm/blob/master/README.md&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;minimap2:      Web-based documentation on https://github.com/lh3/minimap2/blob/master/README.md&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;minimap2:      Man page for the minimap2 command&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;MUSCLE:        Web-based documentation on http://drive5.com/muscle/manual/&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Racon:         Web-based documentation on https://github.com/lbcb-sci/racon/blob/master/README.md&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;VSEARCH:       Man page vsearch in section 1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;VSEARCH:       Manual downloadable from https://github.com/torognes/vsearch/releases/download/v</span><span class="si">%(version)s</span><span class="s1">/vsearch_manual.pdf&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">toolchain</span> <span class="o">=</span>     <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;intel&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="n">local_buildset</span><span class="p">}</span>
+
+<span class="n">builddependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;buildtools&#39;</span><span class="p">,</span> <span class="n">local_buildset</span><span class="p">,</span>     <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Perl&#39;</span><span class="p">,</span>       <span class="n">local_Perl_version</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;baselibs&#39;</span><span class="p">,</span> <span class="n">local_buildset</span><span class="p">,</span>       <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;GCCcore&#39;</span><span class="p">,</span> <span class="n">local_gcc_version</span><span class="p">)),</span> 
+    <span class="p">(</span><span class="s1">&#39;LuaJIT&#39;</span><span class="p">,</span>   <span class="n">local_LuaJIT_version</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;GCCcore&#39;</span><span class="p">,</span> <span class="n">local_gcc_version</span><span class="p">))</span>
+<span class="p">]</span>
+
+<span class="n">default_easyblock</span> <span class="o">=</span> <span class="s1">&#39;ConfigureMake&#39;</span>
+
+<span class="n">components</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;BEDTools&#39;</span><span class="p">,</span> <span class="n">local_BEDTools_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>      <span class="p">[</span> <span class="p">{</span>
+                            <span class="s1">&#39;filename&#39;</span><span class="p">:</span>    <span class="s1">&#39;bedtools-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://github.com/arq5x/bedtools2/releases/download/v</span><span class="si">%(version)s</span><span class="s1">/&#39;</span><span class="p">]</span>
+                        <span class="p">}</span> <span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>    <span class="s1">&#39;bedtools2&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;skipsteps&#39;</span><span class="p">:</span>    <span class="p">[</span><span class="s1">&#39;configure&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;prebuildopts&#39;</span><span class="p">:</span> <span class="s1">&#39;sed -e &quot;s/-g -Wall -O2/-Wall/&quot; -i Makefile &amp;&amp; &#39;</span><span class="p">,</span>
+        <span class="s1">&#39;buildopts&#39;</span><span class="p">:</span>    <span class="s1">&#39;CXX=&quot;$CXX&quot; CC=&quot;$CC&quot; CFLAGS=&quot;$CFLAGS&quot; VERBOSE=1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;installopts&#39;</span><span class="p">:</span>  <span class="s1">&#39;prefix=</span><span class="si">%(installdir)s</span><span class="s1"> CXX=&quot;$CXX&quot; VERBOSE=1&#39;</span><span class="p">,</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;CD-HIT&#39;</span><span class="p">,</span> <span class="n">local_CDHIT_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;easyblock&#39;</span><span class="p">:</span>     <span class="s1">&#39;MakeCp&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>       <span class="p">[</span> <span class="p">{</span>
+                            <span class="s1">&#39;download_filename&#39;</span><span class="p">:</span> <span class="s1">&#39;V</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;filename&#39;</span><span class="p">:</span>          <span class="n">SOURCE_TAR_GZ</span><span class="p">,</span>
+                            <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>       <span class="p">[</span><span class="s1">&#39;https://github.com/weizhongli/cdhit/archive/&#39;</span><span class="p">]</span>
+                         <span class="p">}</span> <span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>     <span class="s1">&#39;cdhit-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;prebuildopts&#39;</span><span class="p">:</span>  <span class="s1">&#39;sed -i </span><span class="se">\&#39;</span><span class="s1">s@#!/usr/bin/perl.*@#!/usr/bin/env perl@</span><span class="se">\&#39;</span><span class="s1"> *.pl &amp;&amp; &#39;</span><span class="p">,</span>
+        <span class="s1">&#39;buildopts&#39;</span><span class="p">:</span>     <span class="s1">&#39;CC=&quot;$CXX&quot; CCFLAGS=&quot;$CPPFLAGS $CXXFLAGS -qopenmp&quot;&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;files_to_copy&#39;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">([</span><span class="s1">&#39;cd-hit&#39;</span><span class="p">,</span> <span class="s1">&#39;cd-hit-est&#39;</span><span class="p">,</span> <span class="s1">&#39;cd-hit-2d&#39;</span><span class="p">,</span> <span class="s1">&#39;cd-hit-est-2d&#39;</span><span class="p">,</span> <span class="s1">&#39;cd-hit-div&#39;</span><span class="p">,</span> <span class="s1">&#39;cd-hit-454&#39;</span><span class="p">],</span> <span class="s1">&#39;bin&#39;</span><span class="p">),</span> 
+                            <span class="p">([</span><span class="s1">&#39;*.pl&#39;</span><span class="p">],</span>                  <span class="s1">&#39;bin&#39;</span><span class="p">),</span> 
+                            <span class="p">([</span><span class="s1">&#39;doc/*&#39;</span><span class="p">],</span>                 <span class="s1">&#39;share/doc/CD-HIT&#39;</span><span class="p">),</span> 
+                            <span class="p">([</span><span class="s1">&#39;README&#39;</span><span class="p">,</span> <span class="s1">&#39;license.txt&#39;</span><span class="p">],</span> <span class="s1">&#39;share/doc/CD-HIT&#39;</span><span class="p">),</span>
+                         <span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;ClonalFrameML&#39;</span><span class="p">,</span> <span class="n">local_ClonalFrameML_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;easyblock&#39;</span><span class="p">:</span>     <span class="s1">&#39;MakeCp&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>       <span class="p">[</span> <span class="p">{</span>
+                            <span class="s1">&#39;download_filename&#39;</span><span class="p">:</span> <span class="s1">&#39;v</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;filename&#39;</span><span class="p">:</span>          <span class="n">SOURCE_TAR_GZ</span><span class="p">,</span>
+                            <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>       <span class="p">[</span><span class="s1">&#39;https://github.com/xavierdidelot/ClonalFrameML/archive/&#39;</span><span class="p">]</span>
+                         <span class="p">}</span> <span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>     <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">/src&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;prebuildopts&#39;</span><span class="p">:</span>  <span class="s1">&#39;sed -e &quot;s|CC = .*|CC = \$(CXX)|&quot; -e &quot;s|CFLAGS +=.*|CFLAGS = \$(CXXFLAGS)|&quot; -i makefile &amp;&amp; &#39;</span><span class="p">,</span>
+        <span class="s1">&#39;buildopts&#39;</span><span class="p">:</span>     <span class="s1">&#39;all&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;files_to_copy&#39;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">([</span><span class="s1">&#39;ClonalFrameML&#39;</span><span class="p">],</span>  <span class="s1">&#39;bin&#39;</span><span class="p">),</span> 
+                            <span class="p">([</span><span class="s1">&#39;cfml_results.R&#39;</span><span class="p">],</span> <span class="s1">&#39;bin&#39;</span><span class="p">),</span> 
+                            <span class="p">([</span><span class="s1">&#39;../README.md&#39;</span><span class="p">],</span>   <span class="s1">&#39;share/doc/ClonalFrameML&#39;</span><span class="p">),</span>
+                         <span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;fastp&#39;</span><span class="p">,</span> <span class="n">local_fastp_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>        <span class="p">[</span> <span class="p">{</span>
+                             <span class="s1">&#39;download_filename&#39;</span><span class="p">:</span> <span class="s1">&#39;v</span><span class="si">%(version)s</span><span class="s1">.zip&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;filename&#39;</span><span class="p">:</span>          <span class="n">SOURCELOWER_ZIP</span><span class="p">,</span>
+                             <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>       <span class="p">[</span><span class="s1">&#39;https://github.com/OpenGene/fastp/archive/&#39;</span><span class="p">],</span>
+                          <span class="p">}</span> <span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>      <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;skipsteps&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="s1">&#39;configure&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;buildopts&#39;</span><span class="p">:</span>      <span class="s1">&#39;CXXFLAGS=&quot;$</span><span class="si">{CXXFLAGS}</span><span class="s1"> -std=c++11 -I./inc&quot;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;preinstallopts&#39;</span><span class="p">:</span> <span class="s1">&#39;mkdir -p </span><span class="si">%(installdir)s</span><span class="s1">/bin &amp;&amp; &#39;</span><span class="p">,</span>
+        <span class="s1">&#39;installopts&#39;</span><span class="p">:</span>    <span class="s1">&#39;PREFIX=</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;FastTree&#39;</span><span class="p">,</span> <span class="n">local_FastTree_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;easyblock&#39;</span><span class="p">:</span>     <span class="s1">&#39;CmdCp&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>       <span class="p">[</span> <span class="p">{</span>
+                            <span class="s1">&#39;filename&#39;</span><span class="p">:</span>          <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.c&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>       <span class="p">[</span><span class="s1">&#39;http://www.microbesonline.org/fasttree/&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;extract_cmd&#39;</span><span class="p">:</span>       <span class="s1">&#39;mkdir </span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1"> ; cp </span><span class="si">%s</span><span class="s1"> </span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span>
+                         <span class="p">}</span> <span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>     <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;skipsteps&#39;</span><span class="p">:</span>     <span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;cmds_map&#39;</span><span class="p">:</span>      <span class="p">[(</span><span class="s1">&#39;FastTree.*.c&#39;</span><span class="p">,</span> <span class="s1">&#39;$CC -DOPENMP $CFLAGS $LIBS </span><span class="si">%%</span><span class="s1">(source)s -o </span><span class="si">%(name)s</span><span class="s1">&#39;</span><span class="p">)],</span>
+        <span class="s1">&#39;files_to_copy&#39;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">(([</span><span class="s1">&#39;FastTree&#39;</span><span class="p">],</span> <span class="s1">&#39;bin&#39;</span><span class="p">)),</span> 
+                         <span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;MCL&#39;</span><span class="p">,</span> <span class="n">local_MCL_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>      <span class="p">[</span> <span class="p">{</span>
+                           <span class="s1">&#39;filename&#39;</span><span class="p">:</span>    <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version_major)s</span><span class="s1">-</span><span class="si">%(version_minor)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://micans.org/</span><span class="si">%(namelower)s</span><span class="s1">/src/&#39;</span><span class="p">]</span>
+                        <span class="p">}</span> <span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>    <span class="s1">&#39;mcl-</span><span class="si">%(version_major)s</span><span class="s1">-</span><span class="si">%(version_minor)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;installopts&#39;</span><span class="p">:</span>  <span class="s1">&#39; &amp;&amp; cp </span><span class="si">%(builddir)s</span><span class="s1">/mcl-</span><span class="si">%(version_major)s</span><span class="s1">-</span><span class="si">%(version_minor)s</span><span class="s1">/src/alien/oxygen/src/mclblastline </span><span class="si">%(installdir)s</span><span class="s1">/bin &#39;</span> <span class="o">+</span> 
+                        <span class="s1">&#39; &amp;&amp; cp </span><span class="si">%(builddir)s</span><span class="s1">/mcl-</span><span class="si">%(version_major)s</span><span class="s1">-</span><span class="si">%(version_minor)s</span><span class="s1">/src/alien/oxygen/src/mcxdeblast   </span><span class="si">%(installdir)s</span><span class="s1">/bin&#39;</span><span class="p">,</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;MEGAHIT&#39;</span><span class="p">,</span> <span class="n">local_MEGAHIT_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;easyblock&#39;</span><span class="p">:</span>         <span class="s1">&#39;CMakeMake&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>           <span class="p">[</span> <span class="p">{</span>
+                                 <span class="s1">&#39;download_filename&#39;</span><span class="p">:</span> <span class="s1">&#39;v</span><span class="si">%(version)s</span><span class="s1">.zip&#39;</span><span class="p">,</span>
+                                 <span class="s1">&#39;filename&#39;</span><span class="p">:</span>          <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.zip&#39;</span><span class="p">,</span>
+                                 <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>       <span class="p">[</span><span class="s1">&#39;https://github.com/voutcn/</span><span class="si">%(namelower)s</span><span class="s1">/archive/&#39;</span><span class="p">],</span>
+                             <span class="p">}</span> <span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>         <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;separate_build_dir&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;miniasm&#39;</span><span class="p">,</span> <span class="n">local_miniasm_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;easyblock&#39;</span><span class="p">:</span>     <span class="s1">&#39;MakeCp&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>       <span class="p">[</span> <span class="p">{</span> <span class="c1"># https://github.com/lh3/miniasm/archive/v0.3.tar.gz</span>
+                             <span class="s1">&#39;download_filename&#39;</span><span class="p">:</span> <span class="s1">&#39;v</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;filename&#39;</span><span class="p">:</span>          <span class="n">SOURCELOWER_TAR_GZ</span><span class="p">,</span>
+                             <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>       <span class="p">[</span><span class="s1">&#39;https://github.com/lh3/miniasm/archive&#39;</span><span class="p">]</span>
+                         <span class="p">}</span> <span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>     <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;buildopts&#39;</span><span class="p">:</span>     <span class="s1">&#39;CC=&quot;$CC&quot; CFLAGS=&quot;$CFLAGS&quot;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;files_to_copy&#39;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">([</span><span class="s1">&#39;miniasm&#39;</span><span class="p">,</span> <span class="s1">&#39;minidot&#39;</span><span class="p">],</span>       <span class="s1">&#39;bin&#39;</span><span class="p">),</span>
+                            <span class="p">([</span><span class="s1">&#39;LICENSE.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;README.md&#39;</span><span class="p">],</span> <span class="s1">&#39;share/doc/miniasm&#39;</span><span class="p">),</span>
+                         <span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;minimap2&#39;</span><span class="p">,</span> <span class="n">local_minimap2_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;easyblock&#39;</span><span class="p">:</span>     <span class="s1">&#39;MakeCp&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>       <span class="p">[</span> <span class="p">{</span> <span class="c1"># https://github.com/lh3/minimap2/releases/download/v2.17/minimap2-2.17.tar.bz2</span>
+                            <span class="s1">&#39;filename&#39;</span><span class="p">:</span>    <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.bz2&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://github.com/lh3/</span><span class="si">%(name)s</span><span class="s1">/releases/download/v</span><span class="si">%(version)s</span><span class="s1">/&#39;</span><span class="p">]</span>
+                         <span class="p">}</span> <span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>     <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;prebuildopts&#39;</span><span class="p">:</span>  <span class="s1">&#39;sed -e &quot;s/-msse2 //&quot; -e &quot;s/-msse4.1 //&quot; -e &quot;s/-mno-sse4.1 //&quot; -i Makefile ; &#39;</span> <span class="p">,</span>
+        <span class="s1">&#39;buildopts&#39;</span><span class="p">:</span>     <span class="s1">&#39;extra CFLAGS=&quot;$CFLAGS&quot; &#39;</span><span class="p">,</span>
+        <span class="s1">&#39;files_to_copy&#39;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">([</span><span class="s1">&#39;minimap2&#39;</span><span class="p">,</span> <span class="s1">&#39;minimap2-lite&#39;</span><span class="p">,</span> <span class="s1">&#39;sdust&#39;</span><span class="p">],</span>  <span class="s1">&#39;bin&#39;</span><span class="p">),</span>
+                            <span class="p">([</span><span class="s1">&#39;lib</span><span class="si">%(name)s</span><span class="s1">.a&#39;</span><span class="p">],</span>                       <span class="s1">&#39;lib&#39;</span><span class="p">),</span>
+                            <span class="p">([</span><span class="s1">&#39;*.h&#39;</span><span class="p">],</span>                                 <span class="s1">&#39;include&#39;</span><span class="p">),</span>
+                            <span class="p">([</span><span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">.1&#39;</span><span class="p">],</span>                          <span class="s1">&#39;share/man/man1&#39;</span><span class="p">),</span>
+                            <span class="p">([</span><span class="s1">&#39;LICENSE.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;NEWS.md&#39;</span><span class="p">,</span> <span class="s1">&#39;README.md&#39;</span><span class="p">],</span> <span class="s1">&#39;share/doc/minimap2&#39;</span><span class="p">),</span>
+                         <span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;MUSCLE&#39;</span><span class="p">,</span> <span class="n">local_MUSCLE_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;easyblock&#39;</span><span class="p">:</span>     <span class="s1">&#39;MakeCp&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>       <span class="p">[</span> <span class="p">{</span>
+                            <span class="s1">&#39;filename&#39;</span><span class="p">:</span>    <span class="s1">&#39;</span><span class="si">%(namelower)s%(version)s</span><span class="s1">_src.tar.gz&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://www.drive5.com/muscle/downloads</span><span class="si">%(version)s</span><span class="s1">/&#39;</span><span class="p">]</span>
+                         <span class="p">}</span> <span class="p">],</span>
+        <span class="s1">&#39;patches&#39;</span><span class="p">:</span>       <span class="p">[</span><span class="s1">&#39;MUSCLE-</span><span class="si">%(version)s</span><span class="s1">_easyconfig_vars.patch&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>     <span class="s1">&#39;</span><span class="si">%(namelower)s%(version)s</span><span class="s1">/src&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;files_to_copy&#39;</span><span class="p">:</span> <span class="p">[([</span><span class="s2">&quot;muscle&quot;</span><span class="p">],</span> <span class="s1">&#39;bin&#39;</span><span class="p">)],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Racon&#39;</span><span class="p">,</span> <span class="n">local_Racon_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;easyblock&#39;</span><span class="p">:</span>         <span class="s1">&#39;CMakeMake&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>           <span class="p">[</span> <span class="p">{</span>
+                                <span class="s1">&#39;filename&#39;</span><span class="p">:</span>    <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-v</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://github.com/lbcb-sci/racon/releases/download/</span><span class="si">%(version)s</span><span class="s1">/&#39;</span><span class="p">]</span>
+                             <span class="p">}</span> <span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>         <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-v</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;separate_build_dir&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;VSEARCH&#39;</span><span class="p">,</span> <span class="n">local_VSEARCH_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>       <span class="p">[</span> <span class="p">{</span>
+                            <span class="s1">&#39;download_filename&#39;</span><span class="p">:</span> <span class="s1">&#39;v</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;filename&#39;</span><span class="p">:</span>          <span class="n">SOURCELOWER_TAR_GZ</span><span class="p">,</span>
+                            <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>       <span class="p">[</span><span class="s1">&#39;https://github.com/torognes/vsearch/archive&#39;</span><span class="p">]</span>
+                         <span class="p">}</span> <span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>     <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;preconfigopts&#39;</span><span class="p">:</span> <span class="s1">&#39;sed -i &quot;s/AM_CXXFLAGS=-Wall.*/AM_CXXFLAGS=$EBVARCXXFLAGS/&quot; src/Makefile.am &amp;&amp; &#39;</span> <span class="o">+</span>
+                         <span class="s1">&#39;./autogen.sh &amp;&amp; &#39;</span><span class="p">,</span>
+
+        <span class="s1">&#39;configopts&#39;</span><span class="p">:</span>    <span class="s1">&#39;--disable-pdfman&#39;</span><span class="p">,</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;HTSlib&#39;</span><span class="p">,</span> <span class="n">local_HTSlib_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>      <span class="p">[</span> <span class="p">{</span>
+                           <span class="s1">&#39;filename&#39;</span><span class="p">:</span>    <span class="n">SOURCELOWER_TAR_BZ2</span><span class="p">,</span>
+                           <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://github.com/samtools/</span><span class="si">%(namelower)s</span><span class="s1">/releases/download/</span><span class="si">%(version)s</span><span class="s1">/&#39;</span><span class="p">]</span>
+                        <span class="p">}</span> <span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>    <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;configopts&#39;</span><span class="p">:</span>   <span class="s1">&#39;--with-libdeflate --enable-libcurl --enable-s3&#39;</span><span class="p">,</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;BCFtools&#39;</span><span class="p">,</span> <span class="n">local_BCFtools_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>      <span class="p">[</span> <span class="p">{</span>
+                           <span class="s1">&#39;filename&#39;</span><span class="p">:</span>    <span class="n">SOURCELOWER_TAR_BZ2</span><span class="p">,</span>
+                           <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://github.com/samtools/</span><span class="si">%(namelower)s</span><span class="s1">/releases/download/</span><span class="si">%(version)s</span><span class="s1">/&#39;</span><span class="p">]</span>
+                        <span class="p">}</span> <span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>    <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;configopts&#39;</span><span class="p">:</span>   <span class="s1">&#39;--enable-libgsl --enable-perl-filters --with-htslib=</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;SAMtools&#39;</span><span class="p">,</span> <span class="n">local_SAMtools_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;easyblock&#39;</span><span class="p">:</span>    <span class="s1">&#39;EB_SAMtools&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>      <span class="p">[</span> <span class="p">{</span>
+                           <span class="s1">&#39;filename&#39;</span><span class="p">:</span>    <span class="n">SOURCELOWER_TAR_BZ2</span><span class="p">,</span>
+                           <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://github.com/samtools/</span><span class="si">%(namelower)s</span><span class="s1">/releases/download/</span><span class="si">%(version)s</span><span class="s1">/&#39;</span><span class="p">]</span>
+                        <span class="p">}</span> <span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>    <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;configopts&#39;</span><span class="p">:</span>   <span class="s1">&#39;--with-ncurses --with-htslib=</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="p">}),</span>
+<span class="p">]</span>
+
+<span class="n">sanity_check_paths</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;files&#39;</span><span class="p">:</span>    <span class="c1"># BEDtools</span>
+                <span class="p">[</span> <span class="s1">&#39;bin/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;bedtools&#39;</span><span class="p">,</span> <span class="s1">&#39;pairToBed&#39;</span><span class="p">,</span> <span class="s1">&#39;mergeBed&#39;</span><span class="p">,</span> <span class="s1">&#39;bedToBam&#39;</span><span class="p">,</span> <span class="s1">&#39;fastaFromBed&#39;</span><span class="p">]</span> <span class="p">]</span> <span class="o">+</span>
+                <span class="c1"># minimap2</span>
+                <span class="p">[</span> <span class="s1">&#39;bin/minimap2&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/minimap2-lite&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/sdust&#39;</span><span class="p">,</span> <span class="s1">&#39;lib/libminimap2.a&#39;</span> <span class="p">]</span> <span class="o">+</span>
+                <span class="c1"># CD-HIT</span>
+                <span class="p">[</span> <span class="s1">&#39;bin/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;cd-hit&#39;</span><span class="p">,</span> <span class="s1">&#39;cd-hit-est&#39;</span><span class="p">,</span> <span class="s1">&#39;cd-hit-2d&#39;</span><span class="p">,</span> <span class="s1">&#39;cd-hit-est-2d&#39;</span><span class="p">,</span> <span class="s1">&#39;cd-hit-div&#39;</span><span class="p">,</span> <span class="s1">&#39;cd-hit-454&#39;</span><span class="p">]</span> <span class="p">]</span> <span class="o">+</span>
+                <span class="c1"># ClonalFrameML</span>
+                <span class="p">[</span> <span class="s1">&#39;bin/ClonalFrameML&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/cfml_results.R&#39;</span><span class="p">,</span> <span class="s1">&#39;share/doc/ClonalFrameML/README.md&#39;</span> <span class="p">]</span> <span class="o">+</span>
+                <span class="c1"># fastp</span>
+                <span class="p">[</span><span class="s1">&#39;bin/fastp&#39;</span><span class="p">]</span> <span class="o">+</span>
+                <span class="c1"># MCL</span>
+                <span class="p">[</span> <span class="s1">&#39;bin/mcl&#39;</span> <span class="p">]</span> <span class="o">+</span>
+                <span class="c1"># minimap2</span>
+                <span class="p">[</span> <span class="s1">&#39;bin/minimap2&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/minimap2-lite&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/sdust&#39;</span><span class="p">,</span> <span class="s1">&#39;lib/libminimap2.a&#39;</span> <span class="p">]</span> <span class="o">+</span>
+                <span class="c1"># Racon</span>
+                <span class="p">[</span> <span class="s1">&#39;bin/racon&#39;</span> <span class="p">]</span> <span class="o">+</span>
+                <span class="c1"># VSEARCH</span>
+                <span class="p">[</span> <span class="s1">&#39;bin/vsearch&#39;</span> <span class="p">]</span> <span class="o">+</span>
+                <span class="c1"># HTSlib</span>
+                <span class="p">[</span> <span class="s1">&#39;bin/bgzip&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/htsfile&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/tabix&#39;</span><span class="p">,</span> <span class="s1">&#39;lib/libhts.</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">SHLIB_EXT</span><span class="p">,</span> <span class="s1">&#39;lib/libhts.a&#39;</span> <span class="p">]</span> <span class="o">+</span>
+                <span class="c1"># BCFtools</span>
+                <span class="p">[</span> <span class="s1">&#39;bin/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;bcftools&#39;</span><span class="p">,</span> <span class="s1">&#39;plot-vcfstats&#39;</span><span class="p">,</span> <span class="s1">&#39;vcfutils.pl&#39;</span><span class="p">]</span> <span class="p">]</span> <span class="o">+</span>
+                <span class="c1"># SAMtools</span>
+                <span class="p">[</span>  <span class="s1">&#39;bin/samtools&#39;</span><span class="p">,</span> <span class="s1">&#39;lib/libbam.a&#39;</span> <span class="p">],</span>
+    <span class="s1">&#39;dirs&#39;</span><span class="p">:</span>  <span class="p">[</span><span class="s1">&#39;share/man&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;bio&#39;</span>
+</code></pre></div>
+<p><a href="../package/">[BioTools]</a> <a href="../../..">[package list]</a></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/hpcuantwerpen" target="_blank" rel="noopener" title="HPC-UAntwerpen on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "header.autohide", "toc.follow", "content.code.annotate", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>

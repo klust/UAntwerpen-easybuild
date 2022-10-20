@@ -1,0 +1,1161 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the UAntwerpen-modules repository">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>R 4.0.2 intel 2020a - UAntwerpen-modules documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#r-402-intel-2020aeb" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="UAntwerpen-modules documentation" class="md-header__button md-logo" aria-label="UAntwerpen-modules documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UAntwerpen-modules documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              R 4.0.2 intel 2020a
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="UAntwerpen-modules documentation" class="md-nav__button md-logo" aria-label="UAntwerpen-modules documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    UAntwerpen-modules documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Pacakge list
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p><a href="../package/">[R]</a> <a href="../../..">[package list]</a></p>
+<h1 id="r-402-intel-2020aeb">R-4.0.2-intel-2020a.eb</h1>
+<div class="highlight"><pre><span></span><code><span class="c1"># NOTE: Needs to be compiled on a compute node via the scheduler because otherwise the </span>
+<span class="c1"># tests for Rmpi hang.</span>
+<span class="c1">#</span>
+<span class="n">local_buildset</span> <span class="o">=</span>         <span class="s1">&#39;2020a&#39;</span>
+<span class="n">local_gcc_version</span> <span class="o">=</span>      <span class="s1">&#39;9.3.0&#39;</span>
+<span class="n">local_binutils_version</span> <span class="o">=</span> <span class="s1">&#39;2.34&#39;</span>
+
+<span class="n">local_Java_version</span> <span class="o">=</span> <span class="s1">&#39;11&#39;</span>
+
+<span class="n">local_Boost_version</span> <span class="o">=</span>          <span class="s1">&#39;1.73.0&#39;</span>          <span class="c1"># https://www.boost.org/users/download/</span>
+<span class="n">local_cairo_version</span> <span class="o">=</span>          <span class="s1">&#39;1.17.2&#39;</span>          <span class="c1"># https://www.cairographics.org</span>
+<span class="n">local_GDAL_version</span> <span class="o">=</span>           <span class="s1">&#39;3.1.0&#39;</span>           <span class="c1"># http://download.osgeo.org/gdal/</span>
+<span class="n">local_GEOS_version</span> <span class="o">=</span>           <span class="s1">&#39;3.8.1&#39;</span>           <span class="c1"># http://trac.osgeo.org/geos</span>
+<span class="n">local_ImageMagick_version</span> <span class="o">=</span>    <span class="s1">&#39;7.0.10-10&#39;</span>       <span class="c1"># https://github.com/ImageMagick/ImageMagick/releases</span>
+<span class="n">local_JAGS_version</span> <span class="o">=</span>           <span class="s1">&#39;4.3.0&#39;</span>           <span class="c1"># http://mcmc-jags.sourceforge.net/</span>
+<span class="n">local_netCDF_version</span> <span class="o">=</span>         <span class="s1">&#39;4.7.3&#39;</span>           <span class="c1"># https://www.unidata.ucar.edu/software/netcdf/</span>
+<span class="n">local_PROJ_version</span> <span class="o">=</span>           <span class="s1">&#39;7.0.1&#39;</span>           <span class="c1"># https://proj.org/download.html</span>
+<span class="n">local_R_version</span> <span class="o">=</span>              <span class="s1">&#39;4.0.2&#39;</span>           <span class="c1"># https://cran.r-project.org/</span>
+<span class="n">local_SQLite_version</span> <span class="o">=</span>         <span class="s1">&#39;3.31.1&#39;</span>          <span class="c1"># https://www.sqlite.org/index.html</span>
+<span class="n">local_Tcl_version</span> <span class="o">=</span>            <span class="s1">&#39;8.6.10&#39;</span>          <span class="c1"># http://www.tcl.tk/</span>
+<span class="n">local_Tk_version</span> <span class="o">=</span>             <span class="s1">&#39;8.6.10&#39;</span>          <span class="c1"># http://www.tcl.tk/</span>
+
+<span class="n">local_Bioconductor_version</span> <span class="o">=</span>   <span class="s1">&#39;3.11&#39;</span>            <span class="c1"># http://bioconductor.org/packages/release/BiocViews.html#___Software</span>
+
+<span class="n">name</span> <span class="o">=</span>    <span class="s1">&#39;R&#39;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="n">local_R_version</span>
+<span class="c1">#versionsuffix = &#39;-UAntwerpen&#39;</span>
+
+<span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;http://www.r-project.org/&#39;</span>
+
+<span class="n">whatis</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Description: R, a free software environment for statistical computing and graphics&#39;</span>
+<span class="p">]</span>
+
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">R is a free software environment for statistical computing and graphics.</span>
+
+<span class="s2">The module also contains a large number of pre-installed R packages, including</span>
+<span class="s2">packages from the Bioconductor project (version </span><span class="si">%(bioc)s</span><span class="s2">).</span>
+<span class="s2">&quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">{</span>
+    <span class="s1">&#39;bioc&#39;</span><span class="p">:</span> <span class="n">local_Bioconductor_version</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">docurls</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="s1">&#39;R manuals: https://cran.r-project.org/manuals.html&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;R FAQs: https://cran.r-project.org/faqs.html&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;Bioconductor packages: http://www.bioconductor.org/&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">toolchain</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;intel&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="n">local_buildset</span><span class="p">}</span>
+
+<span class="n">sources</span> <span class="o">=</span>     <span class="p">[</span><span class="n">SOURCE_TAR_GZ</span><span class="p">]</span>
+<span class="n">source_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;http://cran.us.r-project.org/src/base/R-</span><span class="si">%(version_major)s</span><span class="s1">&#39;</span><span class="p">]</span>
+
+<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;baselibs&#39;</span><span class="p">,</span>    <span class="n">local_buildset</span><span class="p">,</span>             <span class="s1">&#39;&#39;</span><span class="p">,</span>      <span class="p">(</span><span class="s1">&#39;GCCcore&#39;</span><span class="p">,</span> <span class="n">local_gcc_version</span><span class="p">)),</span> <span class="c1"># For ncurses, libreadline, bzip2, XZ, zlib, PCRE, libpne, libjpeg-turbo, LibTIFF, cURL, libxml2, GMP, UDUNITS</span>
+    <span class="p">(</span><span class="s1">&#39;SQLite&#39;</span><span class="p">,</span>      <span class="n">local_SQLite_version</span><span class="p">),</span>  <span class="c1"># RSQLite has its own builtin engine, in version 2.0 this turns out to be SQLite 3.19.1,</span>
+                                            <span class="c1"># but the dependency enters again through GDAL...</span>
+    <span class="p">(</span><span class="s1">&#39;cairo&#39;</span><span class="p">,</span>       <span class="n">local_cairo_version</span><span class="p">,</span>   <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;GCCcore&#39;</span><span class="p">,</span> <span class="n">local_gcc_version</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;Java&#39;</span><span class="p">,</span>        <span class="n">local_Java_version</span><span class="p">,</span>    <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>  <span class="c1"># Java bindings are built if Java is found, might as well provide it</span>
+    <span class="p">(</span><span class="s1">&#39;Tcl&#39;</span><span class="p">,</span>         <span class="n">local_Tcl_version</span><span class="p">),</span>     <span class="c1"># for tcltk</span>
+    <span class="p">(</span><span class="s1">&#39;Tk&#39;</span><span class="p">,</span>          <span class="n">local_Tk_version</span><span class="p">),</span>      <span class="c1"># for tcltk</span>
+    <span class="p">(</span><span class="s1">&#39;Boost&#39;</span><span class="p">,</span>       <span class="n">local_Boost_version</span><span class="p">),</span>   <span class="c1"># for mzR</span>
+    <span class="p">(</span><span class="s1">&#39;ImageMagick&#39;</span><span class="p">,</span> <span class="n">local_ImageMagick_version</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>       <span class="p">(</span><span class="s1">&#39;GCCcore&#39;</span><span class="p">,</span> <span class="n">local_gcc_version</span><span class="p">)),</span> <span class="c1"># For Magick</span>
+    <span class="p">(</span><span class="s1">&#39;GEOS&#39;</span><span class="p">,</span>        <span class="n">local_GEOS_version</span><span class="p">),</span>    <span class="c1"># for rgeos </span>
+    <span class="p">(</span><span class="s1">&#39;PROJ&#39;</span><span class="p">,</span>        <span class="n">local_PROJ_version</span><span class="p">),</span>    <span class="c1"># for rgdal</span>
+    <span class="p">(</span><span class="s1">&#39;GDAL&#39;</span><span class="p">,</span>        <span class="n">local_GDAL_version</span><span class="p">),</span>    <span class="c1"># for rgdal</span>
+    <span class="p">(</span><span class="s1">&#39;JAGS&#39;</span><span class="p">,</span>        <span class="n">local_JAGS_version</span><span class="p">),</span>    <span class="c1"># for R2jags</span>
+    <span class="p">(</span><span class="s1">&#39;netCDF&#39;</span><span class="p">,</span>      <span class="n">local_netCDF_version</span><span class="p">,</span>      <span class="s1">&#39;-MPI&#39;</span><span class="p">)</span> <span class="c1"># for ncdf4, use this one as this is the one used to build GDAL. </span>
+    <span class="c1"># OS dependency should be preferred if the os version is more recent then this version,</span>
+    <span class="c1"># it&#39;s nice to have an up to date openssl for security reasons</span>
+    <span class="c1"># (&#39;OpenSSL&#39;, &#39;1.0.2h&#39;),</span>
+<span class="p">]</span>
+
+<span class="n">osdependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;openssl-devel&#39;</span><span class="p">,</span> <span class="s1">&#39;libssl-dev&#39;</span><span class="p">,</span> <span class="s1">&#39;libopenssl-devel&#39;</span><span class="p">),</span>     <span class="c1"># For openssl and git2r</span>
+    <span class="p">(</span><span class="s1">&#39;libssh2-devel&#39;</span><span class="p">),</span>                                       <span class="c1"># Useful for git2r</span>
+    <span class="p">(</span><span class="s1">&#39;v8-devel&#39;</span><span class="p">),</span>                                            <span class="c1"># for V8, used by CSFA</span>
+<span class="p">]</span>
+
+<span class="c1"># specify that at least EasyBuild v3.5.0 is required,</span>
+<span class="c1"># since we rely on the updated easyblock for R to configure correctly w.r.t. BLAS/LAPACK</span>
+<span class="n">easybuild_version</span> <span class="o">=</span> <span class="s1">&#39;4.2.0&#39;</span>
+<span class="n">preconfigopts</span> <span class="o">=</span> <span class="s1">&#39;CXXFLAGS=&quot;$CXXFLAGS -diag-disable 308&quot; &#39;</span>
+<span class="n">configopts</span>  <span class="o">=</span> <span class="s2">&quot;--with-pic --enable-threads --with-x=no --enable-R-shlib&quot;</span>
+<span class="c1"># some recommended packages may fail in a parallel build (e.g. Matrix), and we&#39;re installing them anyway below</span>
+<span class="n">configopts</span> <span class="o">+=</span> <span class="s2">&quot; --with-recommended-packages=no --with-tcltk --with-tcl-config=$EBROOTTCL/lib/tclConfig.sh --with-tk-config=$EBROOTTK/lib/tkConfig.sh&quot;</span>
+
+<span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">local_os</span>
+<span class="n">local_UAos</span> <span class="o">=</span> <span class="n">local_os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;VSC_OS_LOCAL&#39;</span><span class="p">]</span> 
+<span class="k">if</span> <span class="n">local_UAos</span> <span class="o">==</span> <span class="s2">&quot;centos8&quot;</span><span class="p">:</span>
+    <span class="n">prebuildopts</span> <span class="o">=</span> <span class="s2">&quot;sed -i -e &#39;s/#define HAVE_MATHERR.*//&#39; src/include/config.h &amp;&amp; &quot;</span>
+
+<span class="n">local_biocver</span> <span class="o">=</span> <span class="n">local_Bioconductor_version</span> <span class="c1"># For easy_update</span>
+<span class="n">exts_default_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">&#39;https://bioconductor.org/packages/&#39;</span> <span class="o">+</span> <span class="n">local_biocver</span> <span class="o">+</span> <span class="s1">&#39;/bioc/src/contrib/&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;https://bioconductor.org/packages/&#39;</span> <span class="o">+</span> <span class="n">local_biocver</span> <span class="o">+</span> <span class="s1">&#39;/bioc/src/contrib/Archive/</span><span class="si">%(name)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;https://bioconductor.org/packages/&#39;</span> <span class="o">+</span> <span class="n">local_biocver</span> <span class="o">+</span> <span class="s1">&#39;/data/annotation/src/contrib/&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;https://bioconductor.org/packages/&#39;</span> <span class="o">+</span> <span class="n">local_biocver</span> <span class="o">+</span> <span class="s1">&#39;/data/experiment/src/contrib/&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;https://cran.r-project.org/src/contrib/Archive/</span><span class="si">%(name)s</span><span class="s1">&#39;</span><span class="p">,</span>  <span class="c1"># package archive</span>
+        <span class="s1">&#39;https://cran.r-project.org/src/contrib/&#39;</span><span class="p">,</span>  <span class="c1"># current version of packages</span>
+        <span class="s1">&#39;https://cran.freestatistics.org/src/contrib&#39;</span><span class="p">,</span>  <span class="c1"># mirror alternative for current packages</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">_</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span>
+<span class="p">}</span>
+
+<span class="c1"># !! order of packages is important !!</span>
+<span class="c1"># packages updated on July 8th 2016, with some random updates afterwards.</span>
+<span class="n">exts_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># default libraries, only here to sanity check their presence</span>
+    <span class="s1">&#39;base&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;datasets&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;graphics&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;grDevices&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;grid&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;methods&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;splines&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stats&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stats4&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;tools&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;utils&#39;</span><span class="p">,</span>
+    <span class="c1"># non-standard libraries, should be specified with fixed versions!</span>
+    <span class="c1">#</span>
+    <span class="c1"># First packages that need patches and the packages they depend on.</span>
+    <span class="c1"># These are the packages were EasyBuild actually offers some added value.</span>
+    <span class="c1">#</span>
+    <span class="p">(</span><span class="s1">&#39;Rcpp&#39;</span><span class="p">,</span>          <span class="s1">&#39;1.0.4.6&#39;</span><span class="p">,</span>     <span class="p">{}),</span> <span class="c1"># Needs only base packages, suggests tinytest, inline, rbenchmark, pkgKitten </span>
+    <span class="p">(</span><span class="s1">&#39;BiocVersion&#39;</span><span class="p">,</span>   <span class="s1">&#39;3.11.1&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># To initialize Bioconductor</span>
+    <span class="p">(</span><span class="s1">&#39;BiocManager&#39;</span><span class="p">,</span>   <span class="s1">&#39;1.30.10&#39;</span><span class="p">,</span>     <span class="p">{}),</span> <span class="c1"># Basis of Bioconductor</span>
+    <span class="c1"># Note: For Rmpi, you need to remove the lines in the easyblock that set the path to the include</span>
+    <span class="c1"># files and the libraries as these are wrong. The configure script will find the libraries through</span>
+    <span class="c1"># the environment variables.</span>
+    <span class="p">(</span><span class="s1">&#39;Rmpi&#39;</span><span class="p">,</span>          <span class="s1">&#39;0.6-9&#39;</span><span class="p">,</span>       <span class="p">{</span>
+        <span class="s1">&#39;easyblock&#39;</span><span class="p">:</span>   <span class="s1">&#39;RPackage&#39;</span><span class="p">,</span> <span class="c1"># This does not seem to work, so we use our own Rmpi empty EasyBlock.</span>
+        <span class="s1">&#39;patches&#39;</span><span class="p">:</span>     <span class="p">[</span><span class="s1">&#39;Rmpi-0.6-9_impi2019.patch&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;installopts&#39;</span><span class="p">:</span> <span class="s1">&#39;--configure-args=&quot;--with-Rmpi-type=INTELMPI --with-Rmpi-libpath=$I_MPI_ROOT/intel64/lib/release --with-Rmpi-include=$I_MPI_ROOT/intel64/include&quot;&#39;</span> 
+    <span class="p">}</span> <span class="p">),</span>
+    <span class="c1"># git2r needs certain libraries that we did not have before 2020a or should be system-installed</span>
+    <span class="p">(</span><span class="s1">&#39;git2r&#39;</span><span class="p">,</span> <span class="s1">&#39;0.27.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="c1"># XML doesn&#39;t compile with the EasyBlock but compiles fine without.</span>
+    <span class="p">(</span><span class="s1">&#39;XML&#39;</span><span class="p">,</span> <span class="s1">&#39;3.99-0.3&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;easyblock&#39;</span><span class="p">:</span> <span class="s1">&#39;RPackage&#39;</span><span class="p">,</span> <span class="c1"># This doesn&#39;t seem to work, so simply remove the EasyBlock xml or overwrite with an empty one.</span>
+    <span class="p">}),</span> <span class="c1"># </span>
+    <span class="c1"># ModelMetrics supports OpenMP but we need to manually set the compiler option.</span>
+    <span class="p">(</span><span class="s1">&#39;data.table&#39;</span><span class="p">,</span>    <span class="s1">&#39;1.12.8&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;ModelMetrics&#39;</span><span class="p">,</span>  <span class="s1">&#39;1.2.2.2&#39;</span><span class="p">,</span>     <span class="p">{</span> <span class="c1"># Package supports OpenMP</span>
+        <span class="s1">&#39;preinstallopts&#39;</span><span class="p">:</span> <span class="s1">&#39;PKG_CXXFLAGS=&quot;-qopenmp&quot; &#39;</span><span class="p">,</span>
+    <span class="p">}),</span> <span class="c1"># </span>
+    <span class="c1"># tseries has trouble with the Intel Fortran compiler due to its unusal file names since 0.10-47</span>
+    <span class="p">(</span><span class="s1">&#39;curl&#39;</span><span class="p">,</span>          <span class="s1">&#39;4.3&#39;</span><span class="p">,</span>         <span class="p">{}),</span> <span class="c1"># Needs external libcurl (baselibps module)</span>
+    <span class="p">(</span><span class="s1">&#39;lattice&#39;</span><span class="p">,</span>       <span class="s1">&#39;0.20-41&#39;</span><span class="p">,</span>     <span class="p">{}),</span> <span class="c1"># No dependencies beyond standard packages</span>
+    <span class="p">(</span><span class="s1">&#39;zoo&#39;</span><span class="p">,</span>           <span class="s1">&#39;1.8-8&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs lattice</span>
+    <span class="p">(</span><span class="s1">&#39;xts&#39;</span><span class="p">,</span>           <span class="s1">&#39;0.12-0&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># Needs zoo</span>
+    <span class="p">(</span><span class="s1">&#39;TTR&#39;</span><span class="p">,</span>           <span class="s1">&#39;0.23-6&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># Needs curl, zoo, xts </span>
+    <span class="p">(</span><span class="s1">&#39;quadprog&#39;</span><span class="p">,</span>      <span class="s1">&#39;1.5-8&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;quantmod&#39;</span><span class="p">,</span>      <span class="s1">&#39;0.4.17&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># Needs zoo, xts, TTR</span>
+    <span class="c1"># tseries is a problematic one from 0.10-47 on as the extension .f95 is not recognized</span>
+    <span class="c1"># by the Intel compiler, see the README.md</span>
+    <span class="c1"># tseries needs quadprog, zoo, qantmod</span>
+    <span class="c1"># Solution 1: Unpack sources, rename the file and possibly adapt the file name in MD5: Does not work due to bugs in EasyBuild.</span>
+    <span class="c1"># Solution 2: Use a patch to force unpacking, then rename the file</span>
+    <span class="c1"># (&#39;tseries&#39;,       &#39;0.10-47&#39;,     {</span>
+    <span class="c1">#     &#39;patches&#39;:        [&#39;tseries-0.10-47_MD5.patch&#39;],</span>
+    <span class="c1">#     &#39;preinstallopts&#39;: &#39;pwd &amp;&amp; mv src/cfuncs.f95 src/cfuncs.f90 &amp;&amp; &#39;,</span>
+    <span class="c1"># })</span>
+    <span class="c1"># Solution 3: Patch from Davide Vanzo that adds the directive !DIR$ FREEFORM at the top of cfuncs.f95</span>
+    <span class="c1"># to tell the Intel compiler what type of source file it is.</span>
+    <span class="p">(</span><span class="s1">&#39;tseries&#39;</span><span class="p">,</span>       <span class="s1">&#39;0.10-47&#39;</span><span class="p">,</span>     <span class="p">{</span>
+        <span class="s1">&#39;patches&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;tseries-0.10-47_ifort_explicit_free_form.patch&#39;</span><span class="p">],</span>
+    <span class="p">}</span> <span class="p">),</span>
+    <span class="c1"># sf had trouble in 2019b</span>
+    <span class="p">(</span><span class="s1">&#39;units&#39;</span><span class="p">,</span>         <span class="s1">&#39;0.6-7&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs Rcpp</span>
+    <span class="p">(</span><span class="s1">&#39;magrittr&#39;</span><span class="p">,</span>      <span class="s1">&#39;1.5&#39;</span><span class="p">,</span>         <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;MASS&#39;</span><span class="p">,</span>          <span class="s1">&#39;7.3-51.6&#39;</span><span class="p">,</span>    <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">,</span>         <span class="s1">&#39;7.3-17&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># Needs MASS</span>
+    <span class="p">(</span><span class="s1">&#39;DBI&#39;</span><span class="p">,</span>           <span class="s1">&#39;1.1.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;e1071&#39;</span><span class="p">,</span>         <span class="s1">&#39;1.7-3&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs class</span>
+    <span class="p">(</span><span class="s1">&#39;KernSmooth&#39;</span><span class="p">,</span>    <span class="s1">&#39;2.23-17&#39;</span><span class="p">,</span>     <span class="p">{}),</span> <span class="c1"># Needs MASS</span>
+    <span class="p">(</span><span class="s1">&#39;classInt&#39;</span><span class="p">,</span>      <span class="s1">&#39;0.4-3&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs class, e1071, KernSmoot</span>
+    <span class="p">(</span><span class="s1">&#39;sf&#39;</span><span class="p">,</span>            <span class="s1">&#39;0.9-4&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs Rcpp, magrittr, DBI, classInt, units, external PROJ, GDAL, GEOS.</span>
+    <span class="c1"># penalized needs a preprocessor definition to compile optimally</span>
+    <span class="p">(</span><span class="s1">&#39;Matrix&#39;</span><span class="p">,</span>        <span class="s1">&#39;1.2-18&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># Needs lattice</span>
+    <span class="p">(</span><span class="s1">&#39;survival&#39;</span><span class="p">,</span>      <span class="s1">&#39;3.2-3&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs Matrix</span>
+    <span class="p">(</span><span class="s1">&#39;RcppArmadillo&#39;</span><span class="p">,</span> <span class="s1">&#39;0.9.900.1.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs Rcpp</span>
+    <span class="p">(</span><span class="s1">&#39;penalized&#39;</span><span class="p">,</span>     <span class="s1">&#39;0.9-51&#39;</span><span class="p">,</span>      <span class="p">{</span><span class="s1">&#39;preinstallopts&#39;</span><span class="p">:</span> <span class="s1">&#39;PKG_CXXFLAGS=&quot;-DARMA_ALLOW_FAKE_GCC&quot; &#39;</span><span class="p">}),</span> <span class="c1"># </span>
+    <span class="c1"># kohonen also failed in 2019b</span>
+    <span class="p">(</span><span class="s1">&#39;kohonen&#39;</span><span class="p">,</span>       <span class="s1">&#39;3.0.10&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># Needs Rcpp. Failed in 2019b</span>
+    <span class="c1"># Interface to netCDF. Be careful to use the same netCDF module as for GDAL (used by the package sf)</span>
+    <span class="p">(</span><span class="s1">&#39;ncdf4&#39;</span><span class="p">,</span> <span class="s1">&#39;1.17&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="c1"># Some packages need -diag-dsable 308 or even diag-disable 858</span>
+    <span class="p">(</span><span class="s1">&#39;Rtsne&#39;</span><span class="p">,</span>         <span class="s1">&#39;0.15&#39;</span><span class="p">,</span>        <span class="p">{}),</span> <span class="c1"># Needs Rcpp. -diag-dsable 308 is important for Rtsne, doesn&#39;t work via PKG_CXX_FLAGS</span>
+    <span class="p">(</span><span class="s1">&#39;multicool&#39;</span><span class="p">,</span>     <span class="s1">&#39;0.1-11&#39;</span><span class="p">,</span>      <span class="p">{</span>
+        <span class="s1">&#39;preinstallopts&#39;</span><span class="p">:</span> <span class="s1">&#39;PKG_CXXFLAGS=&quot;-diag-disable 858&quot; &#39;</span><span class="p">,</span>
+    <span class="p">}</span> <span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;BH&#39;</span><span class="p">,</span>            <span class="s1">&#39;1.72.0-3&#39;</span><span class="p">,</span>    <span class="p">{}),</span> <span class="c1"># Requires the Boost libraries</span>
+    <span class="p">(</span><span class="s1">&#39;bigmemory.sri&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1.3&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs only standard R packages</span>
+    <span class="p">(</span><span class="s1">&#39;bigmemory&#39;</span><span class="p">,</span>     <span class="s1">&#39;4.5.36&#39;</span><span class="p">,</span>      <span class="p">{</span>
+        <span class="s1">&#39;preinstallopts&#39;</span><span class="p">:</span> <span class="s1">&#39;PKG_CXXFLAGS=&quot;-diag-disable 858&quot; &#39;</span><span class="p">,</span>
+    <span class="p">}</span> <span class="p">),</span>
+<span class="c1">#</span>
+<span class="c1"># Regular packages without recent problems</span>
+<span class="c1">#</span>
+    <span class="p">(</span><span class="s1">&#39;jpeg&#39;</span><span class="p">,</span>          <span class="s1">&#39;0.1-8.1&#39;</span><span class="p">,</span>     <span class="p">{}),</span> <span class="c1"># Requires external libjpeg (baselibs module)</span>
+    <span class="p">(</span><span class="s1">&#39;png&#39;</span><span class="p">,</span>           <span class="s1">&#39;0.1-7&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Requires external libpng (baselibs module)</span>
+    <span class="p">(</span><span class="s1">&#39;Cairo&#39;</span><span class="p">,</span>         <span class="s1">&#39;1.5-12&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># Requires external cairo</span>
+    <span class="p">(</span><span class="s1">&#39;sys&#39;</span><span class="p">,</span>           <span class="s1">&#39;3.3&#39;</span><span class="p">,</span>         <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;askpass&#39;</span><span class="p">,</span>       <span class="s1">&#39;1.1&#39;</span><span class="p">,</span>         <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;openssl&#39;</span><span class="p">,</span>       <span class="s1">&#39;1.4.2&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Requires askpass and OpenSSL libraries</span>
+    <span class="p">(</span><span class="s1">&#39;bitops&#39;</span><span class="p">,</span>        <span class="s1">&#39;1.0-6&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;RCurl&#39;</span><span class="p">,</span>         <span class="s1">&#39;1.98-1.2&#39;</span><span class="p">,</span>    <span class="p">{}),</span> <span class="c1"># Needs bitops, external libcurl (baselibps module)</span>
+    <span class="p">(</span><span class="s1">&#39;sp&#39;</span><span class="p">,</span>            <span class="s1">&#39;1.4-2&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs lattice</span>
+    <span class="p">(</span><span class="s1">&#39;rgeos&#39;</span><span class="p">,</span>         <span class="s1">&#39;0.5-3&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs sp, external GEOS</span>
+
+    <span class="p">(</span><span class="s1">&#39;backports&#39;</span><span class="p">,</span>     <span class="s1">&#39;1.1.8&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;bit&#39;</span><span class="p">,</span>           <span class="s1">&#39;1.1-15.2&#39;</span><span class="p">,</span>    <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;bit64&#39;</span><span class="p">,</span>         <span class="s1">&#39;0.9-7&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;assertthat&#39;</span><span class="p">,</span>    <span class="s1">&#39;0.2.1&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;prettyunits&#39;</span><span class="p">,</span>   <span class="s1">&#39;1.1.1&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;digest&#39;</span><span class="p">,</span>        <span class="s1">&#39;0.6.25&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;yaml&#39;</span><span class="p">,</span>          <span class="s1">&#39;2.2.1&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;plyr&#39;</span><span class="p">,</span>          <span class="s1">&#39;1.8.6&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs Rcpp</span>
+    <span class="p">(</span><span class="s1">&#39;mime&#39;</span><span class="p">,</span>          <span class="s1">&#39;0.9&#39;</span><span class="p">,</span>         <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;R6&#39;</span><span class="p">,</span>            <span class="s1">&#39;2.4.1&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;jsonlite&#39;</span><span class="p">,</span>      <span class="s1">&#39;1.7.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;httr&#39;</span><span class="p">,</span>          <span class="s1">&#39;1.4.1&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs curl, openssl, mimie, R6, jsonlite</span>
+    <span class="p">(</span><span class="s1">&#39;rlang&#39;</span><span class="p">,</span>         <span class="s1">&#39;0.4.6&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;ellipsis&#39;</span><span class="p">,</span>      <span class="s1">&#39;0.3.1&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs rlang</span>
+    <span class="p">(</span><span class="s1">&#39;glue&#39;</span><span class="p">,</span>          <span class="s1">&#39;1.4.1&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;zeallot&#39;</span><span class="p">,</span>       <span class="s1">&#39;0.1.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;vctrs&#39;</span><span class="p">,</span>         <span class="s1">&#39;0.3.1&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs digest, rlang, glue, ellipsis</span>
+    <span class="p">(</span><span class="s1">&#39;blob&#39;</span><span class="p">,</span>          <span class="s1">&#39;1.2.1&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs rlang, vctrs</span>
+    <span class="p">(</span><span class="s1">&#39;plogr&#39;</span><span class="p">,</span>         <span class="s1">&#39;0.2.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs Rcpp</span>
+    <span class="p">(</span><span class="s1">&#39;memoise&#39;</span><span class="p">,</span>       <span class="s1">&#39;1.1.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs digest</span>
+    <span class="p">(</span><span class="s1">&#39;pkgconfig&#39;</span><span class="p">,</span>     <span class="s1">&#39;2.0.3&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;RSQLite&#39;</span><span class="p">,</span>       <span class="s1">&#39;2.2.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs Rcpp, bit64, blob, DBI, memoise, pkgconfig</span>
+
+    <span class="p">(</span><span class="s1">&#39;rgdal&#39;</span><span class="p">,</span>         <span class="s1">&#39;1.5-12&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># Needs sp</span>
+
+    <span class="p">(</span><span class="s1">&#39;abind&#39;</span><span class="p">,</span>         <span class="s1">&#39;1.4-5&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;glasso&#39;</span><span class="p">,</span>        <span class="s1">&#39;1.11&#39;</span><span class="p">,</span>        <span class="p">{}),</span> <span class="c1"># No dependencies, and 1.11 does not need a patch?</span>
+    <span class="p">(</span><span class="s1">&#39;magic&#39;</span><span class="p">,</span>         <span class="s1">&#39;1.5-9&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs abind</span>
+    <span class="p">(</span><span class="s1">&#39;lpSolve&#39;</span><span class="p">,</span>       <span class="s1">&#39;5.6.15&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># Needs abind</span>
+    <span class="p">(</span><span class="s1">&#39;linprog&#39;</span><span class="p">,</span>       <span class="s1">&#39;0.9-2&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs abind</span>
+    <span class="p">(</span><span class="s1">&#39;RcppProgress&#39;</span><span class="p">,</span>  <span class="s1">&#39;0.4.2&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs only base packages, suggests tinytest, inline, rbenchmark, pkgKitten </span>
+    <span class="p">(</span><span class="s1">&#39;geometry&#39;</span><span class="p">,</span>      <span class="s1">&#39;0.4.5&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs magic thus abind, RcppProgress, lpSolve, linprog</span>
+    <span class="p">(</span><span class="s1">&#39;timeDate&#39;</span><span class="p">,</span>      <span class="s1">&#39;3043.102&#39;</span><span class="p">,</span>    <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;fracdiff&#39;</span><span class="p">,</span>      <span class="s1">&#39;1.5-1&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;nnet&#39;</span><span class="p">,</span>          <span class="s1">&#39;7.3-14&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;colorspace&#39;</span><span class="p">,</span>    <span class="s1">&#39;1.4-1&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;gtable&#39;</span><span class="p">,</span>        <span class="s1">&#39;0.3.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;stringi&#39;</span><span class="p">,</span>       <span class="s1">&#39;1.4.6&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;stringr&#39;</span><span class="p">,</span>       <span class="s1">&#39;1.4.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;reshape2&#39;</span><span class="p">,</span>      <span class="s1">&#39;1.4.4&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs Rcpp, plyr, stringr</span>
+    <span class="p">(</span><span class="s1">&#39;RColorBrewer&#39;</span><span class="p">,</span>  <span class="s1">&#39;1.1-2&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;dichromat&#39;</span><span class="p">,</span>     <span class="s1">&#39;2.0-0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;munsell&#39;</span><span class="p">,</span>       <span class="s1">&#39;0.5.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs colorspace</span>
+    <span class="p">(</span><span class="s1">&#39;labeling&#39;</span><span class="p">,</span>      <span class="s1">&#39;0.3&#39;</span><span class="p">,</span>         <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;viridisLite&#39;</span><span class="p">,</span>   <span class="s1">&#39;0.3.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;lifecycle&#39;</span><span class="p">,</span>     <span class="s1">&#39;0.2.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs glue, rlang</span>
+    <span class="p">(</span><span class="s1">&#39;farver&#39;</span><span class="p">,</span>        <span class="s1">&#39;2.0.3&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;scales&#39;</span><span class="p">,</span>        <span class="s1">&#39;1.1.1&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs farver, labeling, lifecycle, munell, R6, RColorBrewer, viridisLite</span>
+    <span class="p">(</span><span class="s1">&#39;lazyeval&#39;</span><span class="p">,</span>      <span class="s1">&#39;0.2.2&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">,</span>          <span class="s1">&#39;1.1.4&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;crayon&#39;</span><span class="p">,</span>        <span class="s1">&#39;1.3.4&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;fansi&#39;</span><span class="p">,</span>         <span class="s1">&#39;0.4.1&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;cli&#39;</span><span class="p">,</span>           <span class="s1">&#39;2.0.2&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs assertthat, crayon, glue, fansi</span>
+    <span class="p">(</span><span class="s1">&#39;pillar&#39;</span><span class="p">,</span>        <span class="s1">&#39;1.4.4&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs cli, crayon, fansi, rlang, utf8, vctrs</span>
+    <span class="p">(</span><span class="s1">&#39;tibble&#39;</span><span class="p">,</span>        <span class="s1">&#39;3.0.1&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs cli, crayon, ellipsis, fansi, lifecycle, magrittr, pillar, pkgconfig, rlang, vctrs</span>
+    <span class="p">(</span><span class="s1">&#39;nlme&#39;</span><span class="p">,</span>          <span class="s1">&#39;3.1-148&#39;</span><span class="p">,</span>     <span class="p">{}),</span> <span class="c1"># Needs lattice</span>
+    <span class="p">(</span><span class="s1">&#39;mgcv&#39;</span><span class="p">,</span>          <span class="s1">&#39;1.8-31&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># Needs nlme</span>
+    <span class="p">(</span><span class="s1">&#39;withr&#39;</span><span class="p">,</span>         <span class="s1">&#39;2.2.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;evaluate&#39;</span><span class="p">,</span>      <span class="s1">&#39;0.14&#39;</span><span class="p">,</span>        <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;ps&#39;</span><span class="p">,</span>            <span class="s1">&#39;1.3.3&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;processx&#39;</span><span class="p">,</span>      <span class="s1">&#39;3.4.2&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs ps and R6</span>
+    <span class="p">(</span><span class="s1">&#39;callr&#39;</span><span class="p">,</span>         <span class="s1">&#39;3.4.3&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs R6 and processx</span>
+    <span class="p">(</span><span class="s1">&#39;rprojroot&#39;</span><span class="p">,</span>     <span class="s1">&#39;1.3-2&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs backports</span>
+    <span class="p">(</span><span class="s1">&#39;desc&#39;</span><span class="p">,</span>          <span class="s1">&#39;1.2.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs assrtthat, R6, crayon, rprojroot</span>
+    <span class="p">(</span><span class="s1">&#39;pkgbuild&#39;</span><span class="p">,</span>      <span class="s1">&#39;1.0.8&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs callr, ccli, crayon, desc, prettyunits, R6, rprojroot, withr</span>
+    <span class="p">(</span><span class="s1">&#39;rstudioapi&#39;</span><span class="p">,</span>    <span class="s1">&#39;0.11&#39;</span><span class="p">,</span>        <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;pkgload&#39;</span><span class="p">,</span>       <span class="s1">&#39;1.1.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs cli, crayon, desc, pkgbuild, rlang, rprojroot, rstudioapi, withr</span>
+    <span class="p">(</span><span class="s1">&#39;praise&#39;</span><span class="p">,</span>        <span class="s1">&#39;1.0.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;testthat&#39;</span><span class="p">,</span>      <span class="s1">&#39;2.3.2&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs cli, crayon, digest, ellipsis, evaluate, magrittr, pkgload, praise, R6, rlang, withr</span>
+    <span class="p">(</span><span class="s1">&#39;isoband&#39;</span><span class="p">,</span>       <span class="s1">&#39;0.2.2&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs testthat</span>
+    <span class="p">(</span><span class="s1">&#39;ggplot2&#39;</span><span class="p">,</span>       <span class="s1">&#39;3.3.2&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs digest, glue, gtable, isoband, MASS, mgcv, rlang, scales, tibble, withr</span>
+    <span class="p">(</span><span class="s1">&#39;lmtest&#39;</span><span class="p">,</span>        <span class="s1">&#39;0.9-37&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># Needs zoo</span>
+    <span class="p">(</span><span class="s1">&#39;urca&#39;</span><span class="p">,</span>          <span class="s1">&#39;1.3-0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs nlme</span>
+    <span class="p">(</span><span class="s1">&#39;forecast&#39;</span><span class="p">,</span>      <span class="s1">&#39;8.12&#39;</span><span class="p">,</span>        <span class="p">{}),</span> <span class="c1"># Needs colorspace, fracdfiff, ggplot2, lmtest, magrittr, nnet, Rcpp, timeDate, tseries, urca, zoo. -diag-dsable 308</span>
+
+    <span class="p">(</span><span class="s1">&#39;filehash&#39;</span><span class="p">,</span>      <span class="s1">&#39;2.4-2&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;ff&#39;</span><span class="p">,</span>            <span class="s1">&#39;2.2-14.2&#39;</span><span class="p">,</span>    <span class="p">{}),</span> <span class="c1"># Needs bit</span>
+    <span class="p">(</span><span class="s1">&#39;bnlearn&#39;</span><span class="p">,</span>       <span class="s1">&#39;4.5&#39;</span><span class="p">,</span>         <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>     <span class="s1">&#39;2019.6&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;combinat&#39;</span><span class="p">,</span>      <span class="s1">&#39;0.0-8&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies     </span>
+    <span class="p">(</span><span class="s1">&#39;deal&#39;</span><span class="p">,</span>          <span class="s1">&#39;1.2-39&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;fdrtool&#39;</span><span class="p">,</span>       <span class="s1">&#39;1.2.15&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;formatR&#39;</span><span class="p">,</span>       <span class="s1">&#39;1.7&#39;</span><span class="p">,</span>         <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;gtools&#39;</span><span class="p">,</span>        <span class="s1">&#39;3.8.2&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;gdata&#39;</span><span class="p">,</span>         <span class="s1">&#39;2.18.0&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;GSA&#39;</span><span class="p">,</span>           <span class="s1">&#39;1.03.1&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;highr&#39;</span><span class="p">,</span>         <span class="s1">&#39;0.8&#39;</span><span class="p">,</span>         <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;infotheo&#39;</span><span class="p">,</span>      <span class="s1">&#39;1.2.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;kernlab&#39;</span><span class="p">,</span>       <span class="s1">&#39;0.9-29&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;lars&#39;</span><span class="p">,</span>          <span class="s1">&#39;1.2&#39;</span><span class="p">,</span>         <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;lazy&#39;</span><span class="p">,</span>          <span class="s1">&#39;1.2-16&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;xfun&#39;</span><span class="p">,</span>          <span class="s1">&#39;0.15&#39;</span><span class="p">,</span>        <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;markdown&#39;</span><span class="p">,</span>      <span class="s1">&#39;1.1&#39;</span><span class="p">,</span>         <span class="p">{}),</span> <span class="c1"># Needs mime, xfun</span>
+    <span class="p">(</span><span class="s1">&#39;mlbench&#39;</span><span class="p">,</span>       <span class="s1">&#39;2.1-1&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;NLP&#39;</span><span class="p">,</span>           <span class="s1">&#39;0.2-0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;mclust&#39;</span><span class="p">,</span>        <span class="s1">&#39;5.4.6&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;RANN&#39;</span><span class="p">,</span>          <span class="s1">&#39;2.6.1&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;rmeta&#39;</span><span class="p">,</span>         <span class="s1">&#39;3.0&#39;</span><span class="p">,</span>         <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;segmented&#39;</span><span class="p">,</span>     <span class="s1">&#39;1.2-0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;som&#39;</span><span class="p">,</span>           <span class="s1">&#39;0.3-5.1&#39;</span><span class="p">,</span>     <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;SuppDists&#39;</span><span class="p">,</span>     <span class="s1">&#39;1.1-9.5&#39;</span><span class="p">,</span>     <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;stabledist&#39;</span><span class="p">,</span>    <span class="s1">&#39;0.7-1&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;survivalROC&#39;</span><span class="p">,</span>   <span class="s1">&#39;1.0.3&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;pspline&#39;</span><span class="p">,</span>       <span class="s1">&#39;1.0-18&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;longmemo&#39;</span><span class="p">,</span>      <span class="s1">&#39;1.1-2&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;ADGofTest&#39;</span><span class="p">,</span>     <span class="s1">&#39;0.3&#39;</span><span class="p">,</span>         <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;pixmap&#39;</span><span class="p">,</span>        <span class="s1">&#39;0.4-11&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;ade4&#39;</span><span class="p">,</span>          <span class="s1">&#39;1.7-15&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># Needs MASS, sp, pixmap</span>
+    <span class="p">(</span><span class="s1">&#39;AlgDesign&#39;</span><span class="p">,</span>     <span class="s1">&#39;1.2.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;base64enc&#39;</span><span class="p">,</span>     <span class="s1">&#39;0.1-3&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;brew&#39;</span><span class="p">,</span>          <span class="s1">&#39;1.0-6&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;Brobdingnag&#39;</span><span class="p">,</span>   <span class="s1">&#39;1.2-6&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;corpcor&#39;</span><span class="p">,</span>       <span class="s1">&#39;1.6.9&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;longitudinal&#39;</span><span class="p">,</span>  <span class="s1">&#39;1.1.12&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;checkmate&#39;</span><span class="p">,</span>     <span class="s1">&#39;2.0.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs backoports</span>
+    <span class="p">(</span><span class="s1">&#39;cubature&#39;</span><span class="p">,</span>      <span class="s1">&#39;2.0.4&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs Rcpp</span>
+    <span class="p">(</span><span class="s1">&#39;DEoptimR&#39;</span><span class="p">,</span>      <span class="s1">&#39;1.0-8&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;fastmatch&#39;</span><span class="p">,</span>     <span class="s1">&#39;1.1-0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;ffbase&#39;</span><span class="p">,</span>        <span class="s1">&#39;0.12.8&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># Needs fastmatch, bit, ff</span>
+    <span class="p">(</span><span class="s1">&#39;iterators&#39;</span><span class="p">,</span>     <span class="s1">&#39;1.0.12&#39;</span><span class="p">,</span>      <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;maps&#39;</span><span class="p">,</span>          <span class="s1">&#39;3.3.0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;nnls&#39;</span><span class="p">,</span>          <span class="s1">&#39;1.4&#39;</span><span class="p">,</span>         <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;sendmailR&#39;</span><span class="p">,</span>     <span class="s1">&#39;1.2-1&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># Needs base64enc</span>
+    <span class="p">(</span><span class="s1">&#39;dotCall64&#39;</span><span class="p">,</span>     <span class="s1">&#39;1.0-0&#39;</span><span class="p">,</span>       <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;2.5-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># dotCall64</span>
+    <span class="p">(</span><span class="s1">&#39;subplex&#39;</span><span class="p">,</span> <span class="s1">&#39;1.6&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># No depencencies</span>
+    <span class="p">(</span><span class="s1">&#39;logspline&#39;</span><span class="p">,</span> <span class="s1">&#39;2.1.16&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;ncbit&#39;</span><span class="p">,</span> <span class="s1">&#39;2013.03.29&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;permute&#39;</span><span class="p">,</span> <span class="s1">&#39;0.9-5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;plotrix&#39;</span><span class="p">,</span> <span class="s1">&#39;3.7-8&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;randomForest&#39;</span><span class="p">,</span> <span class="s1">&#39;4.6-14&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;scatterplot3d&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3-41&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;SparseM&#39;</span><span class="p">,</span> <span class="s1">&#39;1.78&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;tripack&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3-9.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;irace&#39;</span><span class="p">,</span> <span class="s1">&#39;3.4.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;rJava&#39;</span><span class="p">,</span> <span class="s1">&#39;0.9-12&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;latticeExtra&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6-29&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs lattice</span>
+    <span class="p">(</span><span class="s1">&#39;pROC&#39;</span><span class="p">,</span> <span class="s1">&#39;1.16.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs Rcpp, plyr</span>
+    <span class="p">(</span><span class="s1">&#39;BB&#39;</span><span class="p">,</span> <span class="s1">&#39;2019.10-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs quadprog</span>
+    <span class="p">(</span><span class="s1">&#39;BBmisc&#39;</span><span class="p">,</span> <span class="s1">&#39;1.11&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs checkmate</span>
+    <span class="p">(</span><span class="s1">&#39;fail&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs BBmisc, checkmate</span>
+    <span class="p">(</span><span class="s1">&#39;rlecuyer&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3-5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;snow&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4-3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;tree&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0-40&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;pls&#39;</span><span class="p">,</span> <span class="s1">&#39;2.7-2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;minqa&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs Rcpp</span>
+    <span class="p">(</span><span class="s1">&#39;RcppEigen&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3.3.7.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs Rcpp, Matrix</span>
+    <span class="p">(</span><span class="s1">&#39;MatrixModels&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs Matrix</span>
+    <span class="p">(</span><span class="s1">&#39;quantreg&#39;</span><span class="p">,</span> <span class="s1">&#39;5.55&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs SparseM</span>
+    <span class="p">(</span><span class="s1">&#39;robustbase&#39;</span><span class="p">,</span> <span class="s1">&#39;0.93-6&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs DEoptimR</span>
+    <span class="p">(</span><span class="s1">&#39;vcd&#39;</span><span class="p">,</span> <span class="s1">&#39;1.4-7&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs MASS, colorspace, lmtest</span>
+    <span class="p">(</span><span class="s1">&#39;snowfall&#39;</span><span class="p">,</span> <span class="s1">&#39;1.84-6.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs snow, suggests Rmpi</span>
+    <span class="p">(</span><span class="s1">&#39;rpart&#39;</span><span class="p">,</span> <span class="s1">&#39;4.1-15&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;boot&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3-25&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;nloptr&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.2.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs testthat, knitr, markdown, inline</span>
+    <span class="p">(</span><span class="s1">&#39;ucminf&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1-4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;numDeriv&#39;</span><span class="p">,</span> <span class="s1">&#39;2016.8-1.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;clipr&#39;</span><span class="p">,</span> <span class="s1">&#39;0.7.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;statmod&#39;</span><span class="p">,</span> <span class="s1">&#39;1.4.34&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;lme4&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1-23&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs Matrix, statmod</span>
+    <span class="p">(</span><span class="s1">&#39;ordinal&#39;</span><span class="p">,</span> <span class="s1">&#39;2019.12-10&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs ucminf, MASS, Matrix, numDeriv</span>
+    <span class="p">(</span><span class="s1">&#39;forcats&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs ellipsis, magrittr, rlang, tibble</span>
+    <span class="p">(</span><span class="s1">&#39;hms&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs pkgconfig, rlang, vctrs</span>
+    <span class="p">(</span><span class="s1">&#39;readr&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs Rcpp, tibble, hms, R6, clipr, crayon</span>
+    <span class="p">(</span><span class="s1">&#39;generics&#39;</span><span class="p">,</span> <span class="s1">&#39;0.0.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;purrr&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3.4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs magrittr, rlang</span>
+    <span class="p">(</span><span class="s1">&#39;tidyselect&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs ellipsis, glue, purrr, rlang, vctrs</span>
+    <span class="p">(</span><span class="s1">&#39;dplyr&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs ellipsis, generics, glue, lifecycle, magrittr, R6, rlang, tibble, tidyselect, vctrs</span>
+    <span class="p">(</span><span class="s1">&#39;tidyr&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs dplyr, ellipsis, glue, magrittrm purrr, Rcpp, stringi, tibble, tidyselect, vctrs, lifecycle</span>
+    <span class="p">(</span><span class="s1">&#39;pan&#39;</span><span class="p">,</span> <span class="s1">&#39;1.6&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs mitools, lme4</span>
+    <span class="p">(</span><span class="s1">&#39;jomo&#39;</span><span class="p">,</span> <span class="s1">&#39;2.7-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs lme4, survival, MASS, ordinal</span>
+    <span class="p">(</span><span class="s1">&#39;haven&#39;</span><span class="p">,</span> <span class="s1">&#39;2.3.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs forcats, hms, Rcpp, readr, rlang, tibble, tidyselect, vctrs</span>
+    <span class="p">(</span><span class="s1">&#39;broom&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5.6&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs backports, dplyrm generics, nlme, purrr, reshape2, stringr, tibble, tidyr</span>
+    <span class="p">(</span><span class="s1">&#39;mitml&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3-7&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># pan, jomo, haven</span>
+    <span class="p">(</span><span class="s1">&#39;mice&#39;</span><span class="p">,</span> <span class="s1">&#39;3.9.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs broom, dplyr, lattice, tidyr</span>
+    <span class="p">(</span><span class="s1">&#39;logistf&#39;</span><span class="p">,</span> <span class="s1">&#39;1.23&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs mice, mgcv</span>
+    <span class="p">(</span><span class="s1">&#39;akima&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6-2.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs sp</span>
+    <span class="p">(</span><span class="s1">&#39;mixtools&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs kernlab, MASS, segmented, survival</span>
+    <span class="p">(</span><span class="s1">&#39;cluster&#39;</span><span class="p">,</span> <span class="s1">&#39;2.1.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;gclus&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs cluster</span>
+    <span class="p">(</span><span class="s1">&#39;coda&#39;</span><span class="p">,</span> <span class="s1">&#39;0.19-3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs lattice</span>
+    <span class="p">(</span><span class="s1">&#39;codetools&#39;</span><span class="p">,</span> <span class="s1">&#39;0.2-16&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;foreach&#39;</span><span class="p">,</span> <span class="s1">&#39;1.5.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs codetoolsm iterators</span>
+    <span class="p">(</span><span class="s1">&#39;doMC&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3.6&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs foreachm, iterators</span>
+    <span class="p">(</span><span class="s1">&#39;foreign&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8-80&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;gam&#39;</span><span class="p">,</span> <span class="s1">&#39;1.16.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs foreach</span>
+    <span class="p">(</span><span class="s1">&#39;gamlss.data&#39;</span><span class="p">,</span> <span class="s1">&#39;5.1-4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;gamlss.dist&#39;</span><span class="p">,</span> <span class="s1">&#39;5.1-6&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs MASS</span>
+    <span class="p">(</span><span class="s1">&#39;hwriter&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Need tmvnsim</span>
+    <span class="p">(</span><span class="s1">&#39;tmvnsim&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0-2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># No dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;mnormt&#39;</span><span class="p">,</span> <span class="s1">&#39;2.0.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs tmvnsim</span>
+    <span class="p">(</span><span class="s1">&#39;mvtnorm&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;pcaPP&#39;</span><span class="p">,</span> <span class="s1">&#39;1.9-73&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;preinstallopts&#39;</span><span class="p">:</span> <span class="s1">&#39;PKG_CXXFLAGS=&quot;-diag-disable 858&quot; &#39;</span><span class="p">}</span> <span class="p">),</span> <span class="c1"># Needs mvtnorm</span>
+    <span class="p">(</span><span class="s1">&#39;SQUAREM&#39;</span><span class="p">,</span> <span class="s1">&#39;2020.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;lava&#39;</span><span class="p">,</span> <span class="s1">&#39;1.6.7&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs numDeriv, survival, SQUAREM</span>
+    <span class="p">(</span><span class="s1">&#39;prodlim&#39;</span><span class="p">,</span> <span class="s1">&#39;2019.11.13&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs Rcpp, survival, KernSmooth, lava</span>
+    <span class="p">(</span><span class="s1">&#39;pscl&#39;</span><span class="p">,</span> <span class="s1">&#39;1.5.5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs MASS</span>
+    <span class="p">(</span><span class="s1">&#39;BatchJobs&#39;</span><span class="p">,</span> <span class="s1">&#39;1.8&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs BBmisc</span>
+    <span class="p">(</span><span class="s1">&#39;sandwich&#39;</span><span class="p">,</span> <span class="s1">&#39;2.5-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs zoo</span>
+    <span class="p">(</span><span class="s1">&#39;sfsmisc&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1-7&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;spatial&#39;</span><span class="p">,</span> <span class="s1">&#39;7.3-12&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;VGAM&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1-3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;waveslim&#39;</span><span class="p">,</span> <span class="s1">&#39;1.8.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;xtable&#39;</span><span class="p">,</span> <span class="s1">&#39;1.8-4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;profileModel&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs MASS, gnm</span>
+    <span class="p">(</span><span class="s1">&#39;brglm&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs profileModel</span>
+    <span class="p">(</span><span class="s1">&#39;deSolve&#39;</span><span class="p">,</span> <span class="s1">&#39;1.28&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;tseriesChaos&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1-13.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs deSolve</span>
+    <span class="p">(</span><span class="s1">&#39;fastICA&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2-2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs MASS</span>
+    <span class="p">(</span><span class="s1">&#39;R.methodsS3&#39;</span><span class="p">,</span> <span class="s1">&#39;1.8.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;R.oo&#39;</span><span class="p">,</span> <span class="s1">&#39;1.23.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs R.methodsS3</span>
+    <span class="p">(</span><span class="s1">&#39;cgdsr&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs R.oo, R.methodsS3, httr</span>
+    <span class="p">(</span><span class="s1">&#39;R.utils&#39;</span><span class="p">,</span> <span class="s1">&#39;2.9.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs R.oo, R.methodsS3</span>
+    <span class="p">(</span><span class="s1">&#39;R.matlab&#39;</span><span class="p">,</span> <span class="s1">&#39;3.6.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs R.methodsS3, R.oo, R.utils</span>
+    <span class="p">(</span><span class="s1">&#39;gridExtra&#39;</span><span class="p">,</span> <span class="s1">&#39;2.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs gtable</span>
+    <span class="p">(</span><span class="s1">&#39;gbm&#39;</span><span class="p">,</span> <span class="s1">&#39;2.1.5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs gridExtra, latticem survival</span>
+    <span class="p">(</span><span class="s1">&#39;Formula&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2-3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;acepack&#39;</span><span class="p">,</span> <span class="s1">&#39;1.4.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs testthat</span>
+    <span class="p">(</span><span class="s1">&#39;proto&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs testthat, covr</span>
+    <span class="p">(</span><span class="s1">&#39;chron&#39;</span><span class="p">,</span> <span class="s1">&#39;2.3-55&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;knitr&#39;</span><span class="p">,</span> <span class="s1">&#39;1.29&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs evaluate, highr, markdown, stringr, yaml, xfun</span>
+    <span class="p">(</span><span class="s1">&#39;htmltools&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs digest, base64enc, rlang </span>
+    <span class="p">(</span><span class="s1">&#39;htmlwidgets&#39;</span><span class="p">,</span> <span class="s1">&#39;1.5.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs htmltools, jsonlite, yaml</span>
+    <span class="p">(</span><span class="s1">&#39;htmlTable&#39;</span><span class="p">,</span> <span class="s1">&#39;2.0.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs string, knitr, magrittr, checkmate, htmlwidgets, htmltools, rstudioapi</span>
+    <span class="p">(</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs viridisLite</span>
+    <span class="p">(</span><span class="s1">&#39;Hmisc&#39;</span><span class="p">,</span> <span class="s1">&#39;4.4-0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs lattice, survival, Formula, ggplot2</span>
+    <span class="p">(</span><span class="s1">&#39;fastcluster&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.25&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs flashClust</span>
+    <span class="p">(</span><span class="s1">&#39;registry&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;bibtex&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4.2.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs stringr</span>
+    <span class="p">(</span><span class="s1">&#39;pkgmaker&#39;</span><span class="p">,</span> <span class="s1">&#39;0.31.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs registry</span>
+    <span class="p">(</span><span class="s1">&#39;rngtools&#39;</span><span class="p">,</span> <span class="s1">&#39;1.5&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;doParallel&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.15&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;gridBase&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4-7&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;BiocGenerics&#39;</span><span class="p">,</span> <span class="s1">&#39;0.34.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Bioconductor</span>
+    <span class="p">(</span><span class="s1">&#39;Biobase&#39;</span><span class="p">,</span> <span class="s1">&#39;2.48.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Bioconductor</span>
+    <span class="p">(</span><span class="s1">&#39;NMF&#39;</span><span class="p">,</span> <span class="s1">&#39;0.22.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs pkgmaker, registry, rngtools, cluster, BiocManager</span>
+    <span class="p">(</span><span class="s1">&#39;irlba&#39;</span><span class="p">,</span> <span class="s1">&#39;2.3.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs Matrix</span>
+    <span class="p">(</span><span class="s1">&#39;igraph&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs magrittr, Matrix, pkgconfig</span>
+    <span class="p">(</span><span class="s1">&#39;GeneNet&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.15&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs corpcor, longitudinal, fdrtool</span>
+    <span class="p">(</span><span class="s1">&#39;ape&#39;</span><span class="p">,</span> <span class="s1">&#39;5.4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs nlme, lattice, Rcpp</span>
+    <span class="p">(</span><span class="s1">&#39;RJSONIO&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3-1.4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;caTools&#39;</span><span class="p">,</span> <span class="s1">&#39;1.18.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;gplots&#39;</span><span class="p">,</span> <span class="s1">&#39;3.0.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs gtools, gdata, caTools, KernSmooth</span>
+    <span class="p">(</span><span class="s1">&#39;ROCR&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0-11&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs gplots</span>
+    <span class="p">(</span><span class="s1">&#39;later&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.0.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs Rcpp, rlang</span>
+    <span class="p">(</span><span class="s1">&#39;promises&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs R6, Rcpp, later, rlang, magrittr</span>
+    <span class="p">(</span><span class="s1">&#39;httpuv&#39;</span><span class="p">,</span> <span class="s1">&#39;1.5.4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs Rcpp, R6, promises, later</span>
+    <span class="p">(</span><span class="s1">&#39;rjson&#39;</span><span class="p">,</span> <span class="s1">&#39;0.2.20&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;sourcetools&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1.7&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;fastmap&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.1&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;commonmark&#39;</span><span class="p">,</span> <span class="s1">&#39;1.7&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;shiny&#39;</span><span class="p">,</span> <span class="s1">&#39;1.5.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs httpuv, mime, jsonlite, xtable, digest, htmltools, R6, sourcetools, later, promises, crayon, rlang, gastmap, withr, commonmark, glue</span>
+    <span class="p">(</span><span class="s1">&#39;seqinr&#39;</span><span class="p">,</span> <span class="s1">&#39;3.6-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs ade4, segmented</span>
+    <span class="p">(</span><span class="s1">&#39;LearnBayes&#39;</span><span class="p">,</span> <span class="s1">&#39;2.15.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;deldir&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1-25&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;gmodels&#39;</span><span class="p">,</span> <span class="s1">&#39;2.18.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;raster&#39;</span><span class="p">,</span> <span class="s1">&#39;3.3-7&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;spData&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3.5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;expm&#39;</span><span class="p">,</span> <span class="s1">&#39;0.999-4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs Matrix</span>
+    <span class="p">(</span><span class="s1">&#39;spdep&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1-5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs sp, spData, sf, deldir, boot, MAtrix, LearnBayes, MASS, coda, expm, gmodels, nlme</span>
+    <span class="p">(</span><span class="s1">&#39;vegan&#39;</span><span class="p">,</span> <span class="s1">&#39;2.5-6&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs permute, lattice</span>
+    <span class="p">(</span><span class="s1">&#39;adegenet&#39;</span><span class="p">,</span> <span class="s1">&#39;2.1.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs ade4</span>
+    <span class="p">(</span><span class="s1">&#39;progress&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs hms, prettyunits, R6, crayon</span>
+    <span class="p">(</span><span class="s1">&#39;rncl&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8.4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs Rcpp, progress</span>
+    <span class="p">(</span><span class="s1">&#39;tinytex&#39;</span><span class="p">,</span> <span class="s1">&#39;0.24&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs xfun</span>
+    <span class="p">(</span><span class="s1">&#39;rmarkdown&#39;</span><span class="p">,</span> <span class="s1">&#39;2.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs knitr, yaml, htmltools, evaluate, base64enc, jsonlite, mime, tinytex, xfun, stringr</span>
+    <span class="p">(</span><span class="s1">&#39;reshape&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8.8&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs plyr</span>
+    <span class="p">(</span><span class="s1">&#39;xml2&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;triebeard&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;urltools&#39;</span><span class="p">,</span> <span class="s1">&#39;1.7.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs Rcpp, triebeard</span>
+    <span class="p">(</span><span class="s1">&#39;httpcode&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs testthat</span>
+    <span class="p">(</span><span class="s1">&#39;crul&#39;</span><span class="p">,</span> <span class="s1">&#39;0.9.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs curl, R6, urltools, httpcode, jsonlite, mime</span>
+    <span class="p">(</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs xml2, crul, stringr, jsonlite, reshape, plyr, data.table. tibble</span>
+    <span class="p">(</span><span class="s1">&#39;rredlist&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs crul, jsonlite</span>
+    <span class="p">(</span><span class="s1">&#39;rentrez&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># Needs XML, httr, jsonlite</span>
+    <span class="p">(</span><span class="s1">&#39;rotl&#39;</span><span class="p">,</span> <span class="s1">&#39;3.0.10&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;WikipediR&#39;</span><span class="p">,</span> <span class="s1">&#39;1.5.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;solrium&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;WikidataR&#39;</span><span class="p">,</span> <span class="s1">&#39;1.4.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;ritis&#39;</span><span class="p">,</span> <span class="s1">&#39;0.9.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;worrms&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;natserv&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;wikitaxa&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;phangorn&#39;</span><span class="p">,</span> <span class="s1">&#39;2.5.5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;uuid&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1-4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;conditionz&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;taxize&#39;</span><span class="p">,</span> <span class="s1">&#39;0.9.97&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;RNeXML&#39;</span><span class="p">,</span> <span class="s1">&#39;2.4.5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;phylobase&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8.10&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;adephylo&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1-11&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;magick&#39;</span><span class="p">,</span> <span class="s1">&#39;2.4.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;animation&#39;</span><span class="p">,</span> <span class="s1">&#39;2.6&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;calibrate&#39;</span><span class="p">,</span> <span class="s1">&#39;1.7.7&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;clusterGeneration&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3.4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;dismo&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1-4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;extrafontdb&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;Rttf2pt1&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3.8&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;extrafont&#39;</span><span class="p">,</span> <span class="s1">&#39;0.17&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;10.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;shapefiles&#39;</span><span class="p">,</span> <span class="s1">&#39;0.7&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;fossil&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;phytools&#39;</span><span class="p">,</span> <span class="s1">&#39;0.7-47&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;geiger&#39;</span><span class="p">,</span> <span class="s1">&#39;2.0.7&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;shape&#39;</span><span class="p">,</span> <span class="s1">&#39;1.4.4&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;glmnet&#39;</span><span class="p">,</span> <span class="s1">&#39;4.0-2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;miniUI&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1.1.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;webshot&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;crosstalk&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.0.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;manipulateWidget&#39;</span><span class="p">,</span> <span class="s1">&#39;0.10.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;labdsv&#39;</span><span class="p">,</span> <span class="s1">&#39;2.0-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;stabs&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6-3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;modeltools&#39;</span><span class="p">,</span> <span class="s1">&#39;0.2-23&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;strucchange&#39;</span><span class="p">,</span> <span class="s1">&#39;1.5-2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;TH.data&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0-10&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;multcomp&#39;</span><span class="p">,</span> <span class="s1">&#39;1.4-13&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;libcoin&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0-5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;matrixStats&#39;</span><span class="p">,</span> <span class="s1">&#39;0.56.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;coin&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;party&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3-5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;inum&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;partykit&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2-8&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;mboost&#39;</span><span class="p">,</span> <span class="s1">&#39;2.9-2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;msm&#39;</span><span class="p">,</span> <span class="s1">&#39;1.6.8&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;nor1mix&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3-0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;np&#39;</span><span class="p">,</span> <span class="s1">&#39;0.60-10&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;polynom&#39;</span><span class="p">,</span> <span class="s1">&#39;1.4-0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;polspline&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.19&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;rms&#39;</span><span class="p">,</span> <span class="s1">&#39;6.0-0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;RWekajars&#39;</span><span class="p">,</span> <span class="s1">&#39;3.9.3-2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;RWeka&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4-42&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;slam&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1-47&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;tm&#39;</span><span class="p">,</span> <span class="s1">&#39;0.7-7&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;TraMineR&#39;</span><span class="p">,</span> <span class="s1">&#39;2.2-0.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;chemometrics&#39;</span><span class="p">,</span> <span class="s1">&#39;1.4.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;FNN&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;ipred&#39;</span><span class="p">,</span> <span class="s1">&#39;0.9-9&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;miscTools&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6-26&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;maxLik&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3-8&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;gbRd&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4-11&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;Rdpack&#39;</span><span class="p">,</span> <span class="s1">&#39;0.11-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;dfidx&#39;</span><span class="p">,</span> <span class="s1">&#39;0.0-3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;mlogit&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1-0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;getopt&#39;</span><span class="p">,</span> <span class="s1">&#39;1.20.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;gsalib&#39;</span><span class="p">,</span> <span class="s1">&#39;2.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;optparse&#39;</span><span class="p">,</span> <span class="s1">&#39;1.6.6&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;labelled&#39;</span><span class="p">,</span> <span class="s1">&#39;2.5.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;R.cache&#39;</span><span class="p">,</span> <span class="s1">&#39;0.14.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;rematch2&#39;</span><span class="p">,</span> <span class="s1">&#39;2.1.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;styler&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;questionr&#39;</span><span class="p">,</span> <span class="s1">&#39;0.7.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;klaR&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6-15&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;neuRosim&#39;</span><span class="p">,</span> <span class="s1">&#39;0.2-12&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;locfit&#39;</span><span class="p">,</span> <span class="s1">&#39;1.5-9.4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;GGally&#39;</span><span class="p">,</span> <span class="s1">&#39;2.0.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;beanplot&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;clValid&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6-8&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;DiscriMiner&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1-29&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;ellipse&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;leaps&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;pbkrtest&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4-8.6&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;rematch&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;cellranger&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;zip&#39;</span><span class="p">,</span> <span class="s1">&#39;2.0.4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;readxl&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;openxlsx&#39;</span><span class="p">,</span> <span class="s1">&#39;4.1.5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;carData&#39;</span><span class="p">,</span> <span class="s1">&#39;3.0-4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;maptools&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;rio&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5.16&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="s1">&#39;3.0-8&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;flashClust&#39;</span><span class="p">,</span> <span class="s1">&#39;1.01-2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1">#</span>
+    <span class="p">(</span><span class="s1">&#39;ggrepel&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> 
+    <span class="p">(</span><span class="s1">&#39;FactoMineR&#39;</span><span class="p">,</span> <span class="s1">&#39;2.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;flexclust&#39;</span><span class="p">,</span> <span class="s1">&#39;1.4-0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;flexmix&#39;</span><span class="p">,</span> <span class="s1">&#39;2.3-15&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;prabclus&#39;</span><span class="p">,</span> <span class="s1">&#39;2.3-2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;diptest&#39;</span><span class="p">,</span> <span class="s1">&#39;0.75-7&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;trimcluster&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1-5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;fpc&#39;</span><span class="p">,</span> <span class="s1">&#39;2.2-7&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;BiasedUrn&#39;</span><span class="p">,</span> <span class="s1">&#39;1.07&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;TeachingDemos&#39;</span><span class="p">,</span> <span class="s1">&#39;2.12&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;base64&#39;</span><span class="p">,</span> <span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;doRNG&#39;</span><span class="p">,</span> <span class="s1">&#39;1.8.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;nleqslv&#39;</span><span class="p">,</span> <span class="s1">&#39;3.3.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;Deriv&#39;</span><span class="p">,</span> <span class="s1">&#39;4.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;RGCCA&#39;</span><span class="p">,</span> <span class="s1">&#39;2.1.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;pheatmap&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.12&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;pvclust&#39;</span><span class="p">,</span> <span class="s1">&#39;2.2-0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;RCircos&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;lambda.r&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;futile.options&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;futile.logger&#39;</span><span class="p">,</span> <span class="s1">&#39;1.4.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;VennDiagram&#39;</span><span class="p">,</span> <span class="s1">&#39;1.6.20&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;xlsxjars&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;xlsx&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;fma&#39;</span><span class="p">,</span> <span class="s1">&#39;2.4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;expsmooth&#39;</span><span class="p">,</span> <span class="s1">&#39;2.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;fpp&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;tensor&#39;</span><span class="p">,</span> <span class="s1">&#39;1.5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;polyclip&#39;</span><span class="p">,</span> <span class="s1">&#39;1.10-0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;goftest&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2-2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;spatstat.utils&#39;</span><span class="p">,</span> <span class="s1">&#39;1.17-0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;spatstat.data&#39;</span><span class="p">,</span> <span class="s1">&#39;1.4-3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;spatstat&#39;</span><span class="p">,</span> <span class="s1">&#39;1.64-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;gdalUtils&#39;</span><span class="p">,</span> <span class="s1">&#39;2.0.3.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;pracma&#39;</span><span class="p">,</span> <span class="s1">&#39;2.2.9&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;bio3d&#39;</span><span class="p">,</span> <span class="s1">&#39;2.4-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;AUC&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;interpretR&#39;</span><span class="p">,</span> <span class="s1">&#39;0.2.4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;cvAUC&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;SuperLearner&#39;</span><span class="p">,</span> <span class="s1">&#39;2.0-26&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;mediation&#39;</span><span class="p">,</span> <span class="s1">&#39;4.5.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;lubridate&#39;</span><span class="p">,</span> <span class="s1">&#39;1.7.9&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;gower&#39;</span><span class="p">,</span> <span class="s1">&#39;0.2.2&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;recipes&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1.13&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;caret&#39;</span><span class="p">,</span> <span class="s1">&#39;6.0-86&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;adabag&#39;</span><span class="p">,</span> <span class="s1">&#39;4.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;parallelMap&#39;</span><span class="p">,</span> <span class="s1">&#39;1.5.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;ParamHelpers&#39;</span><span class="p">,</span> <span class="s1">&#39;1.14&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;ggvis&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4.5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;mlr&#39;</span><span class="p">,</span> <span class="s1">&#39;2.17.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;unbalanced&#39;</span><span class="p">,</span> <span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;RSNNS&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4-12&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;abc.data&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="s1">&#39;2.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;lhs&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;tensorA&#39;</span><span class="p">,</span> <span class="s1">&#39;0.36.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;EasyABC&#39;</span><span class="p">,</span> <span class="s1">&#39;1.5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;whisker&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;roxygen2&#39;</span><span class="p">,</span> <span class="s1">&#39;7.1.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;rversions&#39;</span><span class="p">,</span> <span class="s1">&#39;2.0.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;ini&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;clisymbols&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">,</span> <span class="s1">&#39;1.4.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;gh&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;xopen&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;usethis&#39;</span><span class="p">,</span> <span class="s1">&#39;1.6.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;sessioninfo&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;rcmdcheck&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;remotes&#39;</span><span class="p">,</span> <span class="s1">&#39;2.1.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1">#</span>
+    <span class="p">(</span><span class="s1">&#39;rex&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;covr&#39;</span><span class="p">,</span> <span class="s1">&#39;3.5.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;DT&#39;</span><span class="p">,</span> <span class="s1">&#39;0.14&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;devtools&#39;</span><span class="p">,</span> <span class="s1">&#39;2.3.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;Rook&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;RMTstat&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;Lmoments&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;distillery&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0-7&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;extRemes&#39;</span><span class="p">,</span> <span class="s1">&#39;2.0-12&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;tkrplot&#39;</span><span class="p">,</span> <span class="s1">&#39;0.0-24&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;misc3d&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8-4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;ks&#39;</span><span class="p">,</span> <span class="s1">&#39;1.11.7&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;logcondens&#39;</span><span class="p">,</span> <span class="s1">&#39;2.1.5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;Iso&#39;</span><span class="p">,</span> <span class="s1">&#39;0.0-18.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;clusterRepro&#39;</span><span class="p">,</span> <span class="s1">&#39;0.9&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;randomForestSRC&#39;</span><span class="p">,</span> <span class="s1">&#39;2.9.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;sm&#39;</span><span class="p">,</span> <span class="s1">&#39;2.2-5.6&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;psych&#39;</span><span class="p">,</span> <span class="s1">&#39;1.9.12.31&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;pbivnorm&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;lavaan&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6-6&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;matrixcalc&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0-3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;arm&#39;</span><span class="p">,</span> <span class="s1">&#39;1.11-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;mi&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;visNetwork&#39;</span><span class="p">,</span> <span class="s1">&#39;2.0.9&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;downloader&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;influenceR&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;servr&#39;</span><span class="p">,</span> <span class="s1">&#39;0.17&#39;</span><span class="p">,</span> <span class="p">{}),</span> 
+    <span class="p">(</span><span class="s1">&#39;rgexf&#39;</span><span class="p">,</span> <span class="s1">&#39;0.16.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;DiagrammeR&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.6.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;sem&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1-11&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;statnet.common&#39;</span><span class="p">,</span> <span class="s1">&#39;4.3.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;network&#39;</span><span class="p">,</span> <span class="s1">&#39;1.16.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;sna&#39;</span><span class="p">,</span> <span class="s1">&#39;2.5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;huge&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3.4.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;d3Network&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5.2.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;BDgraph&#39;</span><span class="p">,</span> <span class="s1">&#39;2.62&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;tweenr&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.1&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;ggforce&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3.2&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;graphlayouts&#39;</span><span class="p">,</span> <span class="s1">&#39;0.7.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;pbapply&#39;</span><span class="p">,</span> <span class="s1">&#39;1.4-2&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;tidygraph&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;ggraph&#39;</span><span class="p">,</span> <span class="s1">&#39;2.0.3&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;qgraph&#39;</span><span class="p">,</span> <span class="s1">&#39;1.6.5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;diveRsity&#39;</span><span class="p">,</span> <span class="s1">&#39;1.9.90&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;doSNOW&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.18&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;geepack&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;pim&#39;</span><span class="p">,</span> <span class="s1">&#39;2.0.2&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1">#  </span>
+<span class="c1">#</span>
+<span class="c1"># Bioconductor</span>
+<span class="c1">#</span>
+    <span class="p">(</span><span class="s1">&#39;DynDoc&#39;</span><span class="p">,</span> <span class="s1">&#39;1.66.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;limma&#39;</span><span class="p">,</span> <span class="s1">&#39;3.44.3&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;edgeR&#39;</span><span class="p">,</span> <span class="s1">&#39;3.30.3&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;gdsfmt&#39;</span><span class="p">,</span> <span class="s1">&#39;1.24.1&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;illuminaio&#39;</span><span class="p">,</span> <span class="s1">&#39;0.30.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;preprocessCore&#39;</span><span class="p">,</span> <span class="s1">&#39;1.50.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;RNASeqPower&#39;</span><span class="p">,</span> <span class="s1">&#39;1.28.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;Rsubread&#39;</span><span class="p">,</span> <span class="s1">&#39;2.2.2&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;qvalue&#39;</span><span class="p">,</span> <span class="s1">&#39;2.20.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;widgetTools&#39;</span><span class="p">,</span> <span class="s1">&#39;1.66.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;zlibbioc&#39;</span><span class="p">,</span> <span class="s1">&#39;1.34.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;impute&#39;</span><span class="p">,</span> <span class="s1">&#39;1.62.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;shinyFiles&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;samr&#39;</span><span class="p">,</span> <span class="s1">&#39;3.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;tkWidgets&#39;</span><span class="p">,</span> <span class="s1">&#39;1.66.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;Mfuzz&#39;</span><span class="p">,</span> <span class="s1">&#39;2.48.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;pcaMethods&#39;</span><span class="p">,</span> <span class="s1">&#39;1.80.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;S4Vectors&#39;</span><span class="p">,</span> <span class="s1">&#39;0.26.1&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;IRanges&#39;</span><span class="p">,</span> <span class="s1">&#39;2.22.2&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;GenomeInfoDbData&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.3&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;GenomeInfoDb&#39;</span><span class="p">,</span> <span class="s1">&#39;1.24.2&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;AnnotationDbi&#39;</span><span class="p">,</span> <span class="s1">&#39;1.50.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;AnnotationForge&#39;</span><span class="p">,</span> <span class="s1">&#39;1.30.1&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;GO.db&#39;</span><span class="p">,</span> <span class="s1">&#39;3.11.4&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;org.Hs.eg.db&#39;</span><span class="p">,</span> <span class="s1">&#39;3.11.4&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;KEGG.db&#39;</span><span class="p">,</span> <span class="s1">&#39;3.2.4&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;PFAM.db&#39;</span><span class="p">,</span> <span class="s1">&#39;3.11.4&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;hgu133plus2.db&#39;</span><span class="p">,</span> <span class="s1">&#39;3.2.3&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;XVector&#39;</span><span class="p">,</span> <span class="s1">&#39;0.28.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;DelayedArray&#39;</span><span class="p">,</span> <span class="s1">&#39;0.14.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;BiocParallel&#39;</span><span class="p">,</span> <span class="s1">&#39;1.22.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;Rhtslib&#39;</span><span class="p">,</span> <span class="s1">&#39;1.20.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;GenomicRanges&#39;</span><span class="p">,</span> <span class="s1">&#39;1.40.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;SummarizedExperiment&#39;</span><span class="p">,</span> <span class="s1">&#39;1.18.1&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;dbplyr&#39;</span><span class="p">,</span> <span class="s1">&#39;1.4.4&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;Biostrings&#39;</span><span class="p">,</span> <span class="s1">&#39;2.56.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;Rsamtools&#39;</span><span class="p">,</span> <span class="s1">&#39;2.4.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;GenomicAlignments&#39;</span><span class="p">,</span> <span class="s1">&#39;1.24.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;rappdirs&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3.1&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;BiocFileCache&#39;</span><span class="p">,</span> <span class="s1">&#39;1.12.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;rtracklayer&#39;</span><span class="p">,</span> <span class="s1">&#39;1.48.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;biomaRt&#39;</span><span class="p">,</span> <span class="s1">&#39;2.44.1&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;GenomicFeatures&#39;</span><span class="p">,</span> <span class="s1">&#39;1.40.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;TxDb.Hsapiens.UCSC.hg19.knownGene&#39;</span><span class="p">,</span> <span class="s1">&#39;3.2.2&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;ShortRead&#39;</span><span class="p">,</span> <span class="s1">&#39;1.46.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;graph&#39;</span><span class="p">,</span> <span class="s1">&#39;1.66.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;Rgraphviz&#39;</span><span class="p">,</span> <span class="s1">&#39;2.32.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;affyio&#39;</span><span class="p">,</span> <span class="s1">&#39;1.58.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;affy&#39;</span><span class="p">,</span> <span class="s1">&#39;1.66.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;marray&#39;</span><span class="p">,</span> <span class="s1">&#39;1.66.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;CGHbase&#39;</span><span class="p">,</span> <span class="s1">&#39;1.48.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;RBGL&#39;</span><span class="p">,</span> <span class="s1">&#39;1.64.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;annaffy&#39;</span><span class="p">,</span> <span class="s1">&#39;1.60.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;gcrma&#39;</span><span class="p">,</span> <span class="s1">&#39;2.60.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;oligoClasses&#39;</span><span class="p">,</span> <span class="s1">&#39;1.50.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;baySeq&#39;</span><span class="p">,</span> <span class="s1">&#39;2.22.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;DEGseq&#39;</span><span class="p">,</span> <span class="s1">&#39;1.42.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;bumphunter&#39;</span><span class="p">,</span> <span class="s1">&#39;1.30.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;multtest&#39;</span><span class="p">,</span> <span class="s1">&#39;2.44.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;scrime&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3.5&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;siggenes&#39;</span><span class="p">,</span> <span class="s1">&#39;1.62.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;genoset&#39;</span><span class="p">,</span> <span class="s1">&#39;1.44.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;NOISeq&#39;</span><span class="p">,</span> <span class="s1">&#39;2.31.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;annotate&#39;</span><span class="p">,</span> <span class="s1">&#39;1.66.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;GSEABase&#39;</span><span class="p">,</span> <span class="s1">&#39;1.50.1&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;genefilter&#39;</span><span class="p">,</span> <span class="s1">&#39;1.70.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;Category&#39;</span><span class="p">,</span> <span class="s1">&#39;2.54.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;GOstats&#39;</span><span class="p">,</span> <span class="s1">&#39;2.54.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;BSgenome&#39;</span><span class="p">,</span> <span class="s1">&#39;1.56.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;VariantAnnotation&#39;</span><span class="p">,</span> <span class="s1">&#39;1.34.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;interactiveDisplayBase&#39;</span><span class="p">,</span> <span class="s1">&#39;1.26.3&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;AnnotationHub&#39;</span><span class="p">,</span> <span class="s1">&#39;2.20.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;AnnotationFilter&#39;</span><span class="p">,</span> <span class="s1">&#39;1.12.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;ProtGenerics&#39;</span><span class="p">,</span> <span class="s1">&#39;1.20.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;ensembldb&#39;</span><span class="p">,</span> <span class="s1">&#39;2.12.1&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;biovizBase&#39;</span><span class="p">,</span> <span class="s1">&#39;1.36.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;OrganismDbi&#39;</span><span class="p">,</span> <span class="s1">&#39;1.30.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;ggbio&#39;</span><span class="p">,</span> <span class="s1">&#39;1.36.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;geneplotter&#39;</span><span class="p">,</span> <span class="s1">&#39;1.66.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;DESeq2&#39;</span><span class="p">,</span> <span class="s1">&#39;1.28.1&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;ReportingTools&#39;</span><span class="p">,</span> <span class="s1">&#39;2.28.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;Glimma&#39;</span><span class="p">,</span> <span class="s1">&#39;1.16.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;affycoretools&#39;</span><span class="p">,</span> <span class="s1">&#39;1.60.1&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;Homo.sapiens&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3.1&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;BSgenome.Hsapiens.UCSC.hg19&#39;</span><span class="p">,</span> <span class="s1">&#39;1.4.3&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;AgiMicroRna&#39;</span><span class="p">,</span> <span class="s1">&#39;2.38.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;geneLenDataBase&#39;</span><span class="p">,</span> <span class="s1">&#39;1.24.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;goseq&#39;</span><span class="p">,</span> <span class="s1">&#39;1.40.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;KEGGREST&#39;</span><span class="p">,</span> <span class="s1">&#39;1.28.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;KEGGgraph&#39;</span><span class="p">,</span> <span class="s1">&#39;1.48.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;KEGGprofile&#39;</span><span class="p">,</span> <span class="s1">&#39;1.30.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;GEOquery&#39;</span><span class="p">,</span> <span class="s1">&#39;2.56.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;Rhdf5lib&#39;</span><span class="p">,</span> <span class="s1">&#39;1.10.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;rhdf5&#39;</span><span class="p">,</span> <span class="s1">&#39;2.32.1&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;HDF5Array&#39;</span><span class="p">,</span> <span class="s1">&#39;1.16.1&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;DelayedMatrixStats&#39;</span><span class="p">,</span> <span class="s1">&#39;1.10.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;minfi&#39;</span><span class="p">,</span> <span class="s1">&#39;1.34.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;FDb.InfiniumMethylation.hg19&#39;</span><span class="p">,</span> <span class="s1">&#39;2.2.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;methylumi&#39;</span><span class="p">,</span> <span class="s1">&#39;2.34.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;lumi&#39;</span><span class="p">,</span> <span class="s1">&#39;2.40.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;admisc&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;venn&#39;</span><span class="p">,</span> <span class="s1">&#39;1.9&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;maSigPro&#39;</span><span class="p">,</span> <span class="s1">&#39;1.60.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;SPIA&#39;</span><span class="p">,</span> <span class="s1">&#39;2.40.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;Gviz&#39;</span><span class="p">,</span> <span class="s1">&#39;1.32.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;cummeRbund&#39;</span><span class="p">,</span> <span class="s1">&#39;2.30.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;GenomicFiles&#39;</span><span class="p">,</span> <span class="s1">&#39;1.24.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;derfinderHelper&#39;</span><span class="p">,</span> <span class="s1">&#39;1.22.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;derfinder&#39;</span><span class="p">,</span> <span class="s1">&#39;1.22.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;polyester&#39;</span><span class="p">,</span> <span class="s1">&#39;1.24.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;sigaR&#39;</span><span class="p">,</span> <span class="s1">&#39;1.35.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;Wrench&#39;</span><span class="p">,</span> <span class="s1">&#39;1.6.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;metagenomeSeq&#39;</span><span class="p">,</span> <span class="s1">&#39;1.30.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+<span class="c1">#</span>
+<span class="c1"># Other requeste packages</span>
+<span class="c1">#</span>
+<span class="c1"># mzmatch.R and its dependencies, depends on Bioconductor</span>
+    <span class="p">(</span><span class="s1">&#39;ptw&#39;</span><span class="p">,</span> <span class="s1">&#39;1.9-15&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;tcltk2&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2-11&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;MALDIquant&#39;</span><span class="p">,</span> <span class="s1">&#39;1.19.3&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;mzR&#39;</span><span class="p">,</span> <span class="s1">&#39;2.22.0&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;preinstallopts&#39;</span><span class="p">:</span> <span class="s1">&#39;PKG_CXXFLAGS=&quot;-diag-disable 858&quot; &#39;</span><span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;vsn&#39;</span><span class="p">,</span> <span class="s1">&#39;3.56.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;mzID&#39;</span><span class="p">,</span> <span class="s1">&#39;1.26.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;MSnbase&#39;</span><span class="p">,</span> <span class="s1">&#39;2.14.2&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;MassSpecWavelet&#39;</span><span class="p">,</span> <span class="s1">&#39;1.54.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;xcms&#39;</span><span class="p">,</span> <span class="s1">&#39;3.10.1&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+<span class="c1"># Problem: mzmatch not available for R 3.4.3...</span>
+<span class="c1">#install.packages(&quot;mzmatch.R&quot;,           repos=&quot;http://R-Forge.R-project.org&quot;) </span>
+<span class="c1">#</span>
+<span class="c1"># dclone and its dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;R2WinBUGS&#39;</span><span class="p">,</span> <span class="s1">&#39;2.1-21&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;rjags&#39;</span><span class="p">,</span> <span class="s1">&#39;4-10&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;R2jags&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6-1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;RcppParallel&#39;</span><span class="p">,</span> <span class="s1">&#39;5.0.2&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;inline&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3.15&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;loo&#39;</span><span class="p">,</span> <span class="s1">&#39;2.2.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;StanHeaders&#39;</span><span class="p">,</span> <span class="s1">&#39;2.21.0-5&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;rstan&#39;</span><span class="p">,</span> <span class="s1">&#39;2.19.3&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;dclone&#39;</span><span class="p">,</span> <span class="s1">&#39;2.3-0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+<span class="c1">#</span>
+<span class="c1"># future and its dependencies.</span>
+    <span class="p">(</span><span class="s1">&#39;listenv&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;globals&#39;</span><span class="p">,</span> <span class="s1">&#39;0.12.5&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;future&#39;</span><span class="p">,</span> <span class="s1">&#39;1.17.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+<span class="c1">#</span>
+<span class="c1"># CSFA and its dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;fabia&#39;</span><span class="p">,</span> <span class="s1">&#39;2.34.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;V8&#39;</span><span class="p">,</span> <span class="s1">&#39;3.2.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;elasticnet&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;snowFT&#39;</span><span class="p">,</span> <span class="s1">&#39;1.6-0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;randomcoloR&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.0.1&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;CSFA&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.0&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1"># </span>
+<span class="c1">#</span>
+<span class="c1"># dada2 and its dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;dada2&#39;</span><span class="p">,</span> <span class="s1">&#39;1.16.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+<span class="c1">#</span>
+<span class="c1"># phyloseq and dependencies</span>
+    <span class="p">(</span><span class="s1">&#39;biomformat&#39;</span><span class="p">,</span> <span class="s1">&#39;1.16.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="p">(</span><span class="s1">&#39;phyloseq&#39;</span><span class="p">,</span> <span class="s1">&#39;1.32.0&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+<span class="c1">#</span>
+<span class="c1"># DECIPHER  </span>
+    <span class="p">(</span><span class="s1">&#39;DECIPHER&#39;</span><span class="p">,</span> <span class="s1">&#39;2.16.1&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+<span class="p">]</span>
+
+<span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;lang&#39;</span>
+</code></pre></div>
+<p><a href="../package/">[R]</a> <a href="../../..">[package list]</a></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/hpcuantwerpen" target="_blank" rel="noopener" title="HPC-UAntwerpen on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "header.autohide", "toc.follow", "content.code.annotate", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>

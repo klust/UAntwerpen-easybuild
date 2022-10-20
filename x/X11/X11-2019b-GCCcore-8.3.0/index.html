@@ -1,0 +1,541 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the UAntwerpen-modules repository">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>X11 2019b GCCcore 8.3.0 - UAntwerpen-modules documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#x11-2019b-gcccore-830eb" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="UAntwerpen-modules documentation" class="md-header__button md-logo" aria-label="UAntwerpen-modules documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UAntwerpen-modules documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              X11 2019b GCCcore 8.3.0
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="UAntwerpen-modules documentation" class="md-nav__button md-logo" aria-label="UAntwerpen-modules documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    UAntwerpen-modules documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Pacakge list
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p><a href="../package/">[X11]</a> <a href="../../..">[package list]</a></p>
+<h1 id="x11-2019b-gcccore-830eb">X11-2019b-GCCcore-8.3.0.eb</h1>
+<div class="highlight"><pre><span></span><code><span class="n">easyblock</span> <span class="o">=</span> <span class="s1">&#39;Bundle&#39;</span>
+
+<span class="n">name</span> <span class="o">=</span>    <span class="s1">&#39;X11&#39;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;2019b&#39;</span>
+
+<span class="n">local_gcc_version</span> <span class="o">=</span>      <span class="s1">&#39;8.3.0&#39;</span>
+<span class="n">local_binutils_version</span> <span class="o">=</span> <span class="s1">&#39;2.32&#39;</span>
+
+<span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;https://www.x.org&#39;</span>
+
+<span class="n">whatis</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Description: X Window System (X11) libraries, a windowing system for bitmap displays&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;This module contains static and shared libraries for a lot of libraries from the X11 system&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Local UAntwerp extensions: libDRM and D-Bus (DBus)&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">The X Window System (X11, or shortened to simply X) is a windowing system for</span>
+<span class="s2">bitmap displays, common on UNIX-like computer operating systems.</span>
+
+<span class="s2">X provides the basic framework for a GUI environment: drawing and moving windows</span>
+<span class="s2">on the display device and interacting with a mouse and keyboard. X does not</span>
+<span class="s2">mandate the user interface – this is handled by individual programs. As such,</span>
+<span class="s2">the visual styling of X-based environments varies greatly; different programs</span>
+<span class="s2">may present radically different interfaces.</span>
+
+<span class="s2">This module contains static and shared libraries for a lot of libraries from the X11 system</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">toolchain</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;GCCcore&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="n">local_gcc_version</span><span class="p">}</span>
+
+<span class="n">source_urls</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">XORG_LIB_SOURCE</span><span class="p">,</span>
+    <span class="n">XORG_PROTO_SOURCE</span><span class="p">,</span>
+    <span class="s1">&#39;http://xcb.freedesktop.org/dist/&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;http://xkbcommon.org/download/&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;http://cgit.freedesktop.org/xorg/util/macros/snapshot&#39;</span><span class="p">,</span>
+    <span class="n">XORG_DATA_SOURCE</span><span class="p">,</span>
+    <span class="n">XORG_DATA_SOURCE</span> <span class="o">+</span> <span class="s1">&#39;/xkeyboard-config&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;baselibs&#39;</span><span class="p">,</span> <span class="n">version</span><span class="p">),</span>  <span class="c1"># for bzip2, zlib, fontconfig, freetype, gettext (the latter a build dependency)</span>
+<span class="p">]</span>
+
+<span class="n">builddependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;buildtools&#39;</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span>                <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="c1"># Includes Bison which is also used</span>
+    <span class="c1"># use same binutils version that was used when building GCCcore toolchain</span>
+    <span class="p">(</span><span class="s1">&#39;binutils&#39;</span><span class="p">,</span>   <span class="n">local_binutils_version</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;intltool&#39;</span><span class="p">,</span>   <span class="s1">&#39;0.51.0&#39;</span><span class="p">,</span>               <span class="s1">&#39;-Perl-5.30.0&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">default_easyblock</span> <span class="o">=</span> <span class="s1">&#39;ConfigureMake&#39;</span>
+
+<span class="n">default_component_specs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;sources&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">SOURCE_TAR_BZ2</span><span class="p">],</span>
+    <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">components</span> <span class="o">=</span> <span class="p">[</span> <span class="c1"># Update done on 2019-07-23</span>
+    <span class="p">(</span><span class="s1">&#39;xorg-macros&#39;</span><span class="p">,</span> <span class="s1">&#39;1.19.2&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2018-03-02 https://www.x.org/releases/individual/util/</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;util-macros-</span><span class="si">%(version)s</span><span class="s1">.tar.bz2&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;9bed29abc725ca484249ef4314df76fd053b803f188b5b1deb68c5f1026f2b29&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span> <span class="s1">&#39;util-macros-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libpthread-stubs&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2017-03-14 https://xcb.freedesktop.org/dist/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;e4d05911a3165d3b18321cc067fdd2f023f06436e391c6a28dff618a78d2e733&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;xorgproto&#39;</span><span class="p">,</span> <span class="s1">&#39;2019.1&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2018-02-28 https://www.x.org/archive/individual/proto/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a6daaa7a6cbc8e374032d83ff7f47d41be98f1e0f4475d66a4da3aa766a0d49b&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXau&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.9&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-02-10 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ccf8cbf0dbf676faa2ea0a6d64bcc3b6746064722b606c8c52917ed00dcb73ec&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXdmcp&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.3&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-03-16 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;20523b44aaa513e17c009e873ad7bbc301507a3224c232610ce2e099011c6529&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;xcb-proto&#39;</span><span class="p">,</span> <span class="s1">&#39;1.13&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2018-03-05 https://xcb.freedesktop.org/dist/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;7b98721e669be80284e9bbfeab02d2d0d54cd11172b72271e47a2fe875e2bde1&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libxcb&#39;</span><span class="p">,</span> <span class="s1">&#39;1.13&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2018-03-05 https://xcb.freedesktop.org/dist/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;188c8752193c50ff2dbe89db4554c63df2e26a2e47b0fa415a70918b5b851daa&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;xtrans&#39;</span><span class="p">,</span> <span class="s1">&#39;1.4.0&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-03-16 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;377c4491593c417946efcd2c7600d1e62639f7a8bbca391887e2c4679807d773&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libxkbcommon&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8.4&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-02-22 https://xkbcommon.org/download/</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;libxkbcommon-</span><span class="si">%(version)s</span><span class="s1">.tar.xz&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;60ddcff932b7fd352752d51a5c4f04f3d0403230a584df9a2e0d5ed87c486c8b&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span> <span class="s1">&#39;libxkbcommon-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libX11&#39;</span><span class="p">,</span> <span class="s1">&#39;1.6.8&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-06-17 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;b289a845c189e251e0e884cc0f9269bbe97c238df3741e854ec4c17c21e473d5&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXext&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3.4&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-03-16 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;59ad6fcce98deaecc14d39a672cf218ca37aba617c9a0f691cac3bcd28edf82b&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libFS&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.8&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-03-10 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;c8e13727149b2ddfe40912027459b2522042e3844c5cd228c3300fe5eef6bd0f&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libICE&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.10&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-07-14 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;6f86dce12cf4bcaf5c37dddd8b1b64ed2ddf1ef7b218f22b9942595fb747c348&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libSM&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.3&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2018-10-10 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2d264499dcb05f56438dee12a1b4b71d76736ce7ba7aa6efbf15ebb113769cbb&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXScrnSaver&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.3&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2018-07-05 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;f917075a1b7b5a38d67a8b0238eaab14acd2557679835b154cf2bca576e89bf8&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXt&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.0&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-06-21 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;b31df531dabed9f4611fc8980bc51d7782967e2aff44c4105251a1acb5a77831&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXmu&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.3&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-03-16 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;9c343225e7c3dc0904f2122b562278da5fed639b1b5e880d25111561bac5b731&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXpm&#39;</span><span class="p">,</span> <span class="s1">&#39;3.5.12&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2016-12-15 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;fd6a6de3da48de8d1bb738ab6be4ad67f7cb0986c39bd3f7d51dd24f7854bdec&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXaw&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.13&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2015-05-01 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;8ef8067312571292ccc2bbe94c41109dcf022ea5a4ec71656a83d8cce9edb0cd&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXfixes&#39;</span><span class="p">,</span> <span class="s1">&#39;5.0.3&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2016-10-04 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;de1cd33aff226e08cefd0e6759341c2c8e8c9faf8ce9ac6ec38d43e287b22ad6&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXcomposite&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4.5&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-03-11 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;b3218a2c15bab8035d16810df5b8251ffc7132ff3aa70651a1fba0bfe9634e8f&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXrender&#39;</span><span class="p">,</span> <span class="s1">&#39;0.9.10&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2016-10-04 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;c06d5979f86e64cabbde57c223938db0b939dff49fdb5a793a1d3d0396650949&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXcursor&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.0&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-03-11 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;3ad3e9f8251094af6fe8cb4afcf63e28df504d46bfa5a5529db74a505d628782&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXdamage&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.5&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-03-11 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;b734068643cac3b5f3d2c8279dd366b5bf28c7219d9e9d8717e1383995e0ea45&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libfontenc&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.4&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-02-20 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2cfcce810ddd48f2e5dc658d28c1808e86dcf303eaff16728b9aa3dbc0092079&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXfont&#39;</span><span class="p">,</span> <span class="s1">&#39;1.5.4&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2017-11-28 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;1a7f7490774c87f2052d146d1e0e64518d32e6848184a18654e8d0bb57883242&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXfont2&#39;</span><span class="p">,</span> <span class="s1">&#39;2.0.3&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2017-11-28 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;0e8ab7fd737ccdfe87e1f02b55f221f0bd4503a1c5f28be4ed6a54586bac9c4e&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXft&#39;</span><span class="p">,</span> <span class="s1">&#39;2.3.3&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-03-16 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;225c68e616dd29dbb27809e45e9eadf18e4d74c50be43020ef20015274529216&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXi&#39;</span><span class="p">,</span> <span class="s1">&#39;1.7.10&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-06-19 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;36a30d8f6383a72e7ce060298b4b181fd298bc3a135c8e201b7ca847f5f81061&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXinerama&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.4&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2018-07-05 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;0008dbd7ecf717e1e507eed1856ab0d9cf946d03201b85d5dcf61489bb02d720&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXrandr&#39;</span><span class="p">,</span> <span class="s1">&#39;1.5.2&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-03-16 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;8aea0ebe403d62330bb741ed595b53741acf45033d3bda1792f1d4cc3daee023&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXres&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.0&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2017-10-11 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ff75c1643488e64a7cfbced27486f0f944801319c84c18d3bd3da6bf28c812d4&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXtst&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2.3&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2016-10-04 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;4655498a1b8e844e3d6f21f3b2c4e2b571effb5fd83199d428a6ba7ea4bf5204&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXv&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.11&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2016-10-04 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;d26c13eac99ac4504c532e8e76a1c8e4bd526471eb8a0a4ff2a88db60cb0b088&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXvMC&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.11&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-03-16 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;4a2e34d444a683a7c010b01b23cefe2b8043a063ce4dc6a9b855836b5262622d&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXxf86dga&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.5&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-03-16 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2b98bc5f506c6140d4eddd3990842d30f5dae733b64f198a504f07461bdb7203&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXxf86vm&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.4&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2015-02-24 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;afee27f93c5f31c0ad582852c0fb36d50e4de7cd585fcf655e278a633d85cd57&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libdmx&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.4&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2018-05-14 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;253f90005d134fa7a209fbcbc5a3024335367c930adf0f3203e754cf32747243&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libpciaccess&#39;</span><span class="p">,</span> <span class="s1">&#39;0.16&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-07-17 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;214c9d0d884fdd7375ec8da8dcb91a8d3169f263294c9a90c575bf1938b9f489&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libxkbfile&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.9&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2015-05-01 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;51817e0530961975d9513b773960b4edd275f7d5c72293d5a151ed4f42aeb16a&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libxshmfence&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2018-02-26 https://www.x.org/releases/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;b884300d26a14961a076fbebc762a39831cb75f92bed5ccf9836345b459220c7&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;xcb-util&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4.0&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2014-10-15 https://xcb.freedesktop.org/dist/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;46e49469cb3b594af1d33176cd7565def2be3fa8be4371d62271fabb5eae50e9&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;xcb-util-image&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4.0&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2014-10-15 https://xcb.freedesktop.org/dist/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2db96a37d78831d643538dd1b595d7d712e04bdccf8896a5e18ce0f398ea2ffc&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;xcb-util-keysyms&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4.0&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2014-10-01 https://xcb.freedesktop.org/dist/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;0ef8490ff1dede52b7de533158547f8b454b241aa3e4dcca369507f66f216dd9&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;xcb-util-renderutil&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3.9&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2014-06-13 https://xcb.freedesktop.org/dist/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;c6e97e48fb1286d6394dddb1c1732f00227c70bd1bedb7d1acabefdd340bea5b&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;xcb-util-wm&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4.1&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2014-02-19 https://xcb.freedesktop.org/dist/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;28bf8179640eaa89276d2b0f1ce4285103d136be6c98262b6151aaee1d3c2a3f&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;xcb-util-cursor&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1.3&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2016-05-12 https://xcb.freedesktop.org/dist/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;05a10a0706a1a789a078be297b5fb663f66a71fb7f7f1b99658264c35926394f&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;xkeyboard-config&#39;</span><span class="p">,</span> <span class="s1">&#39;2.27&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2019-05-30 https://www.x.org/releases/individual/data/xkeyboard-config/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;690daec8fea63526c07620c90e6f3f10aae34e94b6db6e30906173480721901f&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;printproto&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.5&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2011-01-06 https://www.x.org/archive/individual/proto/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;1298316cf43b987365ab7764d61b022a3d7f180b67b423eed3456862d155911a&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libXp&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.3&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2015-02-21 https://www.x.org/archive/individual/lib/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;7f360c9905849c3587d48efc0f0ecbc852c19f61a52b18530d6b005cb9148c57&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;xbitmaps&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.2&#39;</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># 2018-03-10 https://www.x.org/archive/individual/data/</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;b9f0c71563125937776c8f1f25174ae9685314cbd130fb4c2efce811981e07ee&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+<span class="c1">#</span>
+<span class="c1"># UAntwerp additions</span>
+<span class="c1"># </span>
+    <span class="p">(</span><span class="s1">&#39;libdrm&#39;</span><span class="p">,</span> <span class="s1">&#39;2.4.99&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="c1"># 2019-07-02 http://dri.freedesktop.org/libdrm/, used by Qt5</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://dri.freedesktop.org/libdrm/&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>   <span class="p">[</span><span class="s1">&#39;4dbf539c7ed25dbb2055090b77ab87508fc46be39a9379d15fed4b5517e1da5e&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;DBus&#39;</span><span class="p">,</span> <span class="s1">&#39;1.13.12&#39;</span><span class="p">,</span> <span class="p">{</span> 
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>     <span class="p">[</span> <span class="p">{</span> <span class="c1"># 2019-06-11 http://dbus.freedesktop.org/releases/dbus</span>
+                          <span class="s1">&#39;filename&#39;</span><span class="p">:</span>    <span class="n">SOURCELOWER_TAR_XZ</span><span class="p">,</span>
+                          <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://dbus.freedesktop.org/releases/dbus&#39;</span><span class="p">]</span>
+                       <span class="p">}],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>   <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;configopts&#39;</span><span class="p">:</span>  <span class="s1">&#39;--without-systemdsystemunitdir&#39;</span><span class="p">,</span>
+    <span class="p">}),</span>
+<span class="p">]</span>
+
+<span class="n">preconfigopts</span> <span class="o">=</span> <span class="s2">&quot;if [ ! -f configure ]; then ./autogen.sh; fi &amp;&amp; &quot;</span>
+
+<span class="c1"># Python is required for xcb-proto</span>
+<span class="n">allow_system_deps</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="n">SYS_PYTHON_VERSION</span><span class="p">)]</span>
+<span class="n">local_pyshortver</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">SYS_PYTHON_VERSION</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="n">sanity_check_paths</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;files&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;include/X11/Xlib.h&#39;</span><span class="p">,</span> <span class="s1">&#39;include/X11/Xutil.h&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;dirs&#39;</span><span class="p">:</span>  <span class="p">[</span><span class="s1">&#39;include/GL&#39;</span><span class="p">,</span> <span class="s1">&#39;include/X11&#39;</span><span class="p">,</span> <span class="s1">&#39;include/X11/extensions&#39;</span><span class="p">,</span> <span class="s1">&#39;lib&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;lib/python</span><span class="si">%s</span><span class="s1">/site-packages/xcbgen&#39;</span> <span class="o">%</span> <span class="n">local_pyshortver</span><span class="p">,</span> <span class="s1">&#39;lib/pkgconfig&#39;</span><span class="p">,</span> <span class="s1">&#39;share/pkgconfig&#39;</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;vis&#39;</span>
+</code></pre></div>
+<p><a href="../package/">[X11]</a> <a href="../../..">[package list]</a></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/hpcuantwerpen" target="_blank" rel="noopener" title="HPC-UAntwerpen on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "header.autohide", "toc.follow", "content.code.annotate", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>

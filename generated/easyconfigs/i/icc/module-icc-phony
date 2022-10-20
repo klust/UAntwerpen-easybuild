@@ -1,8 +1,0 @@
-#%Module
-proc ModulesHelp { } {
-    puts stderr { Dummy module to make easybuild happy with our intel toolchain
-    }
-}
-
-module-whatis {Description: Dummy module to make easybuild happy with our intel toolchain}
-

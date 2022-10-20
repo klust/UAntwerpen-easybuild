@@ -1,0 +1,1258 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the UAntwerpen-modules repository">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>Perl 5.24.1 intel 2016b - UAntwerpen-modules documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#perl-5241-intel-2016beb" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="UAntwerpen-modules documentation" class="md-header__button md-logo" aria-label="UAntwerpen-modules documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UAntwerpen-modules documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Perl 5.24.1 intel 2016b
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="UAntwerpen-modules documentation" class="md-nav__button md-logo" aria-label="UAntwerpen-modules documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    UAntwerpen-modules documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Pacakge list
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p><a href="../package/">[Perl]</a> <a href="../../..">[package list]</a></p>
+<h1 id="perl-5241-intel-2016beb">Perl-5.24.1-intel-2016b.eb</h1>
+<div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Perl&#39;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;5.24.1&#39;</span>
+
+<span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;http://www.perl.org/&#39;</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Larry Wall&#39;s Practical Extraction and Report Language&quot;&quot;&quot;</span>
+
+<span class="n">toolchain</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;intel&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;2016b&#39;</span><span class="p">}</span>
+<span class="n">toolchainopts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;pic&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+
+<span class="n">source_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;http://www.cpan.org/src/</span><span class="si">%(version_major)s</span><span class="s1">.0&#39;</span><span class="p">]</span>
+<span class="n">sources</span> <span class="o">=</span> <span class="p">[</span><span class="n">SOURCELOWER_TAR_GZ</span><span class="p">]</span>
+
+<span class="n">exts_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;Config::General&#39;</span><span class="p">,</span> <span class="s1">&#39;2.63&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Config-General-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/T/TL/TLINDEN&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;File::Listing&#39;</span><span class="p">,</span> <span class="s1">&#39;6.04&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;File-Listing-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GA/GAAS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;ExtUtils::InstallPaths&#39;</span><span class="p">,</span> <span class="s1">&#39;0.011&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;ExtUtils-InstallPaths-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/L/LE/LEONT&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;ExtUtils::Helpers&#39;</span><span class="p">,</span> <span class="s1">&#39;0.026&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;ExtUtils-Helpers-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/L/LE/LEONT&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Test::Harness&#39;</span><span class="p">,</span> <span class="s1">&#39;3.38&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Test-Harness-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/L/LE/LEONT&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;ExtUtils::Config&#39;</span><span class="p">,</span> <span class="s1">&#39;0.008&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;ExtUtils-Config-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/L/LE/LEONT&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Module::Build::Tiny&#39;</span><span class="p">,</span> <span class="s1">&#39;0.039&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Module-Build-Tiny-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/L/LE/LEONT&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;aliased&#39;</span><span class="p">,</span> <span class="s1">&#39;0.34&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/ET/ETHER&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Text::Glob&#39;</span><span class="p">,</span> <span class="s1">&#39;0.11&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Text-Glob-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RC/RCLAMP&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Regexp::Common&#39;</span><span class="p">,</span> <span class="s1">&#39;2016060801&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Regexp-Common-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/A/AB/ABIGAIL&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;GO::Utils&#39;</span><span class="p">,</span> <span class="s1">&#39;0.15&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;go-perl-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/C/CM/CMUNGALL&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Module::Pluggable&#39;</span><span class="p">,</span> <span class="s1">&#39;5.2&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Module-Pluggable-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/S/SI/SIMONW&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Test::Fatal&#39;</span><span class="p">,</span> <span class="s1">&#39;0.014&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Test-Fatal-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RJ/RJBS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Test::Warnings&#39;</span><span class="p">,</span> <span class="s1">&#39;0.026&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Test-Warnings-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/ET/ETHER&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;DateTime::Locale&#39;</span><span class="p">,</span> <span class="s1">&#39;1.14&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;DateTime-Locale-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DR/DROLSKY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;DateTime::TimeZone&#39;</span><span class="p">,</span> <span class="s1">&#39;2.10&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;DateTime-TimeZone-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DR/DROLSKY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Test::Requires&#39;</span><span class="p">,</span> <span class="s1">&#39;0.10&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Test-Requires-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/T/TO/TOKUHIROM&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Module::Implementation&#39;</span><span class="p">,</span> <span class="s1">&#39;0.09&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Module-Implementation-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DR/DROLSKY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Module::Build&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4220&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Module-Build-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/L/LE/LEONT&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Module::Runtime&#39;</span><span class="p">,</span> <span class="s1">&#39;0.014&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Module-Runtime-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Try::Tiny&#39;</span><span class="p">,</span> <span class="s1">&#39;0.28&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Try-Tiny-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/ET/ETHER&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Params::Validate&#39;</span><span class="p">,</span> <span class="s1">&#39;1.26&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Params-Validate-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DR/DROLSKY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;List::MoreUtils&#39;</span><span class="p">,</span> <span class="s1">&#39;0.416&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;List-MoreUtils-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RE/REHSACK&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Exporter::Tiny&#39;</span><span class="p">,</span> <span class="s1">&#39;0.044&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Exporter-Tiny-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/T/TO/TOBYINK&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Class::Singleton&#39;</span><span class="p">,</span> <span class="s1">&#39;1.5&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Class-Singleton-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/S/SH/SHAY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;DateTime&#39;</span><span class="p">,</span> <span class="s1">&#39;1.42&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DR/DROLSKY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;File::Find::Rule::Perl&#39;</span><span class="p">,</span> <span class="s1">&#39;1.15&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;File-Find-Rule-Perl-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/ET/ETHER&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Readonly&#39;</span><span class="p">,</span> <span class="s1">&#39;2.05&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/S/SA/SANKO&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Git&#39;</span><span class="p">,</span> <span class="s1">&#39;0.41&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/M/MS/MSOUTH&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Tree::DAG_Node&#39;</span><span class="p">,</span> <span class="s1">&#39;1.29&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Tree-DAG_Node-</span><span class="si">%(version)s</span><span class="s1">.tgz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Template&#39;</span><span class="p">,</span> <span class="s1">&#39;2.26&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Template-Toolkit-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/A/AB/ABW&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;FreezeThaw&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5001&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/I/IL/ILYAZ/modules&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;DBI&#39;</span><span class="p">,</span> <span class="s1">&#39;1.636&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/T/TI/TIMB&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;DBD::SQLite&#39;</span><span class="p">,</span> <span class="s1">&#39;1.54&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;DBD-SQLite-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Math::Bezier&#39;</span><span class="p">,</span> <span class="s1">&#39;0.01&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Math-Bezier-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/A/AB/ABW&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Archive::Extract&#39;</span><span class="p">,</span> <span class="s1">&#39;0.80&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Archive-Extract-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/B/BI/BINGOS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;DBIx::Simple&#39;</span><span class="p">,</span> <span class="s1">&#39;1.35&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;DBIx-Simple-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/J/JU/JUERD&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Shell&#39;</span><span class="p">,</span> <span class="s1">&#39;0.73&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/F/FE/FERREIRA&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;File::Spec&#39;</span><span class="p">,</span> <span class="s1">&#39;3.62&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;PathTools-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RJ/RJBS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;ExtUtils::MakeMaker&#39;</span><span class="p">,</span> <span class="s1">&#39;7.24&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;ExtUtils-MakeMaker-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/B/BI/BINGOS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Test::Simple&#39;</span><span class="p">,</span> <span class="s1">&#39;1.302078&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Test-Simple-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/EX/EXODIST&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Set::Scalar&#39;</span><span class="p">,</span> <span class="s1">&#39;1.29&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Set-Scalar-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DA/DAVIDO&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;IO::Stringy&#39;</span><span class="p">,</span> <span class="s1">&#39;2.111&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;IO-stringy-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DS/DSKOLL&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Encode::Locale&#39;</span><span class="p">,</span> <span class="s1">&#39;1.05&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Encode-Locale-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GA/GAAS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;XML::SAX::Base&#39;</span><span class="p">,</span> <span class="s1">&#39;1.08&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;XML-SAX-Base-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GR/GRANTM&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;XML::NamespaceSupport&#39;</span><span class="p">,</span> <span class="s1">&#39;1.11&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;XML-NamespaceSupport-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/P/PE/PERIGRIN&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;XML::SAX&#39;</span><span class="p">,</span> <span class="s1">&#39;0.99&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;XML-SAX-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GR/GRANTM&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Test::LeakTrace&#39;</span><span class="p">,</span> <span class="s1">&#39;0.15&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Test-LeakTrace-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GF/GFUJI&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Test::Exception&#39;</span><span class="p">,</span> <span class="s1">&#39;0.43&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Test-Exception-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/EX/EXODIST&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Text::Table&#39;</span><span class="p">,</span> <span class="s1">&#39;1.132&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Text-Table-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;MIME::Types&#39;</span><span class="p">,</span> <span class="s1">&#39;2.13&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;MIME-Types-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/M/MA/MARKOV&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Module::Build::XSUtil&#39;</span><span class="p">,</span> <span class="s1">&#39;0.16&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Module-Build-XSUtil-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/H/HI/HIDEAKIO&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Tie::Function&#39;</span><span class="p">,</span> <span class="s1">&#39;0.02&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Tie-Function-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DA/DAVIDNICO/handy_tied_functions&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Template::Plugin::Number::Format&#39;</span><span class="p">,</span> <span class="s1">&#39;1.06&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Template-Plugin-Number-Format-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DA/DARREN&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;HTML::Parser&#39;</span><span class="p">,</span> <span class="s1">&#39;3.72&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;HTML-Parser-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GA/GAAS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Date::Handler&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Date-Handler-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/B/BB/BBEAUSEJ&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Params::Util&#39;</span><span class="p">,</span> <span class="s1">&#39;1.07&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Params-Util-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/A/AD/ADAMK&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;IO::HTML&#39;</span><span class="p">,</span> <span class="s1">&#39;1.001&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;IO-HTML-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/C/CJ/CJM&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Data::Grove&#39;</span><span class="p">,</span> <span class="s1">&#39;0.08&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;libxml-perl-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/K/KM/KMACLEOD&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Class::ISA&#39;</span><span class="p">,</span> <span class="s1">&#39;0.36&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Class-ISA-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/S/SM/SMUELLER&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;URI&#39;</span><span class="p">,</span> <span class="s1">&#39;1.71&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/ET/ETHER&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Ima::DBI&#39;</span><span class="p">,</span> <span class="s1">&#39;0.35&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Ima-DBI-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/P/PE/PERRIN&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Tie::IxHash&#39;</span><span class="p">,</span> <span class="s1">&#39;1.23&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Tie-IxHash-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/C/CH/CHORNY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;GO&#39;</span><span class="p">,</span> <span class="s1">&#39;0.04&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;go-db-perl-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/S/SJ/SJCARBON&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Class::DBI::SQLite&#39;</span><span class="p">,</span> <span class="s1">&#39;0.11&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Class-DBI-SQLite-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Pod::POM&#39;</span><span class="p">,</span> <span class="s1">&#39;2.01&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Pod-POM-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/N/NE/NEILB&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Math::Round&#39;</span><span class="p">,</span> <span class="s1">&#39;0.07&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Math-Round-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GR/GROMMEL&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Text::Diff&#39;</span><span class="p">,</span> <span class="s1">&#39;1.44&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Text-Diff-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/N/NE/NEILB&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Log::Message::Simple&#39;</span><span class="p">,</span> <span class="s1">&#39;0.10&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Log-Message-Simple-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/B/BI/BINGOS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;IO::Socket::SSL&#39;</span><span class="p">,</span> <span class="s1">&#39;2.047&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;IO-Socket-SSL-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/S/SU/SULLR&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Fennec::Lite&#39;</span><span class="p">,</span> <span class="s1">&#39;0.004&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Fennec-Lite-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/EX/EXODIST&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Sub::Uplevel&#39;</span><span class="p">,</span> <span class="s1">&#39;0.2600&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Sub-Uplevel-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Meta::Builder&#39;</span><span class="p">,</span> <span class="s1">&#39;0.003&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Meta-Builder-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/EX/EXODIST&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Exporter::Declare&#39;</span><span class="p">,</span> <span class="s1">&#39;0.114&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Exporter-Declare-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/EX/EXODIST&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Getopt::Long&#39;</span><span class="p">,</span> <span class="s1">&#39;2.49.1&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Getopt-Long-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/J/JV/JV&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Log::Message&#39;</span><span class="p">,</span> <span class="s1">&#39;0.08&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Log-Message-0.08.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/B/BI/BINGOS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Mouse&#39;</span><span class="p">,</span> <span class="s1">&#39;v2.4.9&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Mouse-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/S/SY/SYOHEX&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Test::Version&#39;</span><span class="p">,</span> <span class="s1">&#39;2.05&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Test-Version-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/P/PL/PLICEASE&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;DBIx::Admin::TableInfo&#39;</span><span class="p">,</span> <span class="s1">&#39;3.03&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;DBIx-Admin-TableInfo-3.01.tgz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Net::HTTP&#39;</span><span class="p">,</span> <span class="s1">&#39;6.13&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Net-HTTP-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/O/OA/OALDERS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Test::Deep&#39;</span><span class="p">,</span> <span class="s1">&#39;1.126&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Test-Deep-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RJ/RJBS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Test::Warn&#39;</span><span class="p">,</span> <span class="s1">&#39;0.32&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Test-Warn-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/B/BI/BIGJ&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;MRO::Compat&#39;</span><span class="p">,</span> <span class="s1">&#39;0.12&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;MRO-Compat-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/B/BO/BOBTFISH&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Moo&#39;</span><span class="p">,</span> <span class="s1">&#39;2.003001&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Moo-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/H/HA/HAARG&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Hash::Merge&#39;</span><span class="p">,</span> <span class="s1">&#39;0.200&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Hash-Merge-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RE/REHSACK&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;SQL::Abstract&#39;</span><span class="p">,</span> <span class="s1">&#39;1.81&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;SQL-Abstract-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RI/RIBASUSHI&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;HTML::Form&#39;</span><span class="p">,</span> <span class="s1">&#39;6.03&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;HTML-Form-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GA/GAAS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;File::Copy::Recursive&#39;</span><span class="p">,</span> <span class="s1">&#39;0.38&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;File-Copy-Recursive-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DM/DMUEY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Number::Compare&#39;</span><span class="p">,</span> <span class="s1">&#39;0.03&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Number-Compare-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RC/RCLAMP&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;IPC::Run&#39;</span><span class="p">,</span> <span class="s1">&#39;0.94&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;IPC-Run-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/T/TO/TODDR&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;HTML::Entities::Interpolate&#39;</span><span class="p">,</span> <span class="s1">&#39;1.10&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;HTML-Entities-Interpolate-1.09.tgz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Test::ClassAPI&#39;</span><span class="p">,</span> <span class="s1">&#39;1.06&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Test-ClassAPI-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/A/AD/ADAMK&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Test::Most&#39;</span><span class="p">,</span> <span class="s1">&#39;0.35&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Test-Most-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/O/OV/OVID&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Class::Accessor&#39;</span><span class="p">,</span> <span class="s1">&#39;0.34&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Class-Accessor-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/K/KA/KASEI&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Test::Differences&#39;</span><span class="p">,</span> <span class="s1">&#39;0.64&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Test-Differences-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DC/DCANTRELL&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;HTTP::Tiny&#39;</span><span class="p">,</span> <span class="s1">&#39;0.070&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;HTTP-Tiny-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Package::DeprecationManager&#39;</span><span class="p">,</span> <span class="s1">&#39;0.17&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Package-DeprecationManager-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DR/DROLSKY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Digest::SHA1&#39;</span><span class="p">,</span> <span class="s1">&#39;2.13&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Digest-SHA1-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GA/GAAS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Date::Language&#39;</span><span class="p">,</span> <span class="s1">&#39;2.30&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;TimeDate-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GB/GBARR&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;0.9917&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/J/JP/JPEACOCK&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;XML::Bare&#39;</span><span class="p">,</span> <span class="s1">&#39;0.53&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;XML-Bare-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/C/CO/CODECHILD&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;patches&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;XML-Bare-0.53_icc.patch&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Dist::CheckConflicts&#39;</span><span class="p">,</span> <span class="s1">&#39;0.11&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Dist-CheckConflicts-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DO/DOY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Sub::Name&#39;</span><span class="p">,</span> <span class="s1">&#39;0.21&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Sub-Name-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/ET/ETHER&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Time::Piece&#39;</span><span class="p">,</span> <span class="s1">&#39;1.31&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Time-Piece-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/ES/ESAYM&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Digest::HMAC&#39;</span><span class="p">,</span> <span class="s1">&#39;1.03&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Digest-HMAC-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GA/GAAS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;HTTP::Negotiate&#39;</span><span class="p">,</span> <span class="s1">&#39;6.01&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;HTTP-Negotiate-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GA/GAAS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;MIME::Lite&#39;</span><span class="p">,</span> <span class="s1">&#39;3.030&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;MIME-Lite-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RJ/RJBS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Crypt::Rijndael&#39;</span><span class="p">,</span> <span class="s1">&#39;1.13&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Crypt-Rijndael-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/L/LE/LEONT&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;B::Lint&#39;</span><span class="p">,</span> <span class="s1">&#39;1.20&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;B-Lint-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RJ/RJBS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Canary::Stability&#39;</span><span class="p">,</span> <span class="s1">&#39;2012&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Canary-Stability-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;AnyEvent&#39;</span><span class="p">,</span> <span class="s1">&#39;7.13&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Object::Accessor&#39;</span><span class="p">,</span> <span class="s1">&#39;0.48&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Object-Accessor-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/B/BI/BINGOS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Data::UUID&#39;</span><span class="p">,</span> <span class="s1">&#39;1.221&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Data-UUID-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RJ/RJBS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Test::Pod&#39;</span><span class="p">,</span> <span class="s1">&#39;1.51&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Test-Pod-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/ET/ETHER&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;AppConfig&#39;</span><span class="p">,</span> <span class="s1">&#39;1.71&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;AppConfig-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/N/NE/NEILB&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Net::SMTP::SSL&#39;</span><span class="p">,</span> <span class="s1">&#39;1.04&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Net-SMTP-SSL-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RJ/RJBS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;XML::Tiny&#39;</span><span class="p">,</span> <span class="s1">&#39;2.06&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;XML-Tiny-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DC/DCANTRELL&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;HTML::Tagset&#39;</span><span class="p">,</span> <span class="s1">&#39;3.20&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;HTML-Tagset-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/P/PE/PETDANCE&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;HTML::Tree&#39;</span><span class="p">,</span> <span class="s1">&#39;5.03&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;HTML-Tree-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/C/CJ/CJM&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Devel::GlobalDestruction&#39;</span><span class="p">,</span> <span class="s1">&#39;0.14&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Devel-GlobalDestruction-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/H/HA/HAARG&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;WWW::RobotRules&#39;</span><span class="p">,</span> <span class="s1">&#39;6.02&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;WWW-RobotRules-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GA/GAAS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Expect&#39;</span><span class="p">,</span> <span class="s1">&#39;1.33&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/J/JA/JACOBY/&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Term::UI&#39;</span><span class="p">,</span> <span class="s1">&#39;0.46&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Term-UI-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/B/BI/BINGOS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Net::SNMP&#39;</span><span class="p">,</span> <span class="s1">&#39;v6.0.1&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Net-SNMP-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DT/DTOWN&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;XML::SAX::Writer&#39;</span><span class="p">,</span> <span class="s1">&#39;0.56&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;XML-SAX-Writer-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/P/PE/PERIGRIN&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Statistics::Descriptive&#39;</span><span class="p">,</span> <span class="s1">&#39;3.0612&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Statistics-Descriptive-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Class::Load&#39;</span><span class="p">,</span> <span class="s1">&#39;0.23&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Class-Load-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/ET/ETHER&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;LWP::Simple&#39;</span><span class="p">,</span> <span class="s1">&#39;6.24&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;libwww-perl-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/O/OA/OALDERS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Time::Piece::MySQL&#39;</span><span class="p">,</span> <span class="s1">&#39;0.06&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Time-Piece-MySQL-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/K/KA/KASEI&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Package::Stash::XS&#39;</span><span class="p">,</span> <span class="s1">&#39;0.28&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Package-Stash-XS-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DO/DOY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;GD::Graph&#39;</span><span class="p">,</span> <span class="s1">&#39;1.54&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;GDGraph-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RU/RUZ&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Set::Array&#39;</span><span class="p">,</span> <span class="s1">&#39;0.30&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Set-Array-0.30.tgz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;boolean&#39;</span><span class="p">,</span> <span class="s1">&#39;0.46&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;boolean-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/I/IN/INGY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Number::Format&#39;</span><span class="p">,</span> <span class="s1">&#39;1.75&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Number-Format-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/W/WR/WRW&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Data::Stag&#39;</span><span class="p">,</span> <span class="s1">&#39;0.14&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Data-Stag-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/C/CM/CMUNGALL&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Test::NoWarnings&#39;</span><span class="p">,</span> <span class="s1">&#39;1.04&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Test-NoWarnings-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/A/AD/ADAMK&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Crypt::DES&#39;</span><span class="p">,</span> <span class="s1">&#39;2.07&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Crypt-DES-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DP/DPARIS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Exporter&#39;</span><span class="p">,</span> <span class="s1">&#39;5.72&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Exporter-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/T/TO/TODDR&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Class::Inspector&#39;</span><span class="p">,</span> <span class="s1">&#39;1.31&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Class-Inspector-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/P/PL/PLICEASE&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Parse::RecDescent&#39;</span><span class="p">,</span> <span class="s1">&#39;1.967013&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Parse-RecDescent-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/J/JT/JTBRAUN&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Carp&#39;</span><span class="p">,</span> <span class="s1">&#39;1.38&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RJ/RJBS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;XML::XPath&#39;</span><span class="p">,</span> <span class="s1">&#39;1.40&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;XML-XPath-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/M/MA/MANWAR&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Capture::Tiny&#39;</span><span class="p">,</span> <span class="s1">&#39;0.46&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Capture-Tiny-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;JSON&#39;</span><span class="p">,</span> <span class="s1">&#39;2.91_04&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Sub::Exporter&#39;</span><span class="p">,</span> <span class="s1">&#39;0.987&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Sub-Exporter-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RJ/RJBS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Class::Load::XS&#39;</span><span class="p">,</span> <span class="s1">&#39;0.09&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Class-Load-XS-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/ET/ETHER&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Set::IntSpan::Fast&#39;</span><span class="p">,</span> <span class="s1">&#39;1.15&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Set-IntSpan-Fast-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/A/AN/ANDYA&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Sub::Exporter::Progressive&#39;</span><span class="p">,</span> <span class="s1">&#39;0.001013&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Sub-Exporter-Progressive-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/F/FR/FREW&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Data::Dumper::Concise&#39;</span><span class="p">,</span> <span class="s1">&#39;2.022&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Data-Dumper-Concise-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/F/FR/FREW&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;File::Slurp::Tiny&#39;</span><span class="p">,</span> <span class="s1">&#39;0.004&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;File-Slurp-Tiny-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/L/LE/LEONT&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Algorithm::Diff&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1903&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Algorithm-Diff-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/T/TY/TYEMQ&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;AnyData&#39;</span><span class="p">,</span> <span class="s1">&#39;0.12&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="c1"># Deprecated....</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RE/REHSACK&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Text::Iconv&#39;</span><span class="p">,</span> <span class="s1">&#39;1.7&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Text-Iconv-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/M/MP/MPIOTR&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Class::Data::Inheritable&#39;</span><span class="p">,</span> <span class="s1">&#39;0.08&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Class-Data-Inheritable-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/T/TM/TMTM&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Text::Balanced&#39;</span><span class="p">,</span> <span class="s1">&#39;2.03&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Text-Balanced-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/S/SH/SHAY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;strictures&#39;</span><span class="p">,</span> <span class="s1">&#39;2.000003&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/H/HA/HAARG&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Switch&#39;</span><span class="p">,</span> <span class="s1">&#39;2.17&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/C/CH/CHORNY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;File::Which&#39;</span><span class="p">,</span> <span class="s1">&#39;1.21&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;File-Which-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/P/PL/PLICEASE&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Email::Date::Format&#39;</span><span class="p">,</span> <span class="s1">&#39;1.005&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Email-Date-Format-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RJ/RJBS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">,</span> <span class="s1">&#39;0.17024&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Mock::Quick&#39;</span><span class="p">,</span> <span class="s1">&#39;1.111&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Mock-Quick-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/EX/EXODIST&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Text::CSV&#39;</span><span class="p">,</span> <span class="s1">&#39;1.91&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Text-CSV-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Test::Output&#39;</span><span class="p">,</span> <span class="s1">&#39;1.03&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Test-Output-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/B/BD/BDFOY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Class::DBI&#39;</span><span class="p">,</span> <span class="s1">&#39;3.0.17&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Class-DBI-v</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/T/TM/TMTM&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;List::AllUtils&#39;</span><span class="p">,</span> <span class="s1">&#39;0.14&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;List-AllUtils-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DR/DROLSKY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;UNIVERSAL::moniker&#39;</span><span class="p">,</span> <span class="s1">&#39;0.08&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;UNIVERSAL-moniker-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/K/KA/KASEI&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Exception::Class&#39;</span><span class="p">,</span> <span class="s1">&#39;1.42&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Exception-Class-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DR/DROLSKY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;File::CheckTree&#39;</span><span class="p">,</span> <span class="s1">&#39;4.42&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;File-CheckTree-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RJ/RJBS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Math::VecStat&#39;</span><span class="p">,</span> <span class="s1">&#39;0.08&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Math-VecStat-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/A/AS/ASPINELLI&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Pod::LaTeX&#39;</span><span class="p">,</span> <span class="s1">&#39;0.61&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Pod-LaTeX-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/T/TJ/TJENNESS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Eval::Closure&#39;</span><span class="p">,</span> <span class="s1">&#39;0.14&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Eval-Closure-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DO/DOY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;HTTP::Request&#39;</span><span class="p">,</span> <span class="s1">&#39;6.11&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;HTTP-Message-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/ET/ETHER&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;XML::Twig&#39;</span><span class="p">,</span> <span class="s1">&#39;3.52&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;XML-Twig-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/M/MI/MIROD&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;IO::String&#39;</span><span class="p">,</span> <span class="s1">&#39;1.08&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;IO-String-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GA/GAAS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;XML::Simple&#39;</span><span class="p">,</span> <span class="s1">&#39;2.22&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;XML-Simple-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GR/GRANTM&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Sub::Install&#39;</span><span class="p">,</span> <span class="s1">&#39;0.928&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Sub-Install-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RJ/RJBS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;HTTP::Cookies&#39;</span><span class="p">,</span> <span class="s1">&#39;6.01&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;HTTP-Cookies-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GA/GAAS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Pod::Plainer&#39;</span><span class="p">,</span> <span class="s1">&#39;1.04&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Pod-Plainer-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RM/RMBARKER&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Test::Exception::LessClever&#39;</span><span class="p">,</span> <span class="s1">&#39;0.009&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Test-Exception-LessClever-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/ET/ETHER&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;LWP::MediaTypes&#39;</span><span class="p">,</span> <span class="s1">&#39;6.02&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;LWP-MediaTypes-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GA/GAAS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Scalar::Util&#39;</span><span class="p">,</span> <span class="s1">&#39;1.47&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Scalar-List-Utils-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/P/PE/PEVANS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Data::Section::Simple&#39;</span><span class="p">,</span> <span class="s1">&#39;0.07&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Data-Section-Simple-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Class::Trigger&#39;</span><span class="p">,</span> <span class="s1">&#39;0.14&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Class-Trigger-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;HTTP::Daemon&#39;</span><span class="p">,</span> <span class="s1">&#39;6.01&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;HTTP-Daemon-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GA/GAAS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;File::HomeDir&#39;</span><span class="p">,</span> <span class="s1">&#39;1.00&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;File-HomeDir-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/A/AD/ADAMK&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;HTTP::Date&#39;</span><span class="p">,</span> <span class="s1">&#39;6.02&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;HTTP-Date-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GA/GAAS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Authen::SASL&#39;</span><span class="p">,</span> <span class="s1">&#39;2.16&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Authen-SASL-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GB/GBARR&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Clone&#39;</span><span class="p">,</span> <span class="s1">&#39;0.38&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/G/GA/GARU&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Data::Types&#39;</span><span class="p">,</span> <span class="s1">&#39;0.09&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Data-Types-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DW/DWHEELER&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Import::Into&#39;</span><span class="p">,</span> <span class="s1">&#39;1.002005&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Import-Into-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/H/HA/HAARG&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;DateTime::Tiny&#39;</span><span class="p">,</span> <span class="s1">&#39;1.06&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;DateTime-Tiny-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;DBD::AnyData&#39;</span><span class="p">,</span> <span class="s1">&#39;0.110&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;DBD-AnyData-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RE/REHSACK&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Text::Format&#39;</span><span class="p">,</span> <span class="s1">&#39;0.60&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Text-Format-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Devel::CheckCompiler&#39;</span><span class="p">,</span> <span class="s1">&#39;0.07&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Devel-CheckCompiler-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/S/SY/SYOHEX&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Log::Handler&#39;</span><span class="p">,</span> <span class="s1">&#39;0.88&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Log-Handler-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/B/BL/BLOONIX&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;DBIx::ContextualFetch&#39;</span><span class="p">,</span> <span class="s1">&#39;1.03&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;DBIx-ContextualFetch-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/T/TM/TMTM&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Devel::StackTrace&#39;</span><span class="p">,</span> <span class="s1">&#39;2.02&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Devel-StackTrace-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DR/DROLSKY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Term::ReadKey&#39;</span><span class="p">,</span> <span class="s1">&#39;2.37&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;TermReadKey-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/J/JS/JSTOWE&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Set::IntSpan&#39;</span><span class="p">,</span> <span class="s1">&#39;1.19&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Set-IntSpan-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/S/SW/SWMCD&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Moose&#39;</span><span class="p">,</span> <span class="s1">&#39;2.2004&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/E/ET/ETHER&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Algorithm::Dependency&#39;</span><span class="p">,</span> <span class="s1">&#39;1.110&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Algorithm-Dependency-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/A/AD/ADAMK&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Font::TTF&#39;</span><span class="p">,</span> <span class="s1">&#39;1.06&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Font-TTF-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/B/BH/BHALLISSY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;IPC::Run3&#39;</span><span class="p">,</span> <span class="s1">&#39;0.048&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;IPC-Run3-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RJ/RJBS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;File::Find::Rule&#39;</span><span class="p">,</span> <span class="s1">&#39;0.34&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;File-Find-Rule-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RC/RCLAMP&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;SQL::Statement&#39;</span><span class="p">,</span> <span class="s1">&#39;1.410&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;SQL-Statement-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RE/REHSACK&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;File::Slurp&#39;</span><span class="p">,</span> <span class="s1">&#39;9999.19&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;File-Slurp-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/U/UR/URI&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Package::Stash&#39;</span><span class="p">,</span> <span class="s1">&#39;0.37&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Package-Stash-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/D/DO/DOY&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Data::OptList&#39;</span><span class="p">,</span> <span class="s1">&#39;0.110&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Data-OptList-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RJ/RJBS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;CPANPLUS&#39;</span><span class="p">,</span> <span class="s1">&#39;0.9164&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/B/BI/BINGOS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;IO::Tty&#39;</span><span class="p">,</span> <span class="s1">&#39;1.12&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;IO-Tty-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/T/TO/TODDR&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Text::Soundex&#39;</span><span class="p">,</span> <span class="s1">&#39;3.05&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Text-Soundex-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RJ/RJBS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Lingua::EN::PluralToSingular&#39;</span><span class="p">,</span> <span class="s1">&#39;0.19&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Lingua-EN-PluralToSingular-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/B/BK/BKB&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Want&#39;</span><span class="p">,</span> <span class="s1">&#39;0.29&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/R/RO/ROBIN&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Cwd::Guard&#39;</span><span class="p">,</span> <span class="s1">&#39;0.05&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Cwd-Guard-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/K/KA/KAZEBURO&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Bundle::BioPerl&#39;</span><span class="p">,</span> <span class="s1">&#39;2.1.9&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Bundle-BioPerl-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/C/CJ/CJFIELDS&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Mail::Util&#39;</span><span class="p">,</span> <span class="s1">&#39;2.18&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;MailTools-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://cpan.metacpan.org/authors/id/M/MA/MARKOV&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Text::Template&#39;</span><span class="p">,</span> <span class="s1">&#39;1.47&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Text-Template-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://search.cpan.org/CPAN/authors/id/M/MS/MSCHOUT&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;PDF::API2&#39;</span><span class="p">,</span> <span class="s1">&#39;2.031&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;PDF-API2-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://search.cpan.org/CPAN/authors/id/S/SS/SSIMMS/&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+<span class="c1">#</span>
+<span class="c1"># Added from previous installations</span>
+<span class="c1">#</span>
+    <span class="p">(</span><span class="s1">&#39;File::ShareDir::Install&#39;</span><span class="p">,</span> <span class="s1">&#39;0.11&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;File-ShareDir-Install-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;File::NFSLock&#39;</span><span class="p">,</span> <span class="s1">&#39;1.27&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;File-NFSLock-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://search.cpan.org/CPAN/authors/id/B/BB/BBB/&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Perl::Unsafe::Signals&#39;</span><span class="p">,</span> <span class="s1">&#39;0.03&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Perl-Unsafe-Signals-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://search.cpan.org/CPAN/authors/id/R/RG/RGARCIA/&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Proc::Simple&#39;</span><span class="p">,</span> <span class="s1">&#39;1.32&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Proc-Simple-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://search.cpan.org/CPAN/authors/id/M/MS/MSCHILLI/&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;IO::All&#39;</span><span class="p">,</span> <span class="s1">&#39;0.86&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;IO-All-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://search.cpan.org/CPAN/authors/id/I/IN/INGY/&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;IO::Prompt&#39;</span><span class="p">,</span> <span class="s1">&#39;0.997004&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;IO-Prompt-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://search.cpan.org/CPAN/authors/id/D/DC/DCONWAY/&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Inline&#39;</span><span class="p">,</span> <span class="s1">&#39;0.80&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://search.cpan.org/CPAN/authors/id/I/IN/INGY/&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Inline::C&#39;</span><span class="p">,</span> <span class="s1">&#39;0.76&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Inline-C-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://search.cpan.org/CPAN/authors/id/I/IN/INGY/&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;forks&#39;</span><span class="p">,</span> <span class="s1">&#39;0.36&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://search.cpan.org/CPAN/authors/id/R/RY/RYBSKEJ/&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Bit::Vector&#39;</span><span class="p">,</span> <span class="s1">&#39;7.4&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Bit-Vector-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://search.cpan.org/CPAN/authors/id/S/ST/STBEY/&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;ExtUtils::Manifest&#39;</span><span class="p">,</span> <span class="s1">&#39;1.70&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;ExtUtils-Manifest-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Algorithm::Combinatorics&#39;</span><span class="p">,</span> <span class="s1">&#39;0.27&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Algorithm-Combinatorics-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://search.cpan.org/CPAN/authors/id/F/FX/FXN/&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;YAML::Tiny&#39;</span><span class="p">,</span> <span class="s1">&#39;1.70&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;YAML-Tiny-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Parallel::ForkManager&#39;</span><span class="p">,</span> <span class="s1">&#39;1.19&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Parallel-ForkManager-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://search.cpan.org/CPAN/authors/id/Y/YA/YANICK/&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Devel::CheckLib&#39;</span><span class="p">,</span> <span class="s1">&#39;1.07&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;source_tmpl&#39;</span><span class="p">:</span> <span class="s1">&#39;Devel-CheckLib-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://search.cpan.org/CPAN/authors/id/M/MA/MATTN/&#39;</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="c1"># DBD::Pg: Interface to the Postgress database. It requires a variable to be</span>
+    <span class="c1"># set to find the Postgress libraries, see the Readme in the files, and </span>
+    <span class="c1"># creates a dependency on a Postgress module</span>
+<span class="c1">#    (&#39;DBD::Pg&#39;, &#39;3.5.3&#39;, {</span>
+<span class="c1">#        &#39;source_tmpl&#39;: &#39;DBD-Pg-%(version)s.tar.gz&#39;,</span>
+<span class="c1">#        &#39;source_urls&#39;: [&#39;http://search.cpan.org/CPAN/authors/id/T/TU/TURNSTEP/&#39;],</span>
+<span class="c1">#    }),</span>
+    <span class="c1"># DBD::mysql: Tests will fail if you cannot connect to a MySQL server,</span>
+    <span class="c1"># so you may want to install this by hand with cpan if you really need it.</span>
+<span class="c1">#    (&#39;DBD::mysql&#39;, &#39;4.042&#39;, {</span>
+<span class="c1">#        &#39;source_tmpl&#39;: &#39;DBD-mysql-%(version)s.tar.gz&#39;,</span>
+<span class="c1">#        &#39;source_urls&#39;: [&#39;http://search.cpan.org/CPAN/authors/id/M/MI/MICHIELB/&#39;],</span>
+<span class="c1">#    }),</span>
+<span class="p">]</span>
+
+<span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;lang&#39;</span>
+</code></pre></div>
+<p><a href="../package/">[Perl]</a> <a href="../../..">[package list]</a></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/hpcuantwerpen" target="_blank" rel="noopener" title="HPC-UAntwerpen on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "header.autohide", "toc.follow", "content.code.annotate", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>

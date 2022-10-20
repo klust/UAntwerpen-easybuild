@@ -1,0 +1,864 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the UAntwerpen-modules repository">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>Buildtools 2020a - UAntwerpen-modules documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#buildtools-2020aeb" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="UAntwerpen-modules documentation" class="md-header__button md-logo" aria-label="UAntwerpen-modules documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UAntwerpen-modules documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Buildtools 2020a
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="UAntwerpen-modules documentation" class="md-nav__button md-logo" aria-label="UAntwerpen-modules documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    UAntwerpen-modules documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Pacakge list
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p><a href="../package/">[buildtools]</a> <a href="../../..">[package list]</a></p>
+<h1 id="buildtools-2020aeb">buildtools-2020a.eb</h1>
+<div class="highlight"><pre><span></span><code><span class="c1"># This easyconfig requires at least EasyBuild 3.9.4 due to a bug in the Bundle</span>
+<span class="c1"># EasyBlock in earlier versions. Or use the patched bundle.py of</span>
+<span class="c1"># https://github.com/easybuilders/easybuild-easyblocks/pull/1777 via --include-easyblocks</span>
+<span class="c1">#</span>
+<span class="c1"># NOTE: This module is developed at UAntwerp</span>
+<span class="c1"># NOTE: meson, which is included, requires python3 with setuptools installed in the OS.</span>
+<span class="c1">#</span>
+<span class="c1"># It is the first module we compile when starting a new toolchain.</span>
+<span class="c1">#</span>
+<span class="c1"># This bundle collects a number of GNU tools useful during the building process</span>
+<span class="c1"># and a few other tools.</span>
+<span class="c1">#</span>
+<span class="c1"># We do include a Flex and Bison even though they do contain libraries</span>
+<span class="c1"># for which some packages may want to use toolchain-specific versions. These </span>
+<span class="c1"># packages should then just assure that module is loaded after buildtools.</span>
+<span class="c1">#</span>
+<span class="n">easyblock</span> <span class="o">=</span> <span class="s1">&#39;Bundle&#39;</span>
+
+<span class="n">name</span> <span class="o">=</span>    <span class="s1">&#39;buildtools&#39;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;2020a&#39;</span>
+
+<span class="n">local_system_pyshortver</span> <span class="o">=</span> <span class="s1">&#39;3.6&#39;</span>
+
+<span class="c1"># Version info:   </span>
+<span class="n">local_autoconf_version</span> <span class="o">=</span>         <span class="s1">&#39;2.69&#39;</span>       <span class="c1"># Autoconf   20120424 - Check on https://ftp.gnu.org/gnu/autoconf/</span>
+<span class="n">local_autoconf_archive_version</span> <span class="o">=</span> <span class="s1">&#39;2019.01.06&#39;</span> <span class="c1"># Autoconf-Archive 20190106 - check on https://ftp.gnu.org/gnu/autoconf-archive/</span>
+<span class="n">local_automake_version</span> <span class="o">=</span>         <span class="s1">&#39;1.16.2&#39;</span>     <span class="c1"># Automake   20200321 - Check on https://ftp.gnu.org/gnu/automake/</span>
+<span class="n">local_cmake_version</span> <span class="o">=</span>            <span class="s1">&#39;3.17.0&#39;</span>     <span class="c1"># CMake      20200320 - Check on https://cmake.org/download/</span>
+<span class="n">local_ninja_version</span> <span class="o">=</span>            <span class="s1">&#39;1.10.0&#39;</span>     <span class="c1"># Ninja      20200128 - Check on https://ninja-build.org/</span>
+<span class="n">local_meson_version</span> <span class="o">=</span>            <span class="s1">&#39;0.53.2&#39;</span>     <span class="c1"># Meson      20200225 - Check on https://pypi.org/project/meson/#history</span>
+<span class="n">local_doxygen_version</span> <span class="o">=</span>          <span class="s1">&#39;1.8.18&#39;</span>     <span class="c1"># Doxygen    20191227 - Check on http://www.doxygen.nl/download.html</span>
+<span class="n">local_help2man_version</span> <span class="o">=</span>         <span class="s1">&#39;1.47.13&#39;</span>    <span class="c1"># help2man   20200315 - Check on https://ftp.gnu.org/gnu/help2man/</span>
+<span class="n">local_libtool_version</span> <span class="o">=</span>          <span class="s1">&#39;2.4.6&#39;</span>      <span class="c1"># libtool    20150215 - Check on https://ftp.gnu.org/gnu/libtool/</span>
+<span class="n">local_m4_version</span> <span class="o">=</span>               <span class="s1">&#39;1.4.18&#39;</span>     <span class="c1"># M4         20161231 - Check on https://ftp.gnu.org/gnu/m4/</span>
+<span class="n">local_make_version</span> <span class="o">=</span>             <span class="s1">&#39;4.3&#39;</span>        <span class="c1"># Make       20200119 - Check on https://ftp.gnu.org/gnu/make/</span>
+<span class="n">local_nasm_version</span> <span class="o">=</span>             <span class="s1">&#39;2.14.02&#39;</span>    <span class="c1"># NASM       20181226 - Check on https://www.nasm.us/</span>
+<span class="n">local_yasm_version</span> <span class="o">=</span>             <span class="s1">&#39;1.3.0&#39;</span>      <span class="c1"># Yasm       20140810 - Check on https://yasm.tortall.net/Download.html</span>
+<span class="n">local_pkgconfig_version</span> <span class="o">=</span>        <span class="s1">&#39;0.29.2&#39;</span>     <span class="c1"># pkg-config 20170320 - Check on https://pkgconfig.freedesktop.org/releases/</span>
+<span class="n">local_gperf_version</span> <span class="o">=</span>            <span class="s1">&#39;3.1&#39;</span>        <span class="c1"># gperf      20170105 - Check on https://ftp.gnu.org/gnu/gperf/</span>
+<span class="n">local_sed_version</span> <span class="o">=</span>              <span class="s1">&#39;4.8&#39;</span>        <span class="c1"># sed        20200114 - Check on https://ftp.gnu.org/gnu/sed/</span>
+<span class="n">local_patchelf_version</span> <span class="o">=</span>         <span class="s1">&#39;0.10&#39;</span>       <span class="c1"># patchelf   20190328 - Check on https://github.com/NixOS/patchelf/releases</span>
+<span class="n">local_bison_version</span> <span class="o">=</span>            <span class="s1">&#39;3.5.3&#39;</span>      <span class="c1"># Bison      20200308 - Check on http://ftp.gnu.org/gnu/bison/</span>
+<span class="n">local_flex_version</span> <span class="o">=</span>             <span class="s1">&#39;2.6.4&#39;</span>      <span class="c1"># flex       20170506 - Check on https://github.com/westes/flex/releases</span>
+<span class="n">local_byacc_version</span> <span class="o">=</span>            <span class="s1">&#39;20191125&#39;</span>   <span class="c1"># byacc      20191125 - Check on ftp://ftp.invisible-island.net/byacc</span>
+<span class="n">local_re2c_version</span> <span class="o">=</span>             <span class="s1">&#39;1.3&#39;</span>        <span class="c1"># re2c       20191214 - https://github.com/skvadrik/re2c/releases</span>
+<span class="n">local_git_version</span> <span class="o">=</span>              <span class="s1">&#39;2.26.0&#39;</span>     <span class="c1"># git        20200323 - Check on https://github.com/git/git/releases</span>
+<span class="n">local_SCons_version</span> <span class="o">=</span>            <span class="s1">&#39;3.1.2&#39;</span>         <span class="c1"># SCons      20101217 - https://github.com/SCons/scons/releases, https://scons.org/pages/download.html</span>
+
+<span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;http://www.gnu.org&#39;</span>
+
+<span class="n">whatis</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Description: A bundle of often used build tools, GNU and others&quot;</span>
+    <span class="s2">&quot;Contains: autoconf, autoconf_archive, automake, libtool, M4, make, git, sed, Bison, flex, Berkeley Yacc (byacc), &quot;</span> <span class="o">+</span> 
+    <span class="s2">&quot;CMake, Ninja, Meson, SCons, NASM, Yasm, patchelf, pkg-config, gperf, re2c, help2man and Doxygen&quot;</span>
+<span class="p">]</span>
+
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">A bundle of often used build tools, GNU and others: autoconf, autoconf_archive, </span>
+<span class="s2">automake, libtool, M4, make, git, sed, Bison, flex, Berkeley Yacc (byacc), CMake, </span>
+<span class="s2">Ninja, Meson, SCons, NASM, Yasm, patchelf, pkg-config, gperf, re2c, help2man </span>
+<span class="s2">and Doxygen.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">usage</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">This bundle collects a number of standard tools that are often needed when </span>
+<span class="s2">building software. Many of them are GNU tools.</span>
+<span class="s2">+ GNU Autoconf </span><span class="si">%(autoconf)s</span><span class="s2">               - https://www.gnu.org/software/autoconf/</span>
+<span class="s2">+ GNU Autoconf Archive </span><span class="si">%(autoconfarchive)s</span><span class="s2"> - https://www.gnu.org/software/autoconf/</span>
+<span class="s2">+ GNU Automake </span><span class="si">%(automake)s</span><span class="s2">             - https://www.gnu.org/software/automake/</span>
+<span class="s2">+ GNU libtool </span><span class="si">%(libtool)s</span><span class="s2">               - https://www.gnu.org/software/libtool/</span>
+<span class="s2">+ GNU M4 </span><span class="si">%(m4)s</span><span class="s2">                   - https://www.gnu.org/software/m4/</span>
+<span class="s2">+ GNU make </span><span class="si">%(make)s</span><span class="s2">                    - https://www.gnu.org/software/make/</span>
+<span class="s2">+ GNU sed </span><span class="si">%(sed)s</span><span class="s2">                     - https://www.gnu.org/software/sed/</span>
+<span class="s2">+ GNU Bison </span><span class="si">%(bison)s</span><span class="s2">                 - https://www.gnu.org/software/bison</span>
+<span class="s2">+ GNU flex </span><span class="si">%(flex)s</span><span class="s2">                  - https://www.gnu.org/software/flex/</span>
+<span class="s2">+ git </span><span class="si">%(git)s</span><span class="s2">                      - https://git-scm.com/</span>
+<span class="s2">+ byacc </span><span class="si">%(byacc)s</span><span class="s2">                  - http://invisible-island.net/byacc/byacc.html</span>
+<span class="s2">+ CMake </span><span class="si">%(cmake)s</span><span class="s2">                    - http://www.cmake.org/</span>
+<span class="s2">+ Ninja </span><span class="si">%(ninja)s</span><span class="s2">                    - https://ninja-build.org/</span>
+<span class="s2">+ Meson </span><span class="si">%(meson)s</span><span class="s2">                    - https://mesonbuild.com/Manual.html</span>
+<span class="s2">+ SCons </span><span class="si">%(SCons)s</span><span class="s2">                     - https://www.scons.org/</span>
+<span class="s2">+ NASM </span><span class="si">%(nasm)s</span><span class="s2">                    - http://www.nasm.us/</span>
+<span class="s2">+ Yasm </span><span class="si">%(yasm)s</span><span class="s2">                      - http://yasm.tortall.net/</span>
+<span class="s2">+ patchelf </span><span class="si">%(patchelf)s</span><span class="s2">                   - Modify the dynamic linker and RPATH of ELF executables,</span>
+<span class="s2">                                    http://nixos.org/patchelf.html</span>
+<span class="s2">+ pkg-config </span><span class="si">%(pkgconfig)s</span><span class="s2">               - https://www.freedesktop.org/wiki/Software/pkg-config/</span>
+<span class="s2">+ re2c </span><span class="si">%(re2c)s</span><span class="s2">                        - http://re2c.org/</span>
+<span class="s2">+ GNU gperf </span><span class="si">%(gperf)s</span><span class="s2">                   - https://www.gnu.org/software/gperf/</span>
+<span class="s2">+ GNU help2man </span><span class="si">%(help2man)s</span><span class="s2">            - https://www.gnu.org/software/help2man/</span>
+<span class="s2">+ Doxygen </span><span class="si">%(doxygen)s</span><span class="s2">                  - http://www.doxygen.org/</span>
+<span class="s2">These tools are all build against the system libraries and have been used to </span>
+<span class="s2">build several of the </span><span class="si">%(ver)s</span><span class="s2"> packages.</span>
+<span class="s2">&quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">{</span>
+    <span class="s1">&#39;autoconf&#39;</span>        <span class="p">:</span> <span class="n">local_autoconf_version</span><span class="p">,</span>
+    <span class="s1">&#39;autoconfarchive&#39;</span> <span class="p">:</span> <span class="n">local_autoconf_archive_version</span><span class="p">,</span>
+    <span class="s1">&#39;automake&#39;</span>        <span class="p">:</span> <span class="n">local_automake_version</span><span class="p">,</span>
+    <span class="s1">&#39;libtool&#39;</span>         <span class="p">:</span> <span class="n">local_libtool_version</span><span class="p">,</span>
+    <span class="s1">&#39;m4&#39;</span>              <span class="p">:</span> <span class="n">local_m4_version</span><span class="p">,</span>
+    <span class="s1">&#39;make&#39;</span>            <span class="p">:</span> <span class="n">local_make_version</span><span class="p">,</span>
+    <span class="s1">&#39;sed&#39;</span>             <span class="p">:</span> <span class="n">local_sed_version</span><span class="p">,</span>
+    <span class="s1">&#39;bison&#39;</span>           <span class="p">:</span> <span class="n">local_bison_version</span><span class="p">,</span>
+    <span class="s1">&#39;flex&#39;</span>            <span class="p">:</span> <span class="n">local_flex_version</span><span class="p">,</span>
+    <span class="s1">&#39;git&#39;</span>             <span class="p">:</span> <span class="n">local_git_version</span><span class="p">,</span>
+    <span class="s1">&#39;byacc&#39;</span>           <span class="p">:</span> <span class="n">local_byacc_version</span><span class="p">,</span>
+    <span class="s1">&#39;cmake&#39;</span>           <span class="p">:</span> <span class="n">local_cmake_version</span><span class="p">,</span>
+    <span class="s1">&#39;ninja&#39;</span>           <span class="p">:</span> <span class="n">local_ninja_version</span><span class="p">,</span>
+    <span class="s1">&#39;meson&#39;</span>           <span class="p">:</span> <span class="n">local_meson_version</span><span class="p">,</span>
+    <span class="s1">&#39;SCons&#39;</span>           <span class="p">:</span> <span class="n">local_SCons_version</span><span class="p">,</span>
+    <span class="s1">&#39;nasm&#39;</span>            <span class="p">:</span> <span class="n">local_nasm_version</span><span class="p">,</span>
+    <span class="s1">&#39;yasm&#39;</span>            <span class="p">:</span> <span class="n">local_yasm_version</span><span class="p">,</span>
+    <span class="s1">&#39;patchelf&#39;</span>        <span class="p">:</span> <span class="n">local_patchelf_version</span><span class="p">,</span>
+    <span class="s1">&#39;pkgconfig&#39;</span>       <span class="p">:</span> <span class="n">local_pkgconfig_version</span><span class="p">,</span>
+    <span class="s1">&#39;re2c&#39;</span>            <span class="p">:</span> <span class="n">local_re2c_version</span><span class="p">,</span>
+    <span class="s1">&#39;gperf&#39;</span>           <span class="p">:</span> <span class="n">local_gperf_version</span><span class="p">,</span>
+    <span class="s1">&#39;help2man&#39;</span>        <span class="p">:</span> <span class="n">local_help2man_version</span><span class="p">,</span>
+    <span class="s1">&#39;doxygen&#39;</span>         <span class="p">:</span> <span class="n">local_doxygen_version</span><span class="p">,</span>
+    <span class="s1">&#39;ver&#39;</span>             <span class="p">:</span> <span class="n">version</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">toolchain</span> <span class="o">=</span> <span class="n">SYSTEM</span>
+
+<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
+
+<span class="n">builddependencies</span> <span class="o">=</span> <span class="p">[</span>
+<span class="c1">#    (&#39;flex&#39;,  local_flex_version),   # For Doxygen</span>
+<span class="c1">#    (&#39;Bison&#39;, local_bison_version),  # For Doxygen</span>
+<span class="p">]</span>
+
+<span class="n">osdependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;openssl-devel&#39;</span><span class="p">,</span> <span class="s1">&#39;libssl-dev&#39;</span><span class="p">,</span> <span class="s1">&#39;libopenssl-devel&#39;</span><span class="p">),</span> <span class="c1"># For CMake</span>
+    <span class="p">(</span><span class="s1">&#39;ncurses-devel&#39;</span><span class="p">),</span>                                   <span class="c1"># For CMake</span>
+    <span class="p">(</span><span class="s1">&#39;libcurl-devel&#39;</span><span class="p">),</span>                                   <span class="c1"># For git</span>
+<span class="c1">#    (&#39;expat-devel&#39;),                                     # For git DOESN&#39;T SEEM TO BE NEEDED? SOME TOOLS HAVE AN INTERNAL ONE.</span>
+    <span class="p">(</span><span class="s1">&#39;gettext-devel&#39;</span><span class="p">),</span>                                   <span class="c1"># For git, make, ... (Packages check for /usr/bin/xgettext)</span>
+    <span class="p">(</span><span class="s1">&#39;pcre2-devel&#39;</span><span class="p">),</span>                                     <span class="c1"># For git, sed</span>
+    <span class="p">(</span><span class="s1">&#39;perl&#39;</span><span class="p">),</span>                                            <span class="c1"># For git and the auto*-tools</span>
+    <span class="p">(</span><span class="s1">&#39;python3&#39;</span><span class="p">),</span>                                         <span class="c1"># For git, Meson, SCons</span>
+    <span class="p">(</span><span class="s1">&#39;zlib-devel&#39;</span><span class="p">),</span>                                      <span class="c1"># For CMake, git</span>
+<span class="p">]</span>
+
+
+<span class="n">default_easyblock</span> <span class="o">=</span> <span class="s1">&#39;ConfigureMake&#39;</span>
+
+<span class="n">local_compiler_flags</span> <span class="o">=</span> <span class="s1">&#39;CC=&quot;gcc&quot; CFLAGS=&quot;-O2 -march=ivybridge -mtune=ivybridge&quot; CXX=&quot;g++&quot; CXXFLAGS=&quot;-O2 -march=ivybridge -mtune=ivybridge&quot; &#39;</span>
+
+<span class="n">components</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;pkg-config&#39;</span><span class="p">,</span> <span class="n">local_pkgconfig_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCELOWER_TAR_GZ</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="s1">&#39;https://pkg-config.freedesktop.org/releases/&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;preconfigopts&#39;</span><span class="p">:</span>    <span class="n">local_compiler_flags</span><span class="p">,</span>
+        <span class="s1">&#39;configopts&#39;</span><span class="p">:</span>       <span class="s2">&quot;--with-internal-glib&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;buildopts&#39;</span><span class="p">:</span>        <span class="s1">&#39;V=1;&#39;</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;git&#39;</span><span class="p">,</span> <span class="n">local_git_version</span><span class="p">,</span> <span class="p">{</span> <span class="c1"># Build of 2.22.0 fails if build after Make or certain other packages...</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span> <span class="p">{</span> <span class="s1">&#39;download_filename&#39;</span> <span class="p">:</span> <span class="s1">&#39;v</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;filename&#39;</span>          <span class="p">:</span> <span class="s1">&#39;git-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;source_urls&#39;</span>       <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://github.com/git/git/archive&#39;</span><span class="p">],</span>
+                            <span class="p">}</span> <span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;2a93b9a3276464507922134bfba9be466427ab6a843e3773849050e3d05250d0&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;preconfigopts&#39;</span><span class="p">:</span>    <span class="s1">&#39;make configure &amp;&amp; &#39;</span> <span class="o">+</span> <span class="n">local_compiler_flags</span><span class="p">,</span>
+        <span class="s1">&#39;configopts&#39;</span><span class="p">:</span>       <span class="s2">&quot;--with-libpcre --with-python=/usr/bin/python --enable-pthreads=&#39;-lpthread&#39;&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;buildopts&#39;</span><span class="p">:</span>        <span class="s1">&#39;V=1;&#39;</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Make&#39;</span><span class="p">,</span> <span class="n">local_make_version</span><span class="p">,</span> <span class="p">{</span> <span class="c1"># Uses pkg-config</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCELOWER_TAR_GZ</span><span class="p">],</span> <span class="c1"># .tar.lz not yet supported on our systems and not available as a constant in EasyBuild.</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="n">GNU_SOURCE</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;e05fdde47c5f7ca45cb697e973894ff4f5d79e13b750ed57d7b66d8defc78e19&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;preconfigopts&#39;</span><span class="p">:</span>    <span class="n">local_compiler_flags</span><span class="p">,</span>
+        <span class="s1">&#39;buildopts&#39;</span><span class="p">:</span>        <span class="s1">&#39;V=1;&#39;</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;byacc&#39;</span><span class="p">,</span> <span class="n">local_byacc_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCELOWER_TGZ</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="s1">&#39;ftp://ftp.invisible-island.net/byacc//&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;071c2ebe36afaa8448b80e893473a681e63a3b8a4ed636c0d675780a02411cde&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;preconfigopts&#39;</span><span class="p">:</span>    <span class="n">local_compiler_flags</span><span class="p">,</span>
+        <span class="s1">&#39;installopts&#39;</span><span class="p">:</span>      <span class="s1">&#39; &amp;&amp; mv </span><span class="si">%(installdir)s</span><span class="s1">/bin/yacc </span><span class="si">%(installdir)s</span><span class="s1">/bin/byacc &amp;&amp; mv </span><span class="si">%(installdir)s</span><span class="s1">/share/man/man1/yacc.1 </span><span class="si">%(installdir)s</span><span class="s1">/share/man/man1/byacc.1&#39;</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;M4&#39;</span><span class="p">,</span> <span class="n">local_m4_version</span><span class="p">,</span> <span class="p">{</span> <span class="c1"># Uses gawk which for now we assume to be on the system</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCELOWER_TAR_XZ</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="n">GNU_SOURCE</span><span class="p">],</span>
+        <span class="s1">&#39;patches&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="s1">&#39;m4-1.4.18-glibc-change-work-around.patch&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;f2c1e86ca0a404ff281631bdc8377638992744b175afb806e25871a24a934e07&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;preconfigopts&#39;</span><span class="p">:</span>    <span class="n">local_compiler_flags</span><span class="p">,</span>
+        <span class="s1">&#39;configopts&#39;</span><span class="p">:</span>       <span class="s1">&#39;sCPPFLAGS=-fgnu89-inline&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;buildopts&#39;</span><span class="p">:</span>        <span class="s1">&#39;V=1;&#39;</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;libtool&#39;</span><span class="p">,</span> <span class="n">local_libtool_version</span><span class="p">,</span> <span class="p">{</span> <span class="c1"># Uses M4</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCELOWER_TAR_XZ</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="n">GNU_SOURCE</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;7c87a8c2c8c0fc9cd5019e402bed4292462d00a718a7cd5f11218153bf28b26f&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;preconfigopts&#39;</span><span class="p">:</span>    <span class="n">local_compiler_flags</span><span class="p">,</span>
+        <span class="s1">&#39;buildopts&#39;</span><span class="p">:</span>        <span class="s1">&#39;V=1;&#39;</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Autoconf&#39;</span><span class="p">,</span> <span class="n">local_autoconf_version</span><span class="p">,</span> <span class="p">{</span> <span class="c1"># Uses M4</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCELOWER_TAR_XZ</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="n">GNU_SOURCE</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;64ebcec9f8ac5b2487125a86a7760d2591ac9e1d3dbd59489633f9de62a57684&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Autoconf-Archive&#39;</span><span class="p">,</span> <span class="n">local_autoconf_archive_version</span><span class="p">,</span> <span class="p">{</span> <span class="c1"># Uses M4</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCELOWER_TAR_XZ</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="n">GNU_SOURCE</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;17195c833098da79de5778ee90948f4c5d90ed1a0cf8391b4ab348e2ec511e3f&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Automake&#39;</span><span class="p">,</span> <span class="n">local_automake_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCELOWER_TAR_XZ</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="n">GNU_SOURCE</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;ccc459de3d710e066ab9e12d2f119bd164a08c9341ca24ba22c9adaa179eedd0&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;help2man&#39;</span><span class="p">,</span> <span class="n">local_help2man_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCELOWER_TAR_XZ</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="n">GNU_SOURCE</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;b7f8bbad1f2c405db747e3f5a4d5e1eddc63b360221c824bf79748f27b560523&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Bison&#39;</span><span class="p">,</span> <span class="n">local_bison_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCELOWER_TAR_XZ</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="n">GNU_SOURCE</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;2bf85b5f88a5f2fa8069aed2a2dfc3a9f8d15a97e59c713e3906e5fdd982a7c4&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;preconfigopts&#39;</span><span class="p">:</span>    <span class="n">local_compiler_flags</span><span class="p">,</span>
+        <span class="s1">&#39;buildopts&#39;</span><span class="p">:</span>        <span class="s1">&#39;V=1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;parallel&#39;</span><span class="p">:</span>         <span class="s1">&#39;1&#39;</span><span class="p">,</span>  <span class="c1"># Building the examples fails in some Bison version when doing a parallel</span>
+                                  <span class="c1"># build, likely due to incomplete dependencies and a file being removed</span>
+                                  <span class="c1"># while it is still needed.</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;flex&#39;</span><span class="p">,</span> <span class="n">local_flex_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;easyblock&#39;</span><span class="p">:</span>        <span class="s1">&#39;EB_flex&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCELOWER_TAR_GZ</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="s1">&#39;https://github.com/westes/flex/releases/download/v&#39;</span> <span class="o">+</span> <span class="n">local_flex_version</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;preconfigopts&#39;</span><span class="p">:</span>    <span class="s1">&#39;export CPPFLAGS=&quot;$CPPFLAGS -D_GNU_SOURCE&quot; &amp;&amp; &#39;</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;sed&#39;</span><span class="p">,</span> <span class="n">local_sed_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCELOWER_TAR_XZ</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="n">GNU_SOURCE</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;f79b0cfea71b37a8eeec8490db6c5f7ae7719c35587f21edb0617f370eeff633&#39;</span><span class="p">],</span> 
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;preconfigopts&#39;</span><span class="p">:</span>    <span class="n">local_compiler_flags</span><span class="p">,</span>
+        <span class="s1">&#39;buildopts&#39;</span><span class="p">:</span>        <span class="s1">&#39;V=1&#39;</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;CMake&#39;</span><span class="p">,</span> <span class="n">local_cmake_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCELOWER_TAR_GZ</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="s1">&#39;https://cmake.org/files/v</span><span class="si">%(version_major_minor)s</span><span class="s1">&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;b74c05b55115eacc4fa2b77a814981dbda05cdc95a53e279fe16b7b272f00847&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;preconfigopts&#39;</span><span class="p">:</span>    <span class="n">local_compiler_flags</span><span class="p">,</span>
+        <span class="s1">&#39;configopts&#39;</span><span class="p">:</span>       <span class="s1">&#39;-- -DCMAKE_USE_OPENSSL=1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;buildopts&#39;</span><span class="p">:</span>        <span class="s1">&#39;V=1 VERBOSE=1&#39;</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;re2c&#39;</span><span class="p">,</span> <span class="n">local_re2c_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCE_TAR_XZ</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="s1">&#39;https://github.com/skvadrik/re2c/releases/download/</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;f37f25ff760e90088e7d03d1232002c2c2672646d5844fdf8e0d51a5cd75a503&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;preconfigopts&#39;</span><span class="p">:</span>    <span class="n">local_compiler_flags</span><span class="p">,</span>
+        <span class="s1">&#39;buildopts&#39;</span><span class="p">:</span>        <span class="s1">&#39;V=1&#39;</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Ninja&#39;</span><span class="p">,</span> <span class="n">local_ninja_version</span><span class="p">,</span> <span class="p">{</span> <span class="c1"># Needs re2c</span>
+        <span class="s1">&#39;easyblock&#39;</span><span class="p">:</span>        <span class="s1">&#39;CmdCp&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span> <span class="p">{</span> <span class="s1">&#39;download_filename&#39;</span> <span class="p">:</span> <span class="s1">&#39;v</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;filename&#39;</span>          <span class="p">:</span> <span class="n">SOURCELOWER_TAR_GZ</span><span class="p">,</span>
+                                <span class="s1">&#39;source_urls&#39;</span>       <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://github.com/ninja-build/ninja/archive&#39;</span><span class="p">],</span>
+                            <span class="p">}</span> <span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;3810318b08489435f8efc19c05525e80a993af5a55baa0dfeae0465a9d45f99f&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;cmds_map&#39;</span><span class="p">:</span>         <span class="p">[(</span><span class="s1">&#39;.*&#39;</span><span class="p">,</span> <span class="s2">&quot;python3 configure.py --bootstrap&quot;</span><span class="p">)],</span>
+        <span class="s1">&#39;files_to_copy&#39;</span><span class="p">:</span>    <span class="p">[([</span><span class="s1">&#39;ninja&#39;</span><span class="p">],</span> <span class="s1">&#39;bin&#39;</span><span class="p">)],</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Meson&#39;</span><span class="p">,</span> <span class="n">local_meson_version</span><span class="p">,</span> <span class="p">{</span> <span class="c1"># Does require Ninja</span>
+        <span class="s1">&#39;easyblock&#39;</span><span class="p">:</span>        <span class="s1">&#39;PythonPackage&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCELOWER_TAR_GZ</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="n">PYPI_SOURCE</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;3e8f830f33184397c2eb0b651ec502adb63decb28978bdc84b3558d71284c21f&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;req_py_majver&#39;</span><span class="p">:</span>    <span class="mi">3</span><span class="p">,</span> <span class="c1"># Used to let EasyBuild select the right system Python executable.</span>
+        <span class="s1">&#39;req_py_minver&#39;</span><span class="p">:</span>    <span class="mi">5</span><span class="p">,</span> <span class="c1"># Used to let EasyBuild select the right system Python executable.</span>
+        <span class="s1">&#39;options&#39;</span><span class="p">:</span>          <span class="p">{</span><span class="s1">&#39;modulename&#39;</span><span class="p">:</span> <span class="s1">&#39;mesonbuild&#39;</span><span class="p">}</span>
+    <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;SCons&#39;</span><span class="p">,</span> <span class="n">local_SCons_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;easyblock&#39;</span><span class="p">:</span>        <span class="s1">&#39;PythonPackage&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCELOWER_TAR_GZ</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="n">SOURCEFORGE_SOURCE</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;7801f3f62f654528e272df780be10c0e9337e897650b62ddcee9f39fde13f8fb&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;req_py_majver&#39;</span><span class="p">:</span>     <span class="mi">3</span><span class="p">,</span> <span class="c1"># Used to let EasyBuild select the right system Python executable.</span>
+        <span class="s1">&#39;req_py_minver&#39;</span><span class="p">:</span>     <span class="mi">5</span><span class="p">,</span> <span class="c1"># Used to let EasyBuild select the right system Python executable.</span>
+        <span class="s1">&#39;download_dep_fail&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">&#39;use_pip&#39;</span><span class="p">:</span>           <span class="kc">False</span><span class="p">,</span>
+        <span class="s1">&#39;sanity_pip_check&#39;</span><span class="p">:</span>  <span class="kc">False</span><span class="p">,</span>
+        <span class="s1">&#39;options&#39;</span><span class="p">:</span>           <span class="p">{</span><span class="s1">&#39;modulename&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;gperf&#39;</span><span class="p">,</span> <span class="n">local_gperf_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCELOWER_TAR_GZ</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="n">GNU_SOURCE</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;588546b945bba4b70b6a3a616e80b4ab466e3f33024a352fc2198112cdbb3ae2&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;preconfigopts&#39;</span><span class="p">:</span>    <span class="n">local_compiler_flags</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;NASM&#39;</span><span class="p">,</span> <span class="n">local_nasm_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCELOWER_TAR_XZ</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="s1">&#39;http://www.nasm.us/pub/nasm/releasebuilds/</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;e24ade3e928f7253aa8c14aa44726d1edf3f98643f87c9d72ec1df44b26be8f5&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;preconfigopts&#39;</span><span class="p">:</span>    <span class="n">local_compiler_flags</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Yasm&#39;</span><span class="p">,</span> <span class="n">local_yasm_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="c1"># http://www.tortall.net/projects/yasm/releases/yasm-1.3.0.tar.gz</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">SOURCELOWER_TAR_GZ</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>      <span class="p">[</span><span class="s1">&#39;http://www.tortall.net/projects/yasm/releases/&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;3dce6601b495f5b3d45b59f7d2492a340ee7e84b5beca17e48f862502bd5603f&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;preconfigopts&#39;</span><span class="p">:</span>    <span class="n">local_compiler_flags</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;patchelf&#39;</span><span class="p">,</span> <span class="n">local_patchelf_version</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>          <span class="p">[</span> <span class="p">{</span> <span class="s1">&#39;download_filename&#39;</span> <span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;filename&#39;</span>          <span class="p">:</span> <span class="s1">&#39;patchelf-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;source_urls&#39;</span>       <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;https://github.com/NixOS/patchelf/archive/&#39;</span><span class="p">],</span>
+                            <span class="p">}</span> <span class="p">],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;b3cb6bdedcef5607ce34a350cf0b182eb979f8f7bc31eae55a93a70a3f020d13&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>        <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;preconfigopts&#39;</span><span class="p">:</span>    <span class="s1">&#39;sh bootstrap.sh &amp;&amp; &#39;</span> <span class="o">+</span> <span class="n">local_compiler_flags</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;Doxygen&#39;</span><span class="p">,</span> <span class="n">local_doxygen_version</span><span class="p">,</span> <span class="p">{</span>  <span class="c1"># Note that the build process already requires CMake, flex and Bison</span>
+        <span class="s1">&#39;easyblock&#39;</span><span class="p">:</span>         <span class="s1">&#39;EB_Doxygen&#39;</span><span class="p">,</span>
+        <span class="c1"># https://sourceforge.net/projects/doxygen/files/rel-1.8.18/doxygen-1.8.18.src.tar.gz/download</span>
+        <span class="s1">&#39;sources&#39;</span><span class="p">:</span>           <span class="p">[</span><span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.src.tar.gz&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>       <span class="p">[(</span><span class="s1">&#39;https://sourceforge.net/projects/doxygen/files/rel-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;/download&#39;</span><span class="p">)],</span>
+        <span class="s1">&#39;checksums&#39;</span><span class="p">:</span>         <span class="p">[</span><span class="s1">&#39;18173d9edc46d2d116c1f92a95d683ec76b6b4b45b817ac4f245bb1073d00656&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;start_dir&#39;</span><span class="p">:</span>         <span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;preconfigopts&#39;</span><span class="p">:</span>     <span class="n">local_compiler_flags</span><span class="p">,</span>
+        <span class="s1">&#39;parallel&#39;</span><span class="p">:</span>          <span class="mi">1</span><span class="p">,</span>
+    <span class="p">}),</span>
+<span class="p">]</span>
+<span class="c1">#</span>
+<span class="c1"># Additions to consider:</span>
+<span class="c1"># - GNU coreutils: Not only for building, but several programs are used during the build proces of some codes.</span>
+<span class="c1">#</span>
+
+<span class="c1">#parallel = 1</span>
+
+<span class="n">postinstallcmds</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># For make</span>
+    <span class="s1">&#39;cd </span><span class="si">%(installdir)s</span><span class="s1">/bin ; ln -s make gmake&#39;</span><span class="p">,</span> <span class="c1"># Some programs check for gmake first and fail if that version is too old.</span>
+    <span class="c1"># For SCons</span>
+    <span class="s1">&#39;/bin/rm </span><span class="si">%(installdir)s</span><span class="s1">/bin/scon*.bat&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cd </span><span class="si">%(installdir)s</span><span class="s1">/bin; sed -e &quot;s/env python/env python3/&quot; -i scons*&#39;</span>    
+<span class="p">]</span>
+
+<span class="n">sanity_check_paths</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;files&#39;</span><span class="p">:</span> <span class="c1"># Make</span>
+             <span class="p">[</span><span class="s1">&#39;bin/make&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/gmake&#39;</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># byacc</span>
+             <span class="p">[</span><span class="s1">&#39;bin/byacc&#39;</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># M4</span>
+             <span class="p">[</span><span class="s1">&#39;bin/m4&#39;</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># libtool</span>
+             <span class="p">[</span><span class="s1">&#39;bin/libtool&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/libtoolize&#39;</span><span class="p">,</span> <span class="s1">&#39;lib/libltdl.</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">SHLIB_EXT</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># Autoconf</span>
+             <span class="p">[</span><span class="s1">&#39;bin/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">x</span>
+              <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;autoconf&#39;</span><span class="p">,</span> <span class="s1">&#39;autoheader&#39;</span><span class="p">,</span> <span class="s1">&#39;autom4te&#39;</span><span class="p">,</span> <span class="s1">&#39;autoreconf&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;autoscan&#39;</span><span class="p">,</span> <span class="s1">&#39;autoupdate&#39;</span><span class="p">,</span> <span class="s1">&#39;ifnames&#39;</span><span class="p">]]</span> <span class="o">+</span>
+             <span class="c1"># Autoconf-archive</span>
+             <span class="c1"># Automake</span>
+             <span class="p">[</span><span class="s1">&#39;bin/aclocal&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;bin/aclocal-&#39;</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">local_automake_version</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[:</span><span class="mi">2</span><span class="p">]),</span>
+              <span class="s1">&#39;bin/automake&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;bin/automake-&#39;</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">local_automake_version</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[:</span><span class="mi">2</span><span class="p">])]</span> <span class="o">+</span>
+             <span class="c1"># help2man</span>
+             <span class="p">[</span><span class="s1">&#39;bin/help2man&#39;</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># Bison</span>
+             <span class="p">[</span><span class="s1">&#39;bin/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;bison&#39;</span><span class="p">,</span> <span class="s1">&#39;yacc&#39;</span><span class="p">]]</span> <span class="o">+</span> <span class="p">[(</span><span class="s1">&#39;lib/liby.a&#39;</span><span class="p">,</span> <span class="s1">&#39;lib64/liby.a&#39;</span><span class="p">)]</span> <span class="o">+</span>
+             <span class="c1"># flex</span>
+             <span class="p">[</span><span class="s1">&#39;bin/flex&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/lex&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/lex++&#39;</span><span class="p">,</span> <span class="s1">&#39;lib/libfl.a&#39;</span><span class="p">,</span> <span class="s1">&#39;lib/libfl.</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">SHLIB_EXT</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># sed</span>
+             <span class="p">[</span><span class="s1">&#39;bin/sed&#39;</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># git</span>
+             <span class="p">[</span><span class="s1">&#39;bin/git&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/gitk&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/git-shell&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/git-cvsserver&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/git-receive-pack&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/git-upload-archive&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/git-upload-pack&#39;</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># CMake</span>
+             <span class="p">[</span><span class="s1">&#39;bin/cmake&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/cpack&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/ctest&#39;</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># Ninja</span>
+             <span class="p">[</span><span class="s1">&#39;bin/ninja&#39;</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># Meson</span>
+             <span class="c1"># SCons</span>
+             <span class="p">[</span><span class="s1">&#39;bin/scons&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/sconsign&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/scons-configure-cache&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="c1"># scons-time is missing in SCons 4? Strange as there is a manual page for it.</span>
+             <span class="c1"># gperf</span>
+             <span class="p">[</span><span class="s1">&#39;bin/gperf&#39;</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># NASM</span>
+             <span class="p">[</span><span class="s1">&#39;bin/nasm&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/ndisasm&#39;</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># Yasm</span>
+             <span class="p">[</span><span class="s1">&#39;bin/yasm&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/vsyasm&#39;</span><span class="p">,</span> <span class="s1">&#39;bin/ytasm&#39;</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># patchelf</span>
+             <span class="p">[</span><span class="s1">&#39;bin/patchelf&#39;</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># re2c</span>
+             <span class="p">[</span><span class="s1">&#39;bin/re2c&#39;</span><span class="p">,</span> <span class="s1">&#39;share/re2c/stdlib/unicode_categories.re&#39;</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># Doxygen</span>
+             <span class="p">[</span><span class="s1">&#39;bin/doxygen&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;dirs&#39;</span><span class="p">:</span>  <span class="c1"># libtool</span>
+             <span class="p">[</span><span class="s1">&#39;include/libltdl&#39;</span><span class="p">,</span> <span class="s1">&#39;share/libtool/loaders&#39;</span><span class="p">,</span> <span class="s1">&#39;share/man/man1&#39;</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># Autoconf</span>
+             <span class="p">[</span><span class="s1">&#39;share/autoconf&#39;</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># Autoconf-archive</span>
+             <span class="p">[</span><span class="s1">&#39;share/aclocal&#39;</span><span class="p">,</span> <span class="s1">&#39;share/doc/autoconf-archive&#39;</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># Automake</span>
+             <span class="p">[</span><span class="s1">&#39;share/aclocal&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;share/aclocal-&#39;</span> <span class="o">+</span>  <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">local_automake_version</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[:</span><span class="mi">2</span><span class="p">]),</span>
+              <span class="s1">&#39;share/automake-&#39;</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">local_automake_version</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[:</span><span class="mi">2</span><span class="p">])]</span> <span class="o">+</span>
+             <span class="c1"># CMake</span>
+             <span class="p">[</span><span class="s1">&#39;share/cmake-&#39;</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">local_cmake_version</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[:</span><span class="mi">2</span><span class="p">])]</span> <span class="o">+</span>
+             <span class="p">[</span><span class="s1">&#39;share/info&#39;</span><span class="p">]</span> <span class="o">+</span>
+             <span class="c1"># Meson and SCons</span>
+             <span class="p">[</span><span class="s1">&#39;lib/python</span><span class="si">%s</span><span class="s1">/site-packages&#39;</span> <span class="o">%</span> <span class="n">local_system_pyshortver</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">sanity_check_commands</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># Make</span>
+    <span class="s1">&#39;make --version&#39;</span><span class="p">,</span>
+    <span class="c1"># byacc</span>
+    <span class="s1">&#39;byacc -V&#39;</span><span class="p">,</span>
+    <span class="c1"># M4</span>
+    <span class="s1">&#39;m4 --version&#39;</span><span class="p">,</span>
+    <span class="c1"># libtool</span>
+    <span class="s1">&#39;libtool --version&#39;</span><span class="p">,</span>
+    <span class="c1"># Autoconf</span>
+    <span class="s1">&#39;autoconf --version&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;autoheader --version&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;autom4te --version&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;autoreconf --version&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;autoscan --version&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;autoupdate --version&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ifnames --version&#39;</span><span class="p">,</span>
+    <span class="c1"># Autoconf-archive</span>
+    <span class="c1"># Automake</span>
+    <span class="s1">&#39;aclocal --version&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;aclocal-&#39;</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">local_automake_version</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[:</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39; --version&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;automake --version&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;automake-&#39;</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">local_automake_version</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[:</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39; --version&#39;</span><span class="p">,</span>
+    <span class="c1"># help2man</span>
+    <span class="s1">&#39;help2man --version&#39;</span><span class="p">,</span>
+    <span class="c1"># Bison</span>
+    <span class="s1">&#39;bison --version&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;yacc --version&#39;</span><span class="p">,</span>
+    <span class="c1"># flex</span>
+    <span class="s1">&#39;flex --version&#39;</span><span class="p">,</span>
+    <span class="c1"># sed</span>
+    <span class="s1">&#39;sed --version&#39;</span><span class="p">,</span>
+    <span class="c1"># git</span>
+    <span class="s1">&#39;git --version&#39;</span><span class="p">,</span> 
+    <span class="c1"># CMake</span>
+    <span class="s1">&#39;cmake --version&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cpack --version&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ctest --version&#39;</span><span class="p">,</span>
+    <span class="c1"># Ninja</span>
+    <span class="s1">&#39;ninja --version&#39;</span><span class="p">,</span>
+   <span class="c1"># Meson</span>
+    <span class="s1">&#39;meson --version&#39;</span><span class="p">,</span>
+    <span class="c1"># SCons</span>
+    <span class="s1">&#39;scons --help&#39;</span><span class="p">,</span>
+    <span class="c1"># gperf</span>
+    <span class="s1">&#39;gperf --version&#39;</span><span class="p">,</span>
+    <span class="c1"># NASM</span>
+    <span class="s1">&#39;nasm --version&#39;</span><span class="p">,</span>
+    <span class="c1"># Yasm</span>
+    <span class="s1">&#39;yasm --version&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;vsyasm --version&#39;</span><span class="p">,</span>
+    <span class="c1"># patchelf</span>
+    <span class="s1">&#39;patchelf --version&#39;</span><span class="p">,</span>
+    <span class="c1"># re2c</span>
+    <span class="s1">&#39;re2c --version&#39;</span><span class="p">,</span>
+    <span class="c1"># Doxygen</span>
+    <span class="s1">&#39;doxygen --version&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">modextrapaths</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;PYTHONPATH&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;lib/python</span><span class="si">%s</span><span class="s1">/site-packages&#39;</span> <span class="o">%</span> <span class="n">local_system_pyshortver</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">modextravars</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;EBROOTBYACC&#39;</span><span class="p">:</span>                 <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONBYACC&#39;</span><span class="p">:</span>              <span class="n">local_byacc_version</span><span class="p">,</span>
+    <span class="s1">&#39;EBROOTFLEX&#39;</span><span class="p">:</span>                  <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONFLEX&#39;</span><span class="p">:</span>               <span class="n">local_flex_version</span><span class="p">,</span>
+    <span class="s1">&#39;EBROOTGIT&#39;</span><span class="p">:</span>                   <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONGIT&#39;</span><span class="p">:</span>                <span class="n">local_git_version</span><span class="p">,</span> 
+    <span class="s1">&#39;EBROOTAUTOCONF&#39;</span><span class="p">:</span>              <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONAUTOCONF&#39;</span><span class="p">:</span>           <span class="n">local_autoconf_version</span><span class="p">,</span>
+    <span class="s1">&#39;EBROOTAUTOCONFMINARCHIVE&#39;</span><span class="p">:</span>    <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONAUTOCONFMINARCHIVE&#39;</span><span class="p">:</span> <span class="n">local_autoconf_archive_version</span><span class="p">,</span>
+    <span class="s1">&#39;EBROOTAUTOMAKE&#39;</span><span class="p">:</span>              <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONAUTOMAKE&#39;</span><span class="p">:</span>           <span class="n">local_automake_version</span><span class="p">,</span>
+    <span class="s1">&#39;EBROOTBISON&#39;</span><span class="p">:</span>                 <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONBISON&#39;</span><span class="p">:</span>              <span class="n">local_bison_version</span><span class="p">,</span> 
+    <span class="s1">&#39;EBROOTLIBTOOL&#39;</span><span class="p">:</span>               <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONLIBTOOL&#39;</span><span class="p">:</span>            <span class="n">local_libtool_version</span><span class="p">,</span> 
+    <span class="s1">&#39;EBROOTM4&#39;</span><span class="p">:</span>                    <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONM4&#39;</span><span class="p">:</span>                 <span class="n">local_m4_version</span><span class="p">,</span>
+    <span class="s1">&#39;EBROOTMAKE&#39;</span><span class="p">:</span>                  <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONMAKE&#39;</span><span class="p">:</span>               <span class="n">local_make_version</span><span class="p">,</span>
+    <span class="s1">&#39;EBROOTSED&#39;</span><span class="p">:</span>                   <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONSED&#39;</span><span class="p">:</span>                <span class="n">local_sed_version</span><span class="p">,</span>
+    <span class="s1">&#39;EBROOTCMAKE&#39;</span><span class="p">:</span>                 <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONCMAKE&#39;</span><span class="p">:</span>              <span class="n">local_cmake_version</span><span class="p">,</span>
+    <span class="s1">&#39;EBROOTNINJA&#39;</span><span class="p">:</span>                 <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONNINJA&#39;</span><span class="p">:</span>              <span class="n">local_ninja_version</span><span class="p">,</span>
+    <span class="s1">&#39;EBROOTMESON&#39;</span><span class="p">:</span>                 <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONMESON&#39;</span><span class="p">:</span>              <span class="n">local_meson_version</span><span class="p">,</span> 
+    <span class="s1">&#39;EBROOTSCONS&#39;</span><span class="p">:</span>                 <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONSCONS&#39;</span><span class="p">:</span>              <span class="n">local_SCons_version</span><span class="p">,</span> 
+    <span class="s1">&#39;EBROOTNASM&#39;</span><span class="p">:</span>                  <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONNASM&#39;</span><span class="p">:</span>               <span class="n">local_nasm_version</span><span class="p">,</span>
+    <span class="s1">&#39;EBROOTYASM&#39;</span><span class="p">:</span>                  <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONYASM&#39;</span><span class="p">:</span>               <span class="n">local_yasm_version</span><span class="p">,</span>
+    <span class="s1">&#39;EBROOTPATCHELF&#39;</span><span class="p">:</span>              <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONPATCHELF&#39;</span><span class="p">:</span>           <span class="n">local_patchelf_version</span><span class="p">,</span>
+    <span class="s1">&#39;EBROOTPKGMINCONFIG&#39;</span><span class="p">:</span>          <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONPKGMINCONFIG&#39;</span><span class="p">:</span>       <span class="n">local_pkgconfig_version</span><span class="p">,</span>
+    <span class="s1">&#39;EBROOTGPERF&#39;</span><span class="p">:</span>                 <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONGPERF&#39;</span><span class="p">:</span>              <span class="n">local_gperf_version</span><span class="p">,</span>
+    <span class="s1">&#39;EBROOTRE2C&#39;</span><span class="p">:</span>                  <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONRE2C&#39;</span><span class="p">:</span>               <span class="n">local_re2c_version</span><span class="p">,</span>
+    <span class="s1">&#39;EBROOTHELP2MAN&#39;</span><span class="p">:</span>              <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONHELP2MAN&#39;</span><span class="p">:</span>           <span class="n">local_help2man_version</span><span class="p">,</span>
+    <span class="s1">&#39;EBROOTDOXYGEN&#39;</span><span class="p">:</span>               <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EBVERSIONDOXYGEN&#39;</span><span class="p">:</span>            <span class="n">local_doxygen_version</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">modluafooter</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">extensions( &quot;Autoconf/</span><span class="si">%(autoconf)s</span><span class="s2">, Autoconf-archive/</span><span class="si">%(autoconfarchive)s</span><span class="s2">, Automake/</span><span class="si">%(automake)s</span><span class="s2">, &quot; ..</span>
+<span class="s2">            &quot;libtool/</span><span class="si">%(libtool)s</span><span class="s2">, M4/</span><span class="si">%(m4)s</span><span class="s2">, make/</span><span class="si">%(make)s</span><span class="s2">, sed/</span><span class="si">%(sed)s</span><span class="s2">, Bison/</span><span class="si">%(bison)s</span><span class="s2">, flex/</span><span class="si">%(flex)s</span><span class="s2">, &quot; ..</span>
+<span class="s2">            &quot;git/</span><span class="si">%(git)s</span><span class="s2">, byacc/</span><span class="si">%(byacc)s</span><span class="s2">, CMake/</span><span class="si">%(cmake)s</span><span class="s2">, Ninja/</span><span class="si">%(ninja)s</span><span class="s2">, &quot; ..</span>
+<span class="s2">            &quot;NASM/</span><span class="si">%(nasm)s</span><span class="s2">, Yasm/</span><span class="si">%(yasm)s</span><span class="s2">, patchelf/</span><span class="si">%(patchelf)s</span><span class="s2">, pkg-config/</span><span class="si">%(pkgconfig)s</span><span class="s2">, &quot; ..</span>
+<span class="s2">            &quot;re2c/</span><span class="si">%(re2c)s</span><span class="s2">, gperf/</span><span class="si">%(gperf)s</span><span class="s2">, help2man/</span><span class="si">%(help2man)s</span><span class="s2">, Doxygen/</span><span class="si">%(doxygen)s</span><span class="s2">, &quot; ..</span>
+<span class="s2">            &quot;Meson/</span><span class="si">%(meson)s</span><span class="s2">, SCons/</span><span class="si">%(SCons)s</span><span class="s2">&quot;</span>
+<span class="s2">          )</span>
+<span class="s2">&quot;&quot;&quot;</span>  <span class="o">%</span> <span class="p">{</span>
+    <span class="s1">&#39;autoconf&#39;</span>        <span class="p">:</span> <span class="n">local_autoconf_version</span><span class="p">,</span>
+    <span class="s1">&#39;autoconfarchive&#39;</span> <span class="p">:</span> <span class="n">local_autoconf_archive_version</span><span class="p">,</span>
+    <span class="s1">&#39;automake&#39;</span>        <span class="p">:</span> <span class="n">local_automake_version</span><span class="p">,</span>
+    <span class="s1">&#39;libtool&#39;</span>         <span class="p">:</span> <span class="n">local_libtool_version</span><span class="p">,</span>
+    <span class="s1">&#39;m4&#39;</span>              <span class="p">:</span> <span class="n">local_m4_version</span><span class="p">,</span>
+    <span class="s1">&#39;make&#39;</span>            <span class="p">:</span> <span class="n">local_make_version</span><span class="p">,</span>
+    <span class="s1">&#39;sed&#39;</span>             <span class="p">:</span> <span class="n">local_sed_version</span><span class="p">,</span>
+    <span class="s1">&#39;bison&#39;</span>           <span class="p">:</span> <span class="n">local_bison_version</span><span class="p">,</span>
+    <span class="s1">&#39;flex&#39;</span>            <span class="p">:</span> <span class="n">local_flex_version</span><span class="p">,</span>
+    <span class="s1">&#39;git&#39;</span>             <span class="p">:</span> <span class="n">local_git_version</span><span class="p">,</span>
+    <span class="s1">&#39;byacc&#39;</span>           <span class="p">:</span> <span class="n">local_byacc_version</span><span class="p">,</span>
+    <span class="s1">&#39;cmake&#39;</span>           <span class="p">:</span> <span class="n">local_cmake_version</span><span class="p">,</span>
+    <span class="s1">&#39;ninja&#39;</span>           <span class="p">:</span> <span class="n">local_ninja_version</span><span class="p">,</span>
+    <span class="s1">&#39;nasm&#39;</span>            <span class="p">:</span> <span class="n">local_nasm_version</span><span class="p">,</span>
+    <span class="s1">&#39;yasm&#39;</span>            <span class="p">:</span> <span class="n">local_yasm_version</span><span class="p">,</span>
+    <span class="s1">&#39;patchelf&#39;</span>        <span class="p">:</span> <span class="n">local_patchelf_version</span><span class="p">,</span>
+    <span class="s1">&#39;pkgconfig&#39;</span>       <span class="p">:</span> <span class="n">local_pkgconfig_version</span><span class="p">,</span>
+    <span class="s1">&#39;re2c&#39;</span>            <span class="p">:</span> <span class="n">local_re2c_version</span><span class="p">,</span>
+    <span class="s1">&#39;gperf&#39;</span>           <span class="p">:</span> <span class="n">local_gperf_version</span><span class="p">,</span>
+    <span class="s1">&#39;help2man&#39;</span>        <span class="p">:</span> <span class="n">local_help2man_version</span><span class="p">,</span>
+    <span class="s1">&#39;doxygen&#39;</span>         <span class="p">:</span> <span class="n">local_doxygen_version</span><span class="p">,</span>
+    <span class="s1">&#39;meson&#39;</span>           <span class="p">:</span> <span class="n">local_meson_version</span><span class="p">,</span>
+    <span class="s1">&#39;SCons&#39;</span>           <span class="p">:</span> <span class="n">local_SCons_version</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;devel&#39;</span>
+</code></pre></div>
+<p><a href="../package/">[buildtools]</a> <a href="../../..">[package list]</a></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/hpcuantwerpen" target="_blank" rel="noopener" title="HPC-UAntwerpen on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "header.autohide", "toc.follow", "content.code.annotate", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>

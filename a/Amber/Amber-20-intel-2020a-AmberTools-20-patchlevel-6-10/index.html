@@ -1,0 +1,458 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the UAntwerpen-modules repository">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>Amber 20 intel 2020a AmberTools 20 patchlevel 6 10 - UAntwerpen-modules documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#amber-20-intel-2020a-ambertools-20-patchlevel-6-10eb" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="UAntwerpen-modules documentation" class="md-header__button md-logo" aria-label="UAntwerpen-modules documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UAntwerpen-modules documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Amber 20 intel 2020a AmberTools 20 patchlevel 6 10
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="UAntwerpen-modules documentation" class="md-nav__button md-logo" aria-label="UAntwerpen-modules documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    UAntwerpen-modules documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Pacakge list
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p><a href="../package/">[Amber]</a> <a href="../../..">[package list]</a></p>
+<h1 id="amber-20-intel-2020a-ambertools-20-patchlevel-6-10eb">Amber-20-intel-2020a-AmberTools-20-patchlevel-6-10.eb</h1>
+<div class="highlight"><pre><span></span><code><span class="c1"># Remarks:</span>
+<span class="c1"># - See the README.md document in the directory on GitHub.</span>
+<span class="c1"># - Amber uses a script to download patches for Amber and Ambertools. </span>
+<span class="c1"># - This script is inspired by the script from CSCS.</span>
+<span class="n">easyblock</span> <span class="o">=</span> <span class="s1">&#39;MakeCp&#39;</span>
+
+<span class="n">local_buildset</span> <span class="o">=</span>         <span class="s1">&#39;2020a&#39;</span>
+<span class="n">local_gcc_version</span> <span class="o">=</span>      <span class="s1">&#39;9.3.0&#39;</span>
+<span class="n">local_binutils_version</span> <span class="o">=</span> <span class="s1">&#39;2.34&#39;</span>
+
+<span class="n">local_netCDF_version</span> <span class="o">=</span>         <span class="s1">&#39;4.7.3&#39;</span>           <span class="c1"># https://www.unidata.ucar.edu/software/netcdf/</span>
+<span class="n">local_Python3_version</span> <span class="o">=</span>        <span class="s1">&#39;3.8.3&#39;</span>           <span class="c1"># https://www.python.org/downloads/</span>
+
+<span class="n">name</span> <span class="o">=</span>                 <span class="s1">&#39;Amber&#39;</span>
+<span class="n">version</span> <span class="o">=</span>              <span class="s1">&#39;20&#39;</span>
+<span class="n">local_ambertools_ver</span> <span class="o">=</span> <span class="s1">&#39;20&#39;</span>
+<span class="c1"># Patch levels from http://ambermd.org/AmberPatches.php and http://ambermd.org/ATPatches.php</span>
+<span class="n">local_patchlevels</span> <span class="o">=</span>    <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># (AmberTools, Amber), EasyBlock parameter. Look on http://ambermd.org/ATPatches.php and http://ambermd.org/AmberPatches.php for the numbers.</span>
+<span class="c1">#local_patchlevels =    (1, 1)  # (AmberTools, Amber), EasyBlock parameter. Look on http://ambermd.org/ATPatches.php and http://ambermd.org/AmberPatches.php for the numbers.</span>
+<span class="n">versionsuffix</span> <span class="o">=</span>        <span class="s1">&#39;-AmberTools-</span><span class="si">%s</span><span class="s1">-patchlevel-</span><span class="si">%s</span><span class="s1">-</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">local_ambertools_ver</span><span class="p">,</span> <span class="n">local_patchlevels</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">local_patchlevels</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;http://ambermd.org/amber.html&#39;</span>
+
+<span class="n">whatis</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Description: Amber is software for performing molecular dynamics and structure prediction&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Contains: Amber </span><span class="si">%s</span><span class="s2"> patchlevel </span><span class="si">%s</span><span class="s2"> and AmberTools </span><span class="si">%s</span><span class="s2"> patchlevel </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">version</span><span class="p">,</span> <span class="n">local_patchlevels</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">local_ambertools_ver</span><span class="p">,</span> <span class="n">local_patchlevels</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">,</span>    
+<span class="p">]</span>
+
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Amber (originally Assisted Model Building with Energy</span>
+<span class="s2">Refinement) is software for performing molecular dynamics and structure</span>
+<span class="s2">prediction.</span>
+
+<span class="s2">This module contains Amber </span><span class="si">%(v_amber)s</span><span class="s2"> patchlevel </span><span class="si">%(p_amber)s</span><span class="s2"> and AmberTools </span><span class="si">%(v_AT)s</span><span class="s2"> patchlevel </span><span class="si">%(p_AT)s</span><span class="s2">.</span>
+
+<span class="s2">This module contains serial, OpenMP, MPI and hybrid MPI/OpenMP executables</span>
+<span class="s2">when they exist. Be careful as some of the auxiliary commands are just serial</span>
+<span class="s2">binaries while others are OpenMP.</span>
+
+<span class="s2">In fact, cpptraj is included in all 4 versions, respectively cpptraj, cpptraj.OMP,</span>
+<span class="s2">cpptraj.MPI and cpptraj.MPI.OMP. A few other commands have serial and MPI versions,</span>
+<span class="s2">the latter with the extension .MPI.</span>
+<span class="s2">&quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">{</span>
+    <span class="s1">&#39;v_amber&#39;</span><span class="p">:</span> <span class="n">version</span><span class="p">,</span>
+    <span class="s1">&#39;v_AT&#39;</span><span class="p">:</span>    <span class="n">local_ambertools_ver</span><span class="p">,</span>
+    <span class="s1">&#39;p_amber&#39;</span><span class="p">:</span> <span class="n">local_patchlevels</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+    <span class="s1">&#39;p_AT&#39;</span><span class="p">:</span>    <span class="n">local_patchlevels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">usage</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">UAntwerp-specific: AmberTools is free software, but Amber itself is not. </span>
+<span class="s2">Hence you need membership of the aamber group to be able to use this package.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">toolchain</span> <span class="o">=</span>     <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;intel&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="n">local_buildset</span><span class="p">}</span>
+<span class="n">toolchainopts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;usempi&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;openmp&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>  <span class="c1"># We do this via configure options.</span>
+
+<span class="n">sources</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="s1">&#39;filename&#39;</span><span class="p">:</span>    <span class="s1">&#39;Amber</span><span class="si">%(version)s</span><span class="s1">.tar.bz2&#39;</span><span class="p">,</span> 
+      <span class="s1">&#39;extract_cmd&#39;</span><span class="p">:</span> <span class="s1">&#39;tar xjf </span><span class="si">%s</span><span class="s1"> --strip-components=1&#39;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s1">&#39;filename&#39;</span><span class="p">:</span>    <span class="s1">&#39;AmberTools</span><span class="si">%s</span><span class="s1">.tar.bz2&#39;</span> <span class="o">%</span> <span class="n">local_ambertools_ver</span><span class="p">,</span>
+      <span class="s1">&#39;extract_cmd&#39;</span><span class="p">:</span> <span class="s1">&#39;tar xjf </span><span class="si">%s</span><span class="s1"> --strip-components=1&#39;</span> <span class="p">},</span>
+<span class="p">]</span>
+<span class="k">for</span> <span class="n">local_i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">local_patchlevels</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">sources</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="p">{</span> <span class="s1">&#39;download_filename&#39;</span><span class="p">:</span> <span class="s1">&#39;update.</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">local_i</span><span class="p">),</span>
+                      <span class="s1">&#39;filename&#39;</span><span class="p">:</span>          <span class="s1">&#39;Amber</span><span class="si">%s</span><span class="s1">/update.</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">version</span><span class="p">,</span> <span class="n">local_i</span><span class="p">),</span>
+                      <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>       <span class="p">[</span><span class="s1">&#39;https://ambermd.org/bugfixes/</span><span class="si">%s</span><span class="s1">.0/&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">version</span><span class="p">)],</span>
+                      <span class="s1">&#39;extract_cmd&#39;</span><span class="p">:</span>       <span class="s1">&#39;mkdir -p .patches/Amber&#39;</span><span class="o">+</span> <span class="n">version</span> <span class="o">+</span> <span class="s1">&#39;_Unapplied_Patches ; &#39;</span> <span class="o">+</span> 
+                                           <span class="s1">&#39;cp </span><span class="si">%s</span><span class="s1"> .patches/Amber&#39;</span><span class="o">+</span> <span class="n">version</span> <span class="o">+</span> <span class="s1">&#39;_Unapplied_Patches&#39;</span><span class="p">}</span> <span class="p">)</span>
+<span class="k">for</span> <span class="n">local_i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">local_patchlevels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">sources</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="p">{</span> <span class="s1">&#39;download_filename&#39;</span><span class="p">:</span> <span class="s1">&#39;update.</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">local_i</span><span class="p">),</span>
+                      <span class="s1">&#39;filename&#39;</span><span class="p">:</span>          <span class="s1">&#39;AmberTools</span><span class="si">%s</span><span class="s1">/update.</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">local_ambertools_ver</span><span class="p">,</span> <span class="n">local_i</span><span class="p">),</span>
+                      <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>       <span class="p">[</span><span class="s1">&#39;https://ambermd.org/bugfixes/AmberTools/</span><span class="si">%s</span><span class="s1">.0/&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">local_ambertools_ver</span><span class="p">)],</span>
+                      <span class="s1">&#39;extract_cmd&#39;</span><span class="p">:</span>       <span class="s1">&#39;mkdir -p .patches/AmberTools&#39;</span><span class="o">+</span> <span class="n">local_ambertools_ver</span> <span class="o">+</span> <span class="s1">&#39;_Unapplied_Patches ; &#39;</span> <span class="o">+</span> 
+                                           <span class="s1">&#39;cp </span><span class="si">%s</span><span class="s1"> .patches/AmberTools&#39;</span><span class="o">+</span> <span class="n">local_ambertools_ver</span> <span class="o">+</span> <span class="s1">&#39;_Unapplied_Patches&#39;</span><span class="p">}</span> <span class="p">)</span>
+<span class="n">patches</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;AmberTools-19_patch_no-gcc.patch&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="c1">#checksums = [</span>
+<span class="c1">#    &#39;2060897c0b11576082d523fb63a51ba701bc7519ff7be3d299d5ec56e8e6e277&#39;,  # Amber18.tar.bz2</span>
+<span class="c1">#    &#39;0c86937904854b64e4831e047851f504ec45b42e593db4ded92c1bee5973e699&#39;,  # AmberTools19.tar.bz2</span>
+<span class="c1">#]</span>
+
+<span class="n">builddependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;buildtools&#39;</span><span class="p">,</span> <span class="n">local_buildset</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="c1"># For flex</span>
+<span class="p">]</span>
+
+<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;baselibs&#39;</span><span class="p">,</span> <span class="n">local_buildset</span><span class="p">,</span>        <span class="s1">&#39;&#39;</span><span class="p">,</span>     <span class="p">(</span><span class="s1">&#39;GCCcore&#39;</span><span class="p">,</span> <span class="n">local_gcc_version</span><span class="p">)</span> <span class="p">),</span> <span class="c1"># For zlib, bzip2</span>
+    <span class="p">(</span><span class="s1">&#39;netCDF&#39;</span><span class="p">,</span>   <span class="n">local_netCDF_version</span><span class="p">,</span>  <span class="s1">&#39;-MPI&#39;</span><span class="p">),</span>                                  <span class="c1"># netCDF including the Fortran interface.</span>
+    <span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span>   <span class="n">local_Python3_version</span><span class="p">),</span>                                          <span class="c1"># Already includes matplotlib @ UAntwerp, otherwise add!</span>
+<span class="p">]</span> <span class="c1"># We use the internal Boost and FFTW3 as we have not yet succeeded to let the configure </span>
+  <span class="c1"># recognize the preinstalled ones</span>
+
+<span class="c1"># The package needs to be build in place, --prefix option is too buggy.</span>
+<span class="n">buildininstalldir</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># single make process since parallel builds might fail</span>
+<span class="n">maxparallel</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1">#</span>
+<span class="c1"># We abuse the configure step to apply the updates to the amber code as we cannot modify the </span>
+<span class="c1"># patch phase where this should really be done.</span>
+<span class="c1">#</span>
+<span class="n">with_configure</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">configure_cmd</span>  <span class="o">=</span> <span class="s1">&#39;export AMBERHOME=</span><span class="si">%(builddir)s</span><span class="s1"> &amp;&amp; &#39;</span>
+<span class="n">configure_cmd</span> <span class="o">+=</span> <span class="s1">&#39;./update_amber --update-to </span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1"> &amp;&amp; &#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;AmberTools&quot;</span><span class="p">,</span> <span class="n">local_patchlevels</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">configure_cmd</span> <span class="o">+=</span> <span class="s1">&#39;./update_amber --update-to </span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1"> &amp;&amp; &#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;Amber&quot;</span><span class="p">,</span>      <span class="n">local_patchlevels</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">configure_cmd</span> <span class="o">+=</span> <span class="s1">&#39;echo &quot;Updates done...&quot; &#39;</span>
+<span class="c1"># Note that you will see some junk in the output of the echo command as EasyBuild adds the options</span>
+<span class="c1"># it would also add to the regular configure command.</span>
+
+<span class="c1">#</span>
+<span class="c1"># We use the build phase to configure and build executables for serial, oppenmp, hybrid and mpi execution.</span>
+<span class="c1"># The order was taken from some EasyConfigs used by CSCS.</span>
+<span class="c1">#</span>
+<span class="n">local_common_build_opts</span> <span class="o">=</span> <span class="s1">&#39;--no-updates -mkl -noX11 --with-python $</span><span class="si">{EBROOTPYTHON}</span><span class="s1">/bin/python --python-install local intel&#39;</span>
+<span class="n">local_netcdf</span>            <span class="o">=</span> <span class="s1">&#39;--with-netcdf $</span><span class="si">{EBROOTNETCDF}</span><span class="s1"> &#39;</span>
+<span class="n">local_pnetcdf</span>           <span class="o">=</span> <span class="s1">&#39;--with-netcdf $</span><span class="si">{EBROOTNETCDF}</span><span class="s1"> --with-pnetcdf $</span><span class="si">{EBROOTNETCDF}</span><span class="s1"> &#39;</span>
+<span class="n">build_cmd</span>  <span class="o">=</span> <span class="s1">&#39;export AMBERHOME=</span><span class="si">%(builddir)s</span><span class="s1"> &amp;&amp; &#39;</span>
+<span class="c1">#build_cmd += &#39;export TUNEFLAGS=\&#39;-xHost\&#39; &amp;&amp; &#39;</span>
+<span class="n">build_cmd</span> <span class="o">+=</span> <span class="s1">&#39;export TUNEFLAGS=</span><span class="se">\&#39;\&#39;</span><span class="s1"> &amp;&amp; &#39;</span> <span class="c1"># TUNEFLAGS is not needed as the standard EasyBuild CFLAGS etc are added to the compiler arguments.</span>
+<span class="n">build_cmd</span> <span class="o">+=</span> <span class="s1">&#39;PYTHONPATH=</span><span class="si">%(builddir)s</span><span class="s1">/lib/python</span><span class="si">%(pyshortver)s</span><span class="s1">/site-packages/:$</span><span class="si">{PYTHONPATH}</span><span class="s1"> &amp;&amp; &#39;</span>
+<span class="n">build_cmd</span> <span class="o">+=</span> <span class="s1">&#39;unset I_MPI_HYDRA_RMK &amp;&amp; unset I_MPI_HYDRA_BOOTSTRAP &amp;&amp; &#39;</span> <span class="c1"># Needed to be able to compile on a login node as otherwise some test in Python fails.</span>
+<span class="n">build_cmd</span> <span class="o">+=</span> <span class="s1">&#39;./configure &#39;</span> <span class="o">+</span> <span class="n">local_netcdf</span> <span class="o">+</span> <span class="n">local_common_build_opts</span> <span class="o">+</span> <span class="s1">&#39; &amp;&amp; &#39;</span>
+<span class="n">build_cmd</span> <span class="o">+=</span> <span class="s2">&quot;make install SHELL=&#39;sh -x&#39; &amp;&amp; &quot;</span>
+<span class="n">build_cmd</span> <span class="o">+=</span> <span class="s1">&#39;make clean &amp;&amp; &#39;</span>
+<span class="c1"># OpenMP build</span>
+<span class="n">build_cmd</span> <span class="o">+=</span> <span class="s1">&#39;./configure -openmp &#39;</span> <span class="o">+</span> <span class="n">local_netcdf</span> <span class="o">+</span> <span class="n">local_common_build_opts</span> <span class="o">+</span> <span class="s1">&#39; &amp;&amp; &#39;</span>
+<span class="n">build_cmd</span> <span class="o">+=</span> <span class="s2">&quot;make install SHELL=&#39;sh -x&#39; &amp;&amp; &quot;</span>
+<span class="n">build_cmd</span> <span class="o">+=</span> <span class="s1">&#39;make clean &amp;&amp; &#39;</span>
+<span class="c1"># Hybrid MPI/OpenMP build</span>
+<span class="n">build_cmd</span> <span class="o">+=</span> <span class="s1">&#39;./configure -openmp -intelmpi &#39;</span> <span class="o">+</span> <span class="n">local_pnetcdf</span> <span class="o">+</span> <span class="n">local_common_build_opts</span> <span class="o">+</span> <span class="s1">&#39; &amp;&amp; &#39;</span>
+<span class="n">build_cmd</span> <span class="o">+=</span> <span class="s2">&quot;make install SHELL=&#39;sh -x&#39; &amp;&amp; &quot;</span>
+<span class="n">build_cmd</span> <span class="o">+=</span> <span class="s1">&#39;make clean &amp;&amp; &#39;</span>
+<span class="c1"># MPI build</span>
+<span class="n">build_cmd</span> <span class="o">+=</span> <span class="s1">&#39;./configure -intelmpi &#39;</span> <span class="o">+</span> <span class="n">local_pnetcdf</span> <span class="o">+</span> <span class="n">local_common_build_opts</span> <span class="o">+</span> <span class="s1">&#39; &amp;&amp; &#39;</span>
+<span class="n">build_cmd</span> <span class="o">+=</span> <span class="s2">&quot;make install SHELL=&#39;sh -x&#39; &amp;&amp; &quot;</span>
+<span class="n">build_cmd</span> <span class="o">+=</span> <span class="s1">&#39;make clean &amp;&amp; &#39;</span>
+<span class="c1"># Dummy command at the end.</span>
+<span class="n">build_cmd</span> <span class="o">+=</span> <span class="s1">&#39;echo &quot;Building done&quot;&#39;</span>
+<span class="c1"># Note that you will see some junk in the output of the echo command as EasyBuild adds the options</span>
+<span class="c1"># it would also add to the regular build command.</span>
+
+<span class="c1"># Nothing to copy as we do an in-place build, but EasyBuild requires this parameter.</span>
+<span class="n">files_to_copy</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">postinstallcmds</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;cd </span><span class="si">%(installdir)s</span><span class="s1"> ; /bin/rm -rf AmberTools src benchmarks doc recipe test updateutils&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cd </span><span class="si">%(installdir)s</span><span class="s1"> ; /bin/rm configure Makefile update_amber&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cd </span><span class="si">%(installdir)s</span><span class="s1"> ; /bin/rm -rf cmake cmake-packaging CMakeLists.txt configure_cmake&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">sanity_check_paths</span> <span class="o">=</span> <span class="p">{</span>
+<span class="c1">#    &#39;files&#39; : [ &#39;bin/pmemd.MPI&#39;, &#39;bin/pmemd&#39; ],</span>
+    <span class="s1">&#39;files&#39;</span> <span class="p">:</span> <span class="p">[],</span>
+    <span class="s1">&#39;dirs&#39;</span>  <span class="p">:</span> <span class="p">[</span> <span class="s1">&#39;dat&#39;</span> <span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">modextravars</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;AMBERHOME&#39;</span> <span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(builddir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">modextrapaths</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;PYTHONPATH&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;lib/python</span><span class="si">%(pyshortver)s</span><span class="s1">/site-packages&#39;</span><span class="p">]}</span>
+
+<span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;bio&#39;</span>
+</code></pre></div>
+<p><a href="../package/">[Amber]</a> <a href="../../..">[package list]</a></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/hpcuantwerpen" target="_blank" rel="noopener" title="HPC-UAntwerpen on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "header.autohide", "toc.follow", "content.code.annotate", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>

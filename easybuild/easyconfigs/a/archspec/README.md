@@ -16,7 +16,7 @@
 
 ## Installing with EasyBuild
 
-There is [support for archspec in the EasyBuilders repository]().
+There is [support for archspec in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/a/archspec).
 
 ### Archspec 0.1.0 in Intel 2020a
 

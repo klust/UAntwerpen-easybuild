@@ -67,10 +67,12 @@ do
         echo -e "---\ntitle: $easyconfig - $package\nhide:\n- navigation\n- toc\n---\n" >$easyconfig_md
         echo -e "[[$package]](index.md) [[package list]](../../index.md)\n" >>$easyconfig_md
         echo -e "# $easyconfig\n" >>$easyconfig_md
-		echo -e '``` python\n' >>$easyconfig_md
+		echo -e '``` python' >>$easyconfig_md
 		cat $file >>$easyconfig_md
-		echo -e '```\n' >>$easyconfig_md
+		echo -e '\n```\n' >>$easyconfig_md
         echo -e "[[$package]](index.md) [[package list]](../../index.md)" >>$easyconfig_md
+        # Note the extra \n in front of the last ``` as otherwise files that do not end
+        # with a newline would cause trouble.
 
 		echo -e "-    [$easyconfig](${easyconfig/.eb/.md})" >>$package_file
 

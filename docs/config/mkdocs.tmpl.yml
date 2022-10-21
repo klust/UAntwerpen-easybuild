@@ -18,6 +18,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     #- navigation.top
+    #- navigation.sections
     - navigation.indexes
     - header.autohide
     - toc.follow
@@ -26,18 +27,17 @@ theme:
   palette:
     - primary: black
 
-#hide:
+hide:
 #  - toc
-#  - nav
-
-nav:
-  - Pacakge list: index.md
-  - A: index.html#a
+  - navigation
 
 plugins:
   # show revision date at bottom of each page
   #- git-revision-date-localized
   - search
+#  - redirects:
+#      redirect_maps:
+#        'e/index.md': 'index.html#a'
 
 markdown_extensions:
   - meta
@@ -61,7 +61,6 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/extra.css
-
 
 extra:
   # add links in bottom right

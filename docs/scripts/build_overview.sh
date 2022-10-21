@@ -4,7 +4,8 @@ cd ..
 [[ -d generated ]] || mkdir generated
 cd generated
 
-#[[ -h mkdocs.yml ]] || ln -s ../scripts/mkdocs.yml
+/bin/cp -f ../config/mkdocs.tmpl.yml mkdocs.yml
+echo -e "\nnav:" >>mkdocs.yml
 
 mkdir -p docs
 /bin/cp -r ../stylesheets docs/stylesheets
@@ -13,10 +14,11 @@ package_list='docs/index.md'
 
 last_group='.'
 
-echo -e "# Package list\n" > $package_list
+echo -e "---\ntitle: Package overview\nhide:\n- navigation\n---\n" >$package_list
+echo -e "# Package list\n" >>$package_list
 
+#for package_dir in $(/bin/ls -1 ../../easybuild/easyconfigs/y/*/*.eb | sed -e 's|.*/easyconfigs/\(.*/.*\)/.*\.eb|\1|' | sort -uf)
 for package_dir in $(/bin/ls -1 ../../easybuild/easyconfigs/*/*/*.eb | sed -e 's|.*/easyconfigs/\(.*/.*\)/.*\.eb|\1|' | sort -uf)
-#for package_dir in $(/bin/ls -1 ../../easybuild/easyconfigs/a/*/*.eb | sed -e 's|.*/easyconfigs/\(.*/.*\)/.*\.eb|\1|' | sort -uf)
 do
 	
 	>&2 echo "Processing $package_dir..." 
@@ -28,11 +30,13 @@ do
 	>&2 echo "Identified group $group, package $package"
 
 	mkdir -p docs/$package_dir
-	package_file="docs/$package_dir/package.md"
+	package_file="docs/$package_dir/index.md"
 
     # Create the package file.
 
-    echo -e "[[package list]](../../index.md)\n" >$package_file
+	echo -e "---\ntitle: $package\nhide:\n- navigation\n---\n" >$package_file
+
+    echo -e "[[package list]](../../index.md)\n" >>$package_file
 	echo -e "# $package\n" >>$package_file
 
 	#
@@ -60,12 +64,13 @@ do
 
 		>&2 echo "Processing $easyconfig, generating $easyconfig_md..."
 
-        echo -e "[[$package]](package.md) [[package list]](../../index.md)\n" >$easyconfig_md
+        echo -e "---\ntitle: $easyconfig - $package\nhide:\n- navigation\n- toc\n---\n" >$easyconfig_md
+        echo -e "[[$package]](index.md) [[package list]](../../index.md)\n" >>$easyconfig_md
         echo -e "# $easyconfig\n" >>$easyconfig_md
 		echo -e '``` python\n' >>$easyconfig_md
 		cat $file >>$easyconfig_md
 		echo -e '```\n' >>$easyconfig_md
-        echo -e "[[$package]](package.md) [[package list]](../../index.md)" >>$easyconfig_md
+        echo -e "[[$package]](index.md) [[package list]](../../index.md)" >>$easyconfig_md
 
 		echo -e "-    [$easyconfig](${easyconfig/.eb/.md})" >>$package_file
 
@@ -86,6 +91,9 @@ do
 	#
     echo -e "\n[[package list]](../../index.md)" >>$package_file
 
+    # If this is a new group, add the letter to the navigation menu.
+
+    [[ $group != $last_group ]] && echo "- $group: index.html#$group" >>mkdocs.yml
 
 	# Finally add the link to the package list
 
@@ -93,6 +101,5 @@ do
     last_group="$group"
     
     echo -e "-   [$package](${package_file#docs/})\n" >>$package_list
-
 	
 done

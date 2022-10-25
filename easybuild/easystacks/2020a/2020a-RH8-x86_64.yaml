@@ -55,3 +55,10 @@ software:
           '1.23':
             versionsuffix:
               '-Java-11'
+  JUnit:
+    toolchains:
+      SYSTEM:
+        versions:
+          '4.12':
+            versionsuffix:
+              '-Java-8'

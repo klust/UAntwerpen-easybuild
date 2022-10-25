@@ -1,25 +1,25 @@
 easyblock = 'JAR'
 
-name = 'JUnit'
+name =    'JUnit'
 version = '4.12'
 
 homepage = 'http://sourceforge.net/projects/junit'
 description = """A programmer-oriented testing framework for Java."""
 
-toolchain = {'name': 'dummy', 'version': ''}
+toolchain = SYSTEM
 
-sources = ['%(namelower)s-%(version)s.jar']
+sources =     ['%(namelower)s-%(version)s.jar']
 source_urls = ['http://search.maven.org/remotecontent?filepath=junit/junit/%(version)s/']
 
-java = 'Java'
-javaver = '8'
-versionsuffix = '-%s-%s' % (java, javaver)
+local_java = 'Java'
+local_local_javaver = '8'
+versionsuffix = '-%s-%s' % (local_java, local_local_javaver)
 
-dependencies = [(java, javaver)]
+dependencies = [(local_java, local_local_javaver)]
 
 sanity_check_paths = {
     'files': sources,
-    'dirs': [],
+    'dirs':  [],
 }
 
 moduleclass = 'devel'

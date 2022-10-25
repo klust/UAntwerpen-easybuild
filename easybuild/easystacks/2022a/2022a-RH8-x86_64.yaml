@@ -58,3 +58,10 @@ software:
           '1.24':
             versionsuffix:
               '-Java-11'
+  Trimmomatic:
+    toolchains:
+      SYSTEM:
+        versions:
+          '0.39':
+            versionsuffix:
+              '-Java-11'

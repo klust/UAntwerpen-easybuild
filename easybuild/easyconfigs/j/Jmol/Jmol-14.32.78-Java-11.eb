@@ -1,7 +1,7 @@
 easyblock = 'MakeCp'
 
 name =          'Jmol'
-version =       '14.30.1'
+version =       '14.32.78'
 local_java =    'Java'
 local_javaver = '11'
 versionsuffix = '-%s-%s' % (local_java, local_javaver)
@@ -52,10 +52,10 @@ docurls = [
 toolchain = SYSTEM
 
 local_version_maj_min = '.'.join(version.split('.')[:2])
-# https://sourceforge.net/projects/jmol/files/Jmol/Version%2014.30/Jmol%2014.30.1/Jmol-14.30.1-binary.zip/download
-sources =     ['%(name)s-%(version)s-binary.zip']
+# https://sourceforge.net/projects/jmol/files/Jmol/Version%2014.32/Jmol%2014.32.78/jmol-14.32.78-binary.zip/download
+sources =     ['%(namelower)s-%(version)s-binary.zip']
 source_urls = ['https://sourceforge.net/projects/jmol/files/Jmol/Version%20' + local_version_maj_min + '/Jmol%20' + version]
-checksums =   ['ebd7edda119a8a969025a31c4957fb5cb15e9458a41c2f9c08c75af1e20cb96d']
+checksums =   ['8ff3b73b618f036cfd61a93f5e39601ad28821821a3328cfd44e82fbd006c3f8']
 
 dependencies = [
     (local_java, local_javaver)

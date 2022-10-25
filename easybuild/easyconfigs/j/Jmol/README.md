@@ -1,12 +1,16 @@
 # Jmol instructions
 
 Links:
+
 * [Jmol web site](http://jmol.sourceforge.net/) (and this page can be accessed as 
   [www.jmol.org](http://www.jmol.org/) also)
+  
 * [Jmol documentation](http://jmol.sourceforge.net/docs/) is integrated on the web site. 
   At this time (December 2019) the link to the Wiki []wiki.jmol.org](http://wiki.jmol.org/index.php/Literature) 
   does not work.
+  
 * [Actual repository on SourceForge](https://sourceforge.net/projects/jmol/)
+
 * Somewhere in the SourceForge pages it is said that development is moving to
   [GitHub](https://github.com/BobHanson/Jmol-SwingJS).
 

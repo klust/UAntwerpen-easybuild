@@ -43,4 +43,11 @@ software:
         versions:
           '4.3.0.0':
             versionsuffix:
-              '-Java-8-minimal'
+              '-Java-11-minimal'
+  Jmol:
+    toolchains:
+      SYSTEM:
+        versions:
+          '14.32.78':
+            versionsuffix:
+              '-Java-11'

@@ -6,3 +6,10 @@ software:
           '2.14':
             versionsuffix:
               '-verbs-smp'
+  ant:
+    toolchains:
+      SYSTEM:
+        versions:
+          '1.10.12':
+            versionsuffix:
+              '-Java-17'

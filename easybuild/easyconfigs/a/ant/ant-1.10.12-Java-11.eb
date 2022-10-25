@@ -1,5 +1,8 @@
-name =    'ant'
-version = '1.10.1'
+easyblock = 'PackedBinary'
+
+name =          'ant'
+version =       '1.10.12'
+versionsuffix = '-Java-%(javaver)s'
 
 homepage = 'http://ant.apache.org/'
 
@@ -15,24 +18,19 @@ upon each other. The main known usage of Ant is the build of Java applications.
 
 toolchain = SYSTEM
 
-sources =     ['apache-%(name)s-%(version)s-src.tar.gz']
-source_urls = ['http://archive.apache.org/dist/%(name)s/source/']
-
-local_java = 'Java'
-local_javaver = '8'
-versionsuffix = '-%s-%s' % (local_java, local_javaver)
+source_urls = ['https://archive.apache.org/dist/ant/binaries/']
+sources =     ['apache-%(name)s-%(version)s-bin.tar.gz']
+checksums =   ['4b3b557279bae4fb80210a5679180fdae3498b44cfd13368e3386e2a21dd853b']
 
 dependencies = [
-    (local_java, local_javaver)
-]
-
-builddependencies = [
-    ('JUnit', '4.12', versionsuffix)
+    ('Java', '11')
 ]
 
 sanity_check_paths = {
     'files': ['bin/ant', 'lib/ant.jar', 'lib/ant.jar'],
     'dirs':  [],
 }
+
+modextravars = {'ANT_HOME': '%(installdir)s'}
 
 moduleclass = 'devel'

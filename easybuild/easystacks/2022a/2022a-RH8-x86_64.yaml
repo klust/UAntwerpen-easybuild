@@ -65,3 +65,10 @@ software:
           '0.39':
             versionsuffix:
               '-Java-11'
+  ant:
+    toolchains:
+      SYSTEM:
+        versions:
+          '1.10.12':
+            versionsuffix:
+              '-Java-11'

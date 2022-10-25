@@ -1,6 +1,6 @@
 easyblock = 'JAR'
 
-local_Pilon_version =          '1.23'            # https://github.com/broadinstitute/pilon
+local_Pilon_version =          '1.24'            # https://github.com/broadinstitute/pilon
 
 name =          'Pilon'
 version =       local_Pilon_version
@@ -25,8 +25,8 @@ Adjust the memory value according to the size of your input files
 toolchain = SYSTEM
 
 source_urls = ['https://github.com/broadinstitute/pilon/releases/download/v%(version)s/']
-sources = ['%(namelower)s-%(version)s.jar']
-checksums = ['bde1d3c8da5537abbc80627f0b2a4165c2b68551690e5733a6adf62413b87185']
+sources =     ['%(namelower)s-%(version)s.jar']
+checksums =   ['ea8e7ca8669887ebe1c376bef440ba487377d4802a45c5937ed37c49cafb8df6']
 
 dependencies = [
     ('Java', '11')

@@ -48,3 +48,10 @@ software:
           '14.30.1':
             versionsuffix:
               '-Java-11'
+  Pilon:
+    toolchains:
+      SYSTEM:
+        versions:
+          '1.23':
+            versionsuffix:
+              '-Java-11'

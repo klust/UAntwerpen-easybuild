@@ -32,5 +32,8 @@ given the simplicity of the installation process seems overkill.
   * Switched to installing in the system toolchain as there is nothing compiler-specific 
     about the whole package.
 
+### Version 3.3.4 for the 2022a toolchains
+
+  * Trivial change to the 3.3.7 EasyConfig.
 
 

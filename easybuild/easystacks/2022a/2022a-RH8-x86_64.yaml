@@ -18,11 +18,10 @@ software:
     toolchains:
       SYSTEM:
         versions: ['11.0.16', '11', '17.0.4', '17']
-#        versions: ['1.6']
-#  monitor: # Awaiting a fix in the system Perl installation
-#    toolchains:
-#      SYSTEM
-#        versions: ['1.1.2']
+  monitor: # Awaiting a fix in the system Perl installation
+    toolchains:
+      SYSTEM:
+        versions: ['1.1.2']
   NAMD:
     toolchains:
       SYSTEM:
@@ -34,3 +33,7 @@ software:
     toolchains:
       SYSTEM:
         versions: ['20220922']
+  Eigen:
+    toolchains:
+      SYSTEM:
+        versions: ['3.4.0']

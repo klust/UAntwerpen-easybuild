@@ -15,10 +15,10 @@ software:
     toolchains:
       SYSTEM:
         versions: ['8.345', '8', '11.0.16', '11']
-#  monitor:
-#    toolchains:
-#      SYSTEM
-#        versions: ['1.1.2']
+  monitor:
+    toolchains:
+      SYSTEM:
+        versions: ['1.1.2']
   NAMD:
     toolchains:
       SYSTEM:
@@ -30,4 +30,8 @@ software:
     toolchains:
       SYSTEM:
         versions: ['20200422']
+  Eigen:
+    toolchains:
+      SYSTEM:
+        versions: ['3.3.7']
   

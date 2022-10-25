@@ -1,10 +1,10 @@
 easyblock = 'Tarball'
 
 name =          'GATK'
-version =       '4.1.4.1'
+version =       '4.3.0.0'
 
-local_java_version = '8' # It is not clear from the release notes to which extent Java 11 is tested.
-                         # It was work in progress for version 4.1.4.0.
+local_java_version = '11' # It is not clear from the release notes to which extent Java 11 is tested.
+                          # It was work in progress for version 4.1.4.0.
 
 versionsuffix = '-Java-%(javaver)s-minimal'
 
@@ -71,7 +71,7 @@ toolchain = SYSTEM
 
 source_urls = ['https://github.com/broadinstitute/gatk/releases/download/%(version)s/']
 sources =     ['gatk-%(version)s.zip']
-checksums =   ['21ae694cfc8b7447381ad5ce62ed4af22e53a228b12495bdcca7df0c73b09cea']
+checksums =   ['e2c27229b34c3e22445964adf00639a0909887bbfcc040f6910079177bc6e2dd']
 
 dependencies = [
     ('Java', local_java_version, '', True),

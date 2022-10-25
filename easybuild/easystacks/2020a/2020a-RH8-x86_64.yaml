@@ -34,4 +34,10 @@ software:
     toolchains:
       SYSTEM:
         versions: ['3.3.7']
-  
+  GATK:
+    toolchains:
+      SYSTEM:
+        versions:
+          '4.1.4.1':
+            versionsuffix:
+              '-Java-8-minimal'

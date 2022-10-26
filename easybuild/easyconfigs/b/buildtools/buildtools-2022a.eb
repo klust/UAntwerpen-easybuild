@@ -33,7 +33,7 @@ local_flex_version =             '2.6.4'         # flex       20170506 - https:/
 local_git_version =              '2.36.3'        # git        20221007 - https://github.com/git/git/tags
 local_gperf_version =            '3.1'           # gperf      20170105 - https://ftp.gnu.org/gnu/gperf/
 local_help2man_version =         '1.49.2'        # help2man   20220411 - https://ftp.gnu.org/gnu/help2man/
-local_libtool_version =          '2.4.6'         # libtool    20150215 - https://ftp.gnu.org/gnu/libtool/
+local_libtool_version =          '2.4.7'         # libtool    20150215 - https://ftp.gnu.org/gnu/libtool/
 local_M4_version =               '1.4.19'        # M4         20210528 - https://ftp.gnu.org/gnu/m4/
 local_make_version =             '4.3'           # Make       20200119 - https://ftp.gnu.org/gnu/make/
 local_NASM_version =             '2.15.05'       # NASM       20200828 - https://www.nasm.us/
@@ -188,7 +188,7 @@ components = [
     ('libtool', local_libtool_version, { # Uses M4
         'sources':          [SOURCELOWER_TAR_XZ],
         'source_urls':      [GNU_SOURCE],
-        'checksums':        ['7c87a8c2c8c0fc9cd5019e402bed4292462d00a718a7cd5f11218153bf28b26f'],
+        'checksums':        ['4f7f217f057ce655ff22559ad221a0fd8ef84ad1fc5fcb6990cecc333aa1635d'],
         'start_dir':        '%(namelower)s-%(version)s',
         'preconfigopts':    local_compiler_flags,
         'buildopts':        'V=1;',

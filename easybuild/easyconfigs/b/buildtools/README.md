@@ -18,78 +18,78 @@ these problems.
 
 The contents of the module evolved over time. It does contain a subset of:
 
-* byacc 
+* [byacc (Berkeley Yacc)](https://invisible-island.net/byacc/byacc.html) 
     * [version check download location](https://invisible-mirror.net/archives/byacc/)
     * [byacc in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/b/byacc)
-* flex 
+* [flex (Fast LEXical analyzer generator](https://sourceforge.net/projects/flex/) 
     * [version check GitHub](https://github.com/westes/flex/releases)
     * [flex in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/f/flex)
-* git 
+* [git](https://git-scm.com/)  
     * [version check GitHub](https://github.com/git/git/tags)
     * [git in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/g/git)
-* GNU Autoconf 
+* [GNU Autoconf](https://www.gnu.org/software/autoconf/) 
     * [version check download location](http://ftp.gnu.org/gnu/autoconf/)
     * [Autoconf in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/a/Autoconf)
-* GNU Automake
+* [GNU Automake](https://www.gnu.org/software/automake/automake.html)
     * [version check download location](http://ftp.gnu.org/gnu/automake/)
     * [Automake in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/a/Automake)
-* GNU Autoconf-archive
+* [GNU Autoconf-archive](https://www.gnu.org/software/autoconf-archive)
     * [version check download location](https://ftp.gnu.org/gnu/autoconf-archive/)
     * [Autoconf-archive in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/a/Autoconf-archive)
-* GNU Bison 
+* [GNU Bison](https://www.gnu.org/software/bison) 
     * [version check on download location](https://ftp.gnu.org/gnu/bison/)
     * [Bison in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/b/Bison)
-* GNU libtool 
+* [GNU libtool](https://www.gnu.org/software/libtool)
     * [version check on the download location](https://www.gnu.org/software/libtool/)
     * [libtool in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/l/libtool)
-* GNU M4 
+* [GNU M4](https://www.gnu.org/software/m4/m4.html) 
     * [version check on the download loacation](https://ftp.gnu.org/gnu/m4/)\
     * [M4 in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/m/M4)
-* GNU make 
+* [GNU make](https://www.gnu.org/software/make/make.html) 
     * [version check on the download location](http://ftp.gnu.org/gnu/make/)
-    * [make in the EasyBuilders repository]
-* GNU sed 
+    * [make in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/m/make)
+* [GNU sed](https://www.gnu.org/software/sed/) 
     * [version check on the download location](http://ftp.gnu.org/gnu/sed/)
     * No support for sed in the EasyBuilders repository
-* CMake 
+* [CMake](https://cmake.org/) 
     * [version check on the CMake web site](http://www.cmake.org/)
     * [Releases on the GitHub mirror of the development repository](https://github.com/Kitware/CMake/releases)
     * [CMake in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/c/CMake)
-* Ninja 
+* [Ninja](https://ninja-build.org/) 
     * [version check on the Ninja web site](https://ninja-build.org/)
     * [Releases on the Ninja GitHub](https://github.com/ninja-build/ninja/releases)
     * [Ninja in the EAsyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs//n/Ninja)
-* NASM 
+* [NASM](https://www.nasm.us/) 
     * [version check on the NASM web site](http://www.nasm.us/)
     * [Releases on the NASM GitHub](https://github.com/netwide-assembler/nasm/tags)
-* Yasm 
+* [Yasm](http://yasm.tortall.net/) 
     * [version check on the Yasm web site](http://yasm.tortall.net/)
     * [Releases on the Yasm GitHub](https://github.com/yasm/yasm/releases)
     * [Yasm in th EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs//y/Yasm)
-* patchelf 
+* [patchelf](https://github.com/NixOS/patchelf) 
     * [version check on the download location](https://github.com/NixOS/patchelf/releases)
     * [patchelf in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs//p/patchelf)
-* pkg-config 
+* [pkg-config](http://www.freedesktop.org/wiki/Software/pkg-config/)
     * [version check on the download location](https://pkgconfig.freedesktop.org/releases/)
     * [pkg-config in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs//p/pkg-config)
-* GNU gperf
+* [GNU perf](https://www.gnu.org/software/gperf/)
     * [version check on the gperf web site](https://www.gnu.org/software/gperf/)
     * [version check on the download location](https://ftp.gnu.org/gnu/gperf/)
     * [gperf in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs//g/gperf)
-* GNU help2man 
+* [GNU help2man](https://www.gnu.org/software/help2man/) 
     * [version check on the download location](http://ftpmirror.gnu.org/help2man/)
     * [help2man in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs//h/help2man)
-* Doxygen 
+* [Doxygen](https://doxygen.nl/index.html) 
     * [version check on the doxygen web site](http://www.doxygen.nl/download.html)
     * [version check on the doxugen GitHub](https://github.com/doxygen/doxygen/tags)
     * [Doxygen on the EasyBuilders web site](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/d/Doxygen)
 * [re2c](https://re2c.org/)
     * [version check on the re2c GitHub](https://github.com/skvadrik/re2c/releases)
     * [re2c in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/r/re2c)
-* Meson 
+* [Meson](https://mesonbuild.com) 
     * [version check on PyPi](https://pypi.org/project/meson/#history)
     * [Meson in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/m/Meson)
-* SCons
+* [SCons](https://www.scons.org/)
     * [Version check on PyPi](https://pypi.org/project/SCons/#history)
     * [SCons in the EasyBuilders repository](https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/s/SCons)
 
@@ -148,6 +148,10 @@ Versions used:
   set as they don't provide shell script wrappers: Meson and SCons. These will
   appear in `buildtools-systempython` and `buildtools-python`.
   
+* Made sure that only static libraries are generated, and those are removed at the
+  end of the build process to ensure that programs that use buildtools will not try
+  to use those libraries when configuring.
+  
 Versions used:
 
 * Byacc 20220128
@@ -157,7 +161,7 @@ Versions used:
 * GNU Automake 1.16.2
 * GNU Autoconf-archive 2022.09.03
 * GNU Bison 3.8.2
-* GNU libtool 2.4.6
+* GNU libtool 2.4.7
 * GNU M4 1.4.19
 * GNU make 4.3. Switched back to .tar.gz as there was no .tar.bz2 file anymore
 * GNU sed 4.8

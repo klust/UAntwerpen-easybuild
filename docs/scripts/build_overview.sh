@@ -1,8 +1,20 @@
 #! /usr/bin/env bash
 
 cd ..
-[[ -d generated ]] || mkdir generated
-cd generated
+
+#
+# Set some variables that will be used as constants
+#
+gendoc='generated'
+userinfo='USER.md'
+
+
+#
+# Set up the structure.
+#
+
+[[ -d $gendoc ]] || mkdir $gendoc
+cd $gendoc
 
 /bin/cp -f ../config/mkdocs.tmpl.yml mkdocs.yml
 echo -e "\nnav:" >>mkdocs.yml
@@ -40,9 +52,9 @@ do
 	echo -e "# $package\n" >>$package_file
 
 	#
-	# Generate the user documentation if a USAGE.md file exists.
+	# Generate the user documentation if a USER.md file exists.
 	#
-    usage="../../easybuild/easyconfigs/$package_dir/USAGE.md"
+    usage="../../easybuild/easyconfigs/$package_dir/$userinfo"
 	if [[ -f $usage ]]
     then
 	    echo -e "## User documentation\n" >>$package_file

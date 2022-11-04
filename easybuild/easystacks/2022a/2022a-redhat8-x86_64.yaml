@@ -1,74 +1,20 @@
-software:
-  buildtools:
-    toolchains:
-      SYSTEM:
-        versions: ['2022a'] 
-  buildtools-systempython:
-    toolchains:
-      SYSTEM:
-        versions: ['2022a'] 
-  AutoDock_Vina:
-    toolchains:
-      SYSTEM:
-        versions: ['1.2.3'] 
-#  g_mmpbsa: # Is this still relevant? Old software, provided by the user.
-#    toolchains:
-#      SYSTEM:
-  Java:
-    toolchains:
-      SYSTEM:
-        versions: ['11.0.16', '11', '17.0.4', '17']
-  monitor: # Awaiting a fix in the system Perl installation
-    toolchains:
-      SYSTEM:
-        versions: ['1.1.2']
-  NAMD:
-    toolchains:
-      SYSTEM:
-        versions:
-          '2.14':
-            versionsuffix:
-              '-verbs'
-  parallel:
-    toolchains:
-      SYSTEM:
-        versions: ['20220922']
-  Eigen:
-    toolchains:
-      SYSTEM:
-        versions: ['3.4.0']
-  GATK:
-    toolchains:
-      SYSTEM:
-        versions:
-          '4.3.0.0':
-            versionsuffix:
-              '-Java-11-minimal'
-  Jmol:
-    toolchains:
-      SYSTEM:
-        versions:
-          '14.32.78':
-            versionsuffix:
-              '-Java-11'
-  Pilon:
-    toolchains:
-      SYSTEM:
-        versions:
-          '1.24':
-            versionsuffix:
-              '-Java-11'
-  Trimmomatic:
-    toolchains:
-      SYSTEM:
-        versions:
-          '0.39':
-            versionsuffix:
-              '-Java-11'
-  ant:
-    toolchains:
-      SYSTEM:
-        versions:
-          '1.10.12':
-            versionsuffix:
-              '-Java-11'
+easyconfigs:
+  buildtools-2022a:
+  buildtools-systempython-2022a:
+  AutoDock_Vina-1.2.3:
+#  g_mmpbsa-??? # Is this still relevant? Old software, provided by the user.
+  Java-11.0.16:
+  Java-11:
+  Java-17.0.4:
+  Java-17:
+  monitor-1.1.2:
+  NAMD-2.14-verbs:
+  NAMD-2.14-verbs-smp:
+  parallel-20220922:
+  Eigen-3.4.0:
+  GATK-4.3.0.0-Java-11-minimal:
+  Jmol-14.32.78-Java-11:
+  Pilon-1.24-Java-11:
+  Trimmomatic-0.39-Java-11:
+  ant-1.10.12-Java-11:
+  ant-1.10.12-Java-17:

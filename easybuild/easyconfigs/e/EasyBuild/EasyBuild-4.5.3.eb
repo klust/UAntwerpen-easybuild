@@ -20,15 +20,11 @@ See the documentation on readthedocs. Only the documentation of the latest
 version is readily available.
 
 Things to know about our local installation:
- - The EasyBuild configuration files that we used are stored in
-   /apps/antwerpen/easybuild/config
- - The repository of EasyConfigs for installed software is in
-   /apps/antwerpen/easybuild/repo, organised per system architecture
-   and major OS release.
- - We maintain GitHub repositories with our EasyConfig files and our
-   custom EasyBlocks:
-    - https://github.com/hpcuantwerpen/UAntwerpen-easyconfigs
-    - https://github.com/hpcuantwerpen/easybuild-easyblocks
+ - The location of the EasyBuild files that we used can be found
+   easily by executing `eb --show-config` after loading the 
+   EasyBuild-user module.
+ - We maintain a GitHub repository with our EasyConfig files and our
+   custom EasyBlocks: https://github.com/hpcuantwerpen/UAntwerpen-easybuild
  - Note that our UAntwerp EasyBuild installation differs in a number of
    aspects form an installation that you get from the default EasyBuilders
    repositories. Hence you may want to make sure that EasyBuild checks our

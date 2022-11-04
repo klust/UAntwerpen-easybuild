@@ -1,6 +1,12 @@
 #! /usr/bin/env bash
 
+# That cd will work if the script is called by specifying the path or is simply
+# found on PATH. It will not expand symbolic links.
+cd $(dirname $0)
 cd ..
+docdir=$(PWD)
+cd ..
+repodir=$(PWD)
 
 #
 # Set some variables that will be used as constants
@@ -8,11 +14,16 @@ cd ..
 gendoc='generated'
 userinfo='USER.md'
 
+################################################################################
+#
+# Main code
+#
 
 #
 # Set up the structure.
 #
 
+cd $docdir
 [[ -d $gendoc ]] || mkdir $gendoc
 cd $gendoc
 
@@ -29,6 +40,7 @@ last_group='.'
 echo -e "---\ntitle: Package overview\nhide:\n- navigation\n---\n" >$package_list
 echo -e "# Package list\n" >>$package_list
 
+# Note that we deliberately use relative references in the ls call below.
 #for package_dir in $(/bin/ls -1 ../../easybuild/easyconfigs/y/*/*.eb | sed -e 's|.*/easyconfigs/\(.*/.*\)/.*\.eb|\1|' | sort -uf)
 for package_dir in $(/bin/ls -1 ../../easybuild/easyconfigs/*/*/*.eb | sed -e 's|.*/easyconfigs/\(.*/.*\)/.*\.eb|\1|' | sort -uf)
 do

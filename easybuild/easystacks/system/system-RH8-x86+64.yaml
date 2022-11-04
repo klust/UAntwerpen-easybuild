@@ -1,13 +1,7 @@
-software:
-  MATLAB:
-    toolchains:
-      SYSTEM:
-        versions: ['R2020a', 'R2021a','R2022a']
-  Maple:
-    toolchains:
-      SYSTEM:
-        versions: ['2020.0']
-  Mathematica:
-    toolchains:
-      SYSTEM:
-        versions: ['12.0']
+easyconfigs:
+  MATLAB-R2020a:
+  MATLAB-R2021a:
+  MATLAB-R2022a:
+  Maple-2020.0:
+  Mathematica-12.0:
+#  COMSOL-5.5.0.359: # Not tested yet.
